@@ -8,12 +8,15 @@
         "allowJs": true, // Разрешает использовать js файлы. Не только ts
         "moduleResolution": "node",
         "esModuleInterop": true, // позволяет работать со старыми пакетами с common js с помощью import
-        "allowSyntheticDefaultImports": true // позволяет писать импорты без *.
+        "allowSyntheticDefaultImports": true, // позволяет писать импорты без *.
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     }
-    // "baseUrl": "."
 }
