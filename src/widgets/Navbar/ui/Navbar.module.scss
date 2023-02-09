@@ -1,0 +1,16 @@
+.container {
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.linksContainer {
+    margin: 10px;
+
+    :first-child {
+        padding-right: 10px;
+    }
+}
