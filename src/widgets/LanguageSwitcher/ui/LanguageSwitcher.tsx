@@ -16,5 +16,13 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
 
     const icon = i18n.language === 'ru' ? ruFlag : enFlag;
 
-    return <img onClick={toggleLanguage} className={styles.container} src={icon} title="Change theme" />;
+    return (
+        <img
+            onClick={toggleLanguage}
+            className={styles.container}
+            src={icon}
+            alt={t('Language')}
+            title={t('Language')}
+        />
+    );
 };
