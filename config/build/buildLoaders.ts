@@ -4,16 +4,8 @@ import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const urlLoader = {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-            {
-                loader: 'url-loader',
-                options: {
-                    limit: 8192,
-                },
-            },
-        ],
-        type: 'javascript/auto',
+        test: /\.png/,
+        type: 'asset/resource',
     };
 
     const svgLoader = {

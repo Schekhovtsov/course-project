@@ -1,0 +1,8 @@
+.container {
+    fill: var(--link-primary-color);
+    cursor: pointer;
+
+    &:hover {
+        fill: var(--link-secondary-color);
+    }
+}

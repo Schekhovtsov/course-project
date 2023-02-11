@@ -10,13 +10,11 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     const { toggleTheme } = useTheme();
 
     return (
-        <div className={styles.container} title="Change theme">
-            <ChangeThemeIcon
-                className={styles.icon}
-                width={48}
-                height={48}
-                onClick={toggleTheme}
-            />
-        </div>
+        <ChangeThemeIcon
+            className={styles.container}
+            width={32}
+            height={32}
+            onClick={toggleTheme}
+        />
     );
 };

@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+    fill: var(--link-primary-color);
+    cursor: pointer;
+
+    &:hover {
+        fill: var(--link-secondary-color);
+    }
+}
+
+.reverse {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}

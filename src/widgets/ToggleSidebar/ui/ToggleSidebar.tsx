@@ -23,8 +23,8 @@ export const ToggleSidebar = ({
                     },
                     [className]
                 )}
-                width={48}
-                height={48}
+                width={32}
+                height={32}
                 onClick={toggleSidebar}
             />
         </div>

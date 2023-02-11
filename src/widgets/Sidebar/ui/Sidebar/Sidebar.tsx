@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { ToggleSidebar } from 'shared/ui/ToggleSidebar';
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { ToggleSidebar } from 'widgets/ToggleSidebar';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -29,6 +29,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     isCollapsed={isCollapsed}
                     toggleSidebar={onToggle}
                 />
+                <LanguageSwitcher />
                 <ThemeSwitcher />
             </div>
         </div>
