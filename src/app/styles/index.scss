@@ -12,3 +12,13 @@
     height: 100vh;
     width: 100vw;
 }
+
+.body {
+    display: flex;
+    flex-direction: row;
+}
+
+.page {
+    padding: 30px;
+    flex-grow: 1;
+}
