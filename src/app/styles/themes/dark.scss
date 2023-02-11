@@ -2,7 +2,7 @@
     --bg-color: #2f3940;
     --inverted-bg-color: #ffffff;
 
-    --primary-color: #ffffff;
+    --primary-color: var(--inverted-bg-color);
     --secondary-color: #bcbcbc;
 
     --link-primary-color: #447eab;

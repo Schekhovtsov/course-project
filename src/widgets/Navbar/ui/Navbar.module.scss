@@ -3,14 +3,15 @@
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
     display: flex;
+    gap: 10px;
     align-items: center;
-    padding: 10px;
-}
+    padding: 0 20px;
 
-.linksContainer {
-    margin: 10px;
+    .linksContainer {
+        margin: 10px;
 
-    :first-child {
-        padding-right: 10px;
+        :first-child {
+            padding-right: 20px;
+        }
     }
 }

@@ -1,10 +1,5 @@
 import { useContext } from 'react';
-import {
-    LOCAL_STORAGE_THEME_KEY,
-    Theme,
-    ThemeContext,
-    ThemeContextProps,
-} from './ThemeContext';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 export type useThemeType = {
     theme: Theme;

@@ -3,6 +3,25 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+    const urlLoader = {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 8192,
+                },
+            },
+        ],
+        type: 'javascript/auto',
+    };
+
+    const svgLoader = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+    };
+
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -29,5 +48,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [typeScriptLoader, cssLoader];
+    return [typeScriptLoader, cssLoader, svgLoader, urlLoader];
 }
