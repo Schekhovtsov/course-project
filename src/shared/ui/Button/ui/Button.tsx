@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
@@ -16,16 +17,12 @@ export const Button: FC<ButtonProps> = ({
     children,
     theme = ThemeButton.PRIMARY,
     ...otherProps
-}: ButtonProps) => {
-    return (
-        <button
-            {...otherProps}
-            className={classNames(styles.container, {}, [
-                className,
-                styles[theme],
-            ])}
-        >
-            {children}
-        </button>
-    );
-};
+}: ButtonProps) => (
+    <button
+        {...otherProps}
+        type="button"
+        className={classNames(styles.container, {}, [className, styles[theme]])}
+    >
+        {children}
+    </button>
+);

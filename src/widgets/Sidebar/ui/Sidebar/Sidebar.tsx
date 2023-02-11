@@ -9,7 +9,7 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar = ({ className }: SidebarProps) => {
+export function Sidebar({ className }: SidebarProps) {
     const [isCollapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
@@ -21,7 +21,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={classNames(
                 styles.container,
                 { [styles.collapsed]: isCollapsed },
-                [className]
+                [className],
             )}
         >
             <div className={styles.switchers}>
@@ -34,4 +34,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
         </div>
     );
-};
+}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FC } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -16,20 +17,15 @@ interface AppLinkProps extends LinkProps {
 export const AppLink: FC<AppLinkProps> = ({
     to,
     className,
-    theme = AppLinkTheme.PRIMARY,
+    theme,
     children,
     ...otherProps
-}) => {
-    return (
-        <Link
-            {...otherProps}
-            to={to}
-            className={classNames(styles.container, {}, [
-                className,
-                styles[theme],
-            ])}
-        >
-            {children}
-        </Link>
-    );
-};
+}) => (
+    <Link
+        {...otherProps}
+        to={to}
+        className={classNames(styles.container, {}, [className, styles[theme]])}
+    >
+        {children}
+    </Link>
+);

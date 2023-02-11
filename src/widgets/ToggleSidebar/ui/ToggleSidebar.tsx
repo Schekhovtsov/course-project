@@ -1,6 +1,6 @@
-import styles from './ToggleSidebar.module.scss';
 import ArrowRightIcon from 'shared/assets/icons/arrows/right.svg';
 import { classNames } from 'shared/lib/classNames';
+import styles from './ToggleSidebar.module.scss';
 
 interface ToggleSidebarProps {
     isCollapsed: boolean;
@@ -8,11 +8,11 @@ interface ToggleSidebarProps {
     className?: string;
 }
 
-export const ToggleSidebar = ({
+export function ToggleSidebar({
     isCollapsed,
     toggleSidebar,
     className,
-}: ToggleSidebarProps) => {
+}: ToggleSidebarProps) {
     return (
         <div className={styles.container} title="Toggle sidebar">
             <ArrowRightIcon
@@ -21,7 +21,7 @@ export const ToggleSidebar = ({
                     {
                         [styles.reverse]: isCollapsed,
                     },
-                    [className]
+                    [className],
                 )}
                 width={32}
                 height={32}
@@ -29,4 +29,4 @@ export const ToggleSidebar = ({
             />
         </div>
     );
-};
+}

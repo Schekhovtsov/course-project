@@ -7,15 +7,15 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export function Navbar({ className }: NavbarProps) {
     const { t } = useTranslation();
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
             <div className={styles.linksContainer}>
-                <AppLink to={'/'}>{t('Home')}</AppLink>
-                <AppLink to={'/about'}>{t('About')}</AppLink>
+                <AppLink to="/">{t('Home')}</AppLink>
+                <AppLink to="/about">{t('About')}</AppLink>
             </div>
         </div>
     );
-};
+}
