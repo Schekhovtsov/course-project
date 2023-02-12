@@ -1,14 +1,11 @@
 :root {
-    --font-family: Serif;
-
+    --font-family: serif;
     --font-size-m: 12px;
     --font-line-m: 20px;
     --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family);
-
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family);
-
     --navbar-height: 50px;
     --sidebar-width: 250px;
     --sidebar-width-collapsed: 90px;
