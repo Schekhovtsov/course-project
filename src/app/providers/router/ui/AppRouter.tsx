@@ -1,3 +1,4 @@
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
@@ -10,13 +11,15 @@ export function AppRouter() {
                 <Route
                     key={path}
                     path={path}
-                    element={
-                        <div className="page">
-                            <Suspense fallback={<Loader />}>
-                                {element}
-                            </Suspense>
-                        </div>
-                    }
+                    element={(
+                        <ErrorBoundary>
+                            <div className="page">
+                                <Suspense fallback={<Loader />}>
+                                    {element}
+                                </Suspense>
+                            </div>
+                        </ErrorBoundary>
+                    )}
                 />
             ))}
         </Routes>
