@@ -1,6 +1,7 @@
 {
-    "Language": "Русский",
-    "Home": "Главная",
-    "About": "О сайте",
-    "page not found": "Страница не найдена"
+  "Language": "Русский",
+  "Home": "Главная",
+  "About": "О сайте",
+  "page not found": "Страница не найдена",
+  "Something went wrong": "Что-то пошло не так..."
 }
