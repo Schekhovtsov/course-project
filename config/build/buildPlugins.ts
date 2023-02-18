@@ -7,6 +7,7 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
     paths,
     isDev,
+    analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
@@ -21,7 +22,7 @@ export function buildPlugins({
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new BundleAnalyzerPlugin({
-            openAnalyzer: false,
+            openAnalyzer: analyze,
         }),
     ];
 }

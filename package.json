@@ -11,7 +11,9 @@
         "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
         "lint:css": "npx stylelint \"**/*.scss\"",
         "lint:css:fix": "npx stylelint \"**/*.scss\" --fix",
-        "test": "jest --config ./config/jest/jest.config.ts"
+        "test": "jest --config ./config/jest/jest.config.ts",
+        "analyze:dev": "npm run build:dev --env analyze=true",
+        "analyze:prod": "npm run build:production --env analyze=true"
     },
     "author": "Sergey Schekhovtsov",
     "license": "ISC",

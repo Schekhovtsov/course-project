@@ -13,6 +13,7 @@ export default (env: BuildEnv) => {
 
     const mode = env.mode || 'development';
     const isDev = mode === 'development';
+    const { analyze } = env;
     const PORT = env.port || 3000;
 
     const config: webpack.Configuration = buildWebpackConfig({
@@ -20,6 +21,7 @@ export default (env: BuildEnv) => {
         paths,
         isDev,
         port: PORT,
+        analyze,
     });
 
     return config;
