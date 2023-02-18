@@ -14,19 +14,22 @@ export function ToggleSidebar({
     className,
 }: ToggleSidebarProps) {
     return (
-        <div className={styles.container} title="Toggle sidebar">
-            <ArrowRightIcon
-                className={classNames(
-                    styles.icon,
-                    {
-                        [styles.reverse]: isCollapsed,
-                    },
-                    [className],
-                )}
-                width={32}
-                height={32}
-                onClick={toggleSidebar}
-            />
+        <div
+            tabIndex={0}
+            role="button"
+            onKeyDown={toggleSidebar}
+            onClick={toggleSidebar}
+            title="Toggle sidebar"
+            data-testid="toggle-sidebar"
+            className={classNames(
+                styles.icon,
+                {
+                    [styles.reverse]: isCollapsed,
+                },
+                [className]
+            )}
+        >
+            <ArrowRightIcon width={32} height={32} />
         </div>
     );
 }

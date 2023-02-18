@@ -22,7 +22,7 @@ export function buildPlugins({
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new BundleAnalyzerPlugin({
-            openAnalyzer: analyze,
+            openAnalyzer: !!analyze,
         }),
     ];
 }

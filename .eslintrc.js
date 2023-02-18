@@ -40,11 +40,24 @@ module.exports = {
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'aria-label', 'to'],
+            },
         ],
         'linebreak-style': ['off', 'windows'],
+        'operator-linebreak': ['off', 'after'],
+        'comma-dangle': ['off', 'never'],
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };

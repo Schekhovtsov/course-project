@@ -3,24 +3,26 @@ import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
-export enum ThemeButton {
+export enum ButtonTheme {
     PRIMARY = 'primary',
+    TEXT = 'text',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ThemeButton;
+    theme?: ButtonTheme;
 }
 
 export const Button: FC<ButtonProps> = ({
     className,
     children,
-    theme = ThemeButton.PRIMARY,
+    theme = ButtonTheme.PRIMARY,
     ...otherProps
 }: ButtonProps) => (
     <button
         {...otherProps}
         type="button"
+        aria-label="button"
         className={classNames(styles.container, {}, [className, styles[theme]])}
     >
         {children}

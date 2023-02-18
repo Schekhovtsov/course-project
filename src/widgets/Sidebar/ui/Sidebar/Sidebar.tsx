@@ -21,8 +21,9 @@ export function Sidebar({ className }: SidebarProps) {
             className={classNames(
                 styles.container,
                 { [styles.collapsed]: isCollapsed },
-                [className],
+                [className]
             )}
+            data-testid="sidebar"
         >
             <div className={styles.switchers}>
                 <ToggleSidebar
