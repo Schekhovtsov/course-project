@@ -48,6 +48,7 @@ module.exports = {
         'linebreak-style': ['off', 'windows'],
         'operator-linebreak': ['off', 'after'],
         'comma-dangle': ['off', 'never'],
+        'implicit-arrow-linebreak': ['off', 'beside'],
     },
     globals: {
         __IS_DEV__: true,

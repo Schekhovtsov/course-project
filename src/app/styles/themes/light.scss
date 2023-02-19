@@ -1,11 +1,14 @@
+:root,
 .app.light {
     --bg-color: #fff;
     --inverted-bg-color: #effff9;
     --primary-color: var(--inverted-bg-color);
     --secondary-color: #513c3c;
     --text-primary-color: #423d3d;
-    --link-primary-color: #6f949b;
+    --link-primary-color: #333737;
     --link-secondary-color: #6f8294;
     --inverted-link-primary-color: #47a5ec;
     --inverted-link-secondary-color: #397cc0;
+    --button-primary-background: #397cc0;
+    --button-primary-text: var(--bg-color);
 }

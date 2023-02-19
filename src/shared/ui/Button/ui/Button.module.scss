@@ -7,15 +7,28 @@
     cursor: pointer;
 }
 
-.primary {
+.button {
     font: var(--font-m);
-    background-color: var(--bg-color);
-    color: var(--inverted-bg-color);
     border-radius: 5px;
     padding: 10px;
+}
+
+.primary {
+    background-color: var(--button-primary-background);
+    color: var(--button-primary-text);
 
     &:hover {
-        background-color: var(--inverted-bg-color);
+        filter: brightness(1.1);
+    }
+}
+
+.secondary {
+    background-color: var(--button-secondary-background);
+    color: var(--button-secondary-text);
+    border: 2px solid var(--link-secondary-color);
+
+    &:hover {
+        background-color: var(--link-secondary-color);
         color: var(--bg-color);
     }
 }

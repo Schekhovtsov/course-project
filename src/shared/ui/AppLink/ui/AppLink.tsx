@@ -6,7 +6,6 @@ import styles from './AppLink.module.scss';
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
-    INVERTED = 'inverted',
 }
 
 interface AppLinkProps extends LinkProps {
@@ -17,7 +16,7 @@ interface AppLinkProps extends LinkProps {
 export const AppLink: FC<AppLinkProps> = ({
     to,
     className,
-    theme,
+    theme = AppLinkTheme.PRIMARY,
     children,
     ...otherProps
 }) => (

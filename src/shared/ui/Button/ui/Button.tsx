@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 
 export enum ButtonTheme {
     PRIMARY = 'primary',
-    TEXT = 'text',
+    SECONDARY = 'secondary',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,7 +23,11 @@ export const Button: FC<ButtonProps> = ({
         {...otherProps}
         type="button"
         aria-label="button"
-        className={classNames(styles.container, {}, [className, styles[theme]])}
+        className={classNames(styles.container, {}, [
+            styles.button,
+            className,
+            styles[theme],
+        ])}
     >
         {children}
     </button>

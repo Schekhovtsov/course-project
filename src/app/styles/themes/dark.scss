@@ -1,3 +1,4 @@
+:root,
 .app.dark {
     --bg-color: #2f3940;
     --inverted-bg-color: #292323;
@@ -8,4 +9,6 @@
     --link-secondary-color: rgb(199 201 204);
     --inverted-link-primary-color: #ced3d6;
     --inverted-link-secondary-color: #62686f;
+    --button-primary-background: var(--link-primary-color);
+    --button-primary-text: var(--bg-color);
 }

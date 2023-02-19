@@ -8,8 +8,8 @@ describe('Button', () => {
     });
 
     test('Проверяет, применяется ли тема к кнопке', () => {
-        render(<Button theme={ButtonTheme.TEXT}>Test</Button>);
-        expect(screen.getByLabelText('button')).toHaveClass('text');
+        render(<Button theme={ButtonTheme.SECONDARY}>Test</Button>);
+        expect(screen.getByLabelText('button')).toHaveClass('secondary');
         screen.debug();
     });
 });
