@@ -14,10 +14,11 @@
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:ui": "npx loki test",
         "test:ui:ok": "npx loki approve",
+        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
         "analyze:dev": "npm run build:dev --env analyze=true",
         "analyze:prod": "npm run build:production --env analyze=true",
         "storybook": "start-storybook -p 6006 -c ./config/storybook",
-        "build-storybook": "build-storybook"
+        "storybook:build": "build-storybook"
     },
     "author": "Sergey Schekhovtsov",
     "license": "ISC",

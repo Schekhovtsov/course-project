@@ -33,3 +33,9 @@ jobs:
 
             - name: unit tests
               run: npm run test:ui
+
+            - name: build storybook
+              run: npm run storybook:build
+
+            - name: screenshot regression test
+              run: npm run test:ui:ci
