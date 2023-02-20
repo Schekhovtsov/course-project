@@ -1,7 +1,8 @@
 {
-    "Language": "English",
-    "Home": "Home",
-    "About": "About",
-    "Page not found": "Page not found",
-    "Something went wrong": "Something went wrong..."
+  "Language": "English",
+  "Home": "Home",
+  "About": "About",
+  "Page not found": "Page not found",
+  "Something went wrong": "Something went wrong...",
+  "Site name": "My Pet Project"
 }

@@ -1,7 +1,8 @@
 {
-  "Language": "Русский",
-  "Home": "Главная",
-  "About": "О сайте",
-  "page not found": "Страница не найдена",
-  "Something went wrong": "Что-то пошло не так..."
+    "Language": "Русский",
+    "Home": "Главная",
+    "About": "О сайте",
+    "page not found": "Страница не найдена",
+    "Something went wrong": "Что-то пошло не так...",
+    "Site name": "My Pet Project"
 }
