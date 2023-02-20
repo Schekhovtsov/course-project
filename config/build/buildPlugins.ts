@@ -9,7 +9,7 @@ export function buildPlugins({
     isDev,
     analyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
@@ -18,11 +18,21 @@ export function buildPlugins({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
-        new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev),
-        }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: !!analyze,
-        }),
     ];
+
+    if (isDev) {
+        plugins.push(
+            new webpack.DefinePlugin({
+                __IS_DEV__: JSON.stringify(isDev),
+            })
+        );
+
+        plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer: !!analyze,
+            })
+        );
+    }
+
+    return plugins;
 }
