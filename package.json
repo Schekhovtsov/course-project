@@ -18,7 +18,7 @@
         "analyze:dev": "npm run build:dev --env analyze=true",
         "analyze:prod": "npm run build:production --env analyze=true",
         "storybook": "start-storybook -p 6006 -c ./config/storybook",
-        "storybook:build": "build-storybook"
+        "storybook:build": "build-storybook -c ./config/storybook"
     },
     "author": "Sergey Schekhovtsov",
     "license": "ISC",
