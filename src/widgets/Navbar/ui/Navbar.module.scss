@@ -1,8 +1,9 @@
 .container {
     width: 100%;
-    height: var(--navbar-height);
+    height: var(--size-navbar-height);
     background: var(--inverted-bg-color);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 30px;
 }

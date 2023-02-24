@@ -1,4 +1,5 @@
 :root {
+    // Fonts
     --font-family: serif;
     --font-size-m: 12px;
     --font-line-m: 20px;
@@ -6,9 +7,17 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family);
-    --navbar-height: 50px;
-    --sidebar-width: 250px;
-    --sidebar-width-collapsed: 90px;
-    --text-black: #2a2727;
-    --text-white: #eeeaea;
+
+    // Sizes
+    --size-navbar-height: 50px;
+    --size-sidebar-width: 250px;
+    --size-sidebar-width-collapsed: 90px;
+
+    // Colors
+    --color-black: #2a2727;
+    --color-white: #eeeaea;
+    --color-overlay: rgba(0 0 0 / 50%);
+
+    // Z-indexes
+    --z-index-modal: 10;
 }

@@ -19,3 +19,9 @@ Secondary.args = {
     children: 'Text',
     theme: ButtonTheme.SECONDARY,
 };
+
+export const Text = Template.bind({});
+Text.args = {
+    children: 'Text',
+    theme: ButtonTheme.TEXT,
+};

@@ -6,9 +6,11 @@ export default {
     component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => (
-    <Navbar {...args} />
-);
+const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    portalProps: {
+        portalElement: 'root',
+    },
+};

@@ -1,6 +1,6 @@
 .container {
-    height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width);
+    height: calc(100vh - var(--size-navbar-height));
+    width: var(--size-sidebar-width);
     background-color: var(--inverted-bg-color);
     position: relative;
     padding: 30px;
@@ -44,7 +44,7 @@
 }
 
 .collapsed {
-    width: calc(var(--sidebar-width-collapsed) + 10px);
+    width: calc(var(--size-sidebar-width-collapsed) + 10px);
 
     .links {
         .link {

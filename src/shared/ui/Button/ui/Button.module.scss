@@ -32,3 +32,12 @@
         color: var(--bg-color);
     }
 }
+
+.text {
+    border: 0;
+    color: var(--text-primary-color);
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+}

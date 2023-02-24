@@ -1,8 +1,8 @@
 .container {
     margin-left: -60px;
     margin-top: -60px;
-    height: calc(100vh - var(--navbar-height));
-    width: calc(100vw - var(--sidebar-width));
+    height: calc(100vh - var(--size-navbar-height));
+    width: calc(100vw - var(--size-sidebar-width));
     flex-grow: 1;
     display: flex;
     align-items: center;

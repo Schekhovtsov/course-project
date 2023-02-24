@@ -6,6 +6,7 @@ import styles from './Button.module.scss';
 export enum ButtonTheme {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
+    TEXT = 'text',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
