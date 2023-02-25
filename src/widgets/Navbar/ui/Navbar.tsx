@@ -19,7 +19,7 @@ export function Navbar({ className, portalProps }: NavbarProps) {
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <span>{t('Site name')}</span>
+            <span className={styles.title}>{t('Site name')}</span>
             <div className={styles.links}>
                 <Button onClick={openModal} theme={ButtonTheme.TEXT}>
                     {t('Login')}

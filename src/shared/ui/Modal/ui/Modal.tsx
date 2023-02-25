@@ -49,7 +49,6 @@ export const Modal = ({
         [styles.isClosing]: isClosing,
     };
 
-    // eslint-disable-next-line no-unused-vars
     const onKeyDownHandler = useCallback(
         (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
