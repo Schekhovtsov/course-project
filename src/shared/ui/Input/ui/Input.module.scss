@@ -1,0 +1,10 @@
+.container {
+    outline: 0;
+    padding: 5px;
+    font-size: var(--font-size-m);
+
+    :active {
+        border: 0;
+        outline: 0;
+    }
+}

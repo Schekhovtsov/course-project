@@ -1,8 +1,8 @@
+import { LoginModal } from 'features/AuthByUsername';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { useModal } from 'shared/lib/hooks/useModal';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -22,12 +22,14 @@ export function Navbar({ className, portalProps }: NavbarProps) {
             <span className={styles.title}>{t('Site name')}</span>
             <div className={styles.links}>
                 <Button onClick={openModal} theme={ButtonTheme.TEXT}>
-                    {t('Login')}
+                    {t('Log in')}
                 </Button>
             </div>
-            <Modal {...portalProps} isOpen={isModalOpen} onClose={closeModal}>
-                123
-            </Modal>
+            <LoginModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                {...portalProps}
+            />
         </div>
     );
 }
