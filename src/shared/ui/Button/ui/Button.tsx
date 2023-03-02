@@ -12,24 +12,33 @@ export enum ButtonTheme {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
+    disabled?: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({
     className,
     children,
     theme = ButtonTheme.PRIMARY,
+    disabled,
     ...otherProps
-}: ButtonProps) => (
-    <button
-        {...otherProps}
-        type="button"
-        aria-label="button"
-        className={classNames(styles.container, {}, [
-            styles.button,
-            className,
-            styles[theme],
-        ])}
-    >
-        {children}
-    </button>
-);
+}: ButtonProps) => {
+    const mods = {
+        [styles.disabled]: disabled,
+    };
+
+    return (
+        <button
+            {...otherProps}
+            type="button"
+            aria-label="button"
+            disabled={disabled}
+            className={classNames(styles.container, mods, [
+                styles.button,
+                className,
+                styles[theme],
+            ])}
+        >
+            {children}
+        </button>
+    );
+};

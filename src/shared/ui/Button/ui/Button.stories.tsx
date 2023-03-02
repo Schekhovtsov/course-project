@@ -25,3 +25,10 @@ Text.args = {
     children: 'Text',
     theme: ButtonTheme.TEXT,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Text',
+    theme: ButtonTheme.PRIMARY,
+    disabled: true,
+};

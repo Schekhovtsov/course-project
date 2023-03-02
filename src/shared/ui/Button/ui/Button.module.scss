@@ -41,3 +41,12 @@
         filter: brightness(1.1);
     }
 }
+
+.disabled {
+    opacity: 0.6;
+
+    &:hover {
+        cursor: auto;
+        filter: brightness(1);
+    }
+}

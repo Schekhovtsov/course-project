@@ -1,0 +1,25 @@
+.primary {
+    .title {
+        color: var(--text-primary-color);
+        font: var(--font-l);
+        padding-bottom: 5px;
+    }
+
+    .text {
+        color: var(--text-primary-color);
+        font: var(--font-m);
+    }
+}
+
+.error {
+    .title {
+        color: var(--color-red);
+        font: var(--font-l);
+        padding-bottom: 5px;
+    }
+
+    .text {
+        color: var(--color-red);
+        font: var(--font-m);
+    }
+}
