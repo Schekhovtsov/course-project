@@ -28,6 +28,7 @@ export const Input = memo(
         value,
         onChange,
         autofocus,
+        width = 250,
         ...otherProps
     }: InputProps) => {
         const inputRef = useRef<HTMLInputElement>(null);
@@ -50,6 +51,7 @@ export const Input = memo(
                 value={value}
                 onChange={onChangeHandler}
                 className={classNames(styles.container, {}, [className])}
+                style={{ width }}
             />
         );
     }
