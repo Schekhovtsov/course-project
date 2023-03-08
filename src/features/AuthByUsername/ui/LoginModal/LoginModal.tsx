@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal';
@@ -12,8 +13,15 @@ interface LoginModalProps {
 }
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
+    const navigate = useNavigate();
+
     const onCloseHandler = () => {
         onClose();
+    };
+
+    const onSuccessHandler = () => {
+        onClose();
+        navigate('profile');
     };
 
     return (
@@ -25,7 +33,7 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
             lazy
         >
             <Suspense fallback={<Loader />}>
-                <LoginFormAsync onSuccess={onClose} />
+                <LoginFormAsync onSuccess={onSuccessHandler} />
             </Suspense>
         </Modal>
     );

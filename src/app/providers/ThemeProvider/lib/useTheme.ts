@@ -17,10 +17,10 @@ export const useTheme = (): useThemeType => {
     };
 
     useEffect(() => {
-        document.body.className = localStorage.getItem(
-            LOCAL_STORAGE_THEME_KEY
-        ) as Theme;
-    }, [theme]);
+        document.body.className =
+            (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ??
+            Theme.LIGHT;
+    }, []);
 
     return { theme, toggleTheme };
 };
