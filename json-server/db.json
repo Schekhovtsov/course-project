@@ -1,7 +1,12 @@
 {
     "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
     "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-    "profile": { "name": "typicode" },
+    "profile": {
+        "firstName": "Sergey",
+        "lastName": "Schekhovtsov",
+        "city": "Stary Oskol",
+        "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
+    },
     "users": [
         {
             "id": "1",

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames';
 import styles from './AppLink.module.scss';
 
 export enum AppLinkTheme {
@@ -11,15 +11,16 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
     className?: string;
     theme?: AppLinkTheme;
+    children: ReactNode;
 }
 
-export const AppLink: FC<AppLinkProps> = ({
+export const AppLink = ({
     to,
     className,
     theme = AppLinkTheme.PRIMARY,
     children,
     ...otherProps
-}) => (
+}: AppLinkProps) => (
     <Link
         {...otherProps}
         to={to}

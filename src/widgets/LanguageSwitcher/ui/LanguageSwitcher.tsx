@@ -2,13 +2,14 @@ import ruFlag from 'shared/assets/icons/flags/ru.png';
 import enFlag from 'shared/assets/icons/flags/en.png';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
+import { memo } from 'react';
 import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
     className?: string;
 }
 
-export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
+export const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggleLanguage = () => {
@@ -27,4 +28,4 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
             title={t('Language')}
         />
     );
-}
+});

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { ButtonHTMLAttributes, FC } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import { classNames } from 'shared/lib/classNames';
 import styles from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -13,9 +13,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonTheme;
     disabled?: boolean;
+    children: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button = ({
     className,
     children,
     theme = ButtonTheme.PRIMARY,

@@ -12,7 +12,9 @@ const Template: ComponentStory<typeof LoginForm> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    onSuccess: () => {},
+};
 
 Primary.decorators = [
     StoreDecorator({

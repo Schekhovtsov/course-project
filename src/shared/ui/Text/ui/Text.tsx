@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames';
 import styles from './Text.module.scss';
 
 export enum TextTheme {
@@ -14,20 +15,20 @@ interface TextProps {
     theme?: TextTheme;
 }
 
-export const Text = ({
-    className,
-    title,
-    text,
-    theme = TextTheme.PRIMARY,
-}: TextProps) => (
-    <div
-        className={classNames(styles.container, {}, [className, styles[theme]])}
-    >
-        {title && (
-            <p className={styles.title}>
-                <b>{title}</b>
-            </p>
-        )}
-        {text && <span className={styles.text}>{text}</span>}
-    </div>
+export const Text = memo(
+    ({ className, title, text, theme = TextTheme.PRIMARY }: TextProps) => (
+        <div
+            className={classNames(styles.container, {}, [
+                className,
+                styles[theme],
+            ])}
+        >
+            {title && (
+                <p className={styles.title}>
+                    <b>{title}</b>
+                </p>
+            )}
+            {text && <span className={styles.text}>{text}</span>}
+        </div>
+    )
 );

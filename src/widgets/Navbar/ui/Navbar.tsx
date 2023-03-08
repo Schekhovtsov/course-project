@@ -1,8 +1,10 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useModal } from 'shared/lib/hooks/useModal';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import styles from './Navbar.module.scss';
@@ -14,9 +16,9 @@ interface NavbarProps {
     };
 }
 
-export function Navbar({ className, portalProps }: NavbarProps) {
+export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const isAuthorized = useSelector(getUserAuthData);
     const { isModalOpen, openModal, closeModal } = useModal();
 
@@ -48,4 +50,4 @@ export function Navbar({ className, portalProps }: NavbarProps) {
             />
         </div>
     );
-}
+});

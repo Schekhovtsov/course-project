@@ -1,11 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames';
 import './Loader.scss';
 
 interface LoaderProps {
     className?: string;
 }
 
-export const Loader = ({ className }: LoaderProps) => (
+export const Loader = memo(({ className }: LoaderProps) => (
     <div className={classNames('container', {}, [className])}>
         <div className="lds-grid">
             <div />
@@ -19,4 +20,4 @@ export const Loader = ({ className }: LoaderProps) => (
             <div />
         </div>
     </div>
-);
+));

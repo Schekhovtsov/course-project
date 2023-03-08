@@ -1,0 +1,28 @@
+.icon {
+    position: absolute;
+    fill: var(--text-primary-color);
+    width: 36px;
+    height: 36px;
+
+    &:hover {
+        fill: var(--button-primary-background);
+    }
+}
+
+.item {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.link {
+    margin-left: 50px;
+}
+
+.collapsed {
+    .link {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+}

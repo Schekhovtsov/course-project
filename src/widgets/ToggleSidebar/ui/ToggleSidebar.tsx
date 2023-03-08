@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ArrowRightIcon from 'shared/assets/icons/arrows/right.svg';
 import { classNames } from 'shared/lib/classNames';
 import styles from './ToggleSidebar.module.scss';
@@ -8,12 +9,8 @@ interface ToggleSidebarProps {
     className?: string;
 }
 
-export function ToggleSidebar({
-    isCollapsed,
-    toggleSidebar,
-    className,
-}: ToggleSidebarProps) {
-    return (
+export const ToggleSidebar = memo(
+    ({ isCollapsed, toggleSidebar, className }: ToggleSidebarProps) => (
         <div
             tabIndex={0}
             role="button"
@@ -31,5 +28,5 @@ export function ToggleSidebar({
         >
             <ArrowRightIcon width={32} height={32} />
         </div>
-    );
-}
+    )
+);
