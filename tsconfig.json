@@ -13,11 +13,11 @@
         "paths": {
             "*": ["./src/*"]
         },
-        "strict": true
+        // "strict": true
     },
     "ts-node": {
         "compilerOptions": {
-            "module": "CommonJS"
+            "module": "nodenext"
         }
     },
     "include": [

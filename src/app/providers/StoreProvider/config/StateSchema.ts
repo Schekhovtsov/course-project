@@ -10,6 +10,7 @@ import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
+import { Dispatch } from 'redux';
 
 export interface StateSchema {
     user: UserSchema;
@@ -42,4 +43,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
+    dispatch?: Dispatch;
 }

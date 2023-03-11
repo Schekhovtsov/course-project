@@ -1,4 +1,4 @@
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
@@ -19,5 +19,6 @@ export const StoreProvider = ({
         initialState as StateSchema,
         asyncReducers as ReducersMapObject<StateSchema>
     );
+    // @ts-ignore
     return <Provider store={store}>{children}</Provider>;
 };

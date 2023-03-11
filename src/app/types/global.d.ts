@@ -7,7 +7,7 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
-    import React from 'react';
+    import React = require('react');
 
     const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;
@@ -18,3 +18,9 @@ declare module '*.jpg';
 
 // eslint-disable-next-line no-unused-vars
 declare const __IS_DEV__: boolean;
+
+type DeepPartial<T> = T extends object
+    ? {
+          [P in keyof T]?: DeepPartial<T[P]>;
+      }
+    : T;
