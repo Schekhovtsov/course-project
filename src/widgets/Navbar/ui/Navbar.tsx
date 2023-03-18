@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { selectUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,7 +19,7 @@ interface NavbarProps {
 export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-    const isAuthorized = useSelector(getUserAuthData);
+    const isAuthorized = useSelector(selectUserAuthData);
     const { isModalOpen, openModal, closeModal } = useModal();
 
     const logoutHandler = () => {

@@ -1,17 +1,29 @@
 {
-    "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
-    "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-    "profile": {
-        "firstName": "Sergey",
-        "lastName": "Schekhovtsov",
-        "city": "Stary Oskol",
-        "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
-    },
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ]
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "firstName": "Сережка",
+    "lastName": "Шеховцов",
+    "city": "Старый Оскол",
+    "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
+  },
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ]
 }

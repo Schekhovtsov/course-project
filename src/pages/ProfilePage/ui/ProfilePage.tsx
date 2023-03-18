@@ -1,13 +1,27 @@
-import { fetchProfileData, profileReducer } from 'entities/Profile';
+import {
+    fetchProfileData,
+    profileReducer,
+    selectError,
+    selectIsLoading,
+    ValidateProfileErrors,
+} from 'entities/Profile';
+import {
+    selectProfileTemp,
+    selectValidateErrors,
+} from 'entities/Profile/model/selector/profileSelectors';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import {
     ReducersList,
     useDynamicReducerLoader,
 } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+import { Text } from 'shared/ui/Text';
+import { TextTheme } from 'shared/ui/Text/ui/Text';
+import styles from './ProfilePage.module.scss';
 
 interface ProfilePageProps {
     className?: string;
@@ -19,17 +33,36 @@ const reducers: ReducersList = {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
     // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation();
+    const { t } = useTranslation('profilePage');
     const dispatch = useAppDispatch();
+    const data = useSelector(selectProfileTemp);
+    const isLoading = useSelector(selectIsLoading);
+    const error = useSelector(selectError);
+    const validateErrors = useSelector(selectValidateErrors);
 
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
 
+    const validateErrorTranslations = {
+        [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Incorrect user data'),
+        [ValidateProfileErrors.SERVER_ERROR]: t('Server error'),
+    };
+
     useDynamicReducerLoader(reducers, false);
+
     return (
-        <div className={classNames('', {}, [className])}>
-            <ProfileCard />
+        <div className={classNames(styles.container, {}, [className])}>
+            <ProfileCard data={data} isLoading={isLoading} error={error} />
+            {validateErrors?.length
+                ? validateErrors.map((error) => (
+                    <Text
+                        key={error}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslations[error]}
+                    />
+                ))
+                : null}
         </div>
     );
 };
