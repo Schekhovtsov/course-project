@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
 import {
     fetchProfileData,
     profileReducer,
@@ -6,7 +8,7 @@ import {
     ValidateProfileErrors,
 } from 'entities/Profile';
 import {
-    selectProfileTemp,
+    selectProfile,
     selectValidateErrors,
 } from 'entities/Profile/model/selector/profileSelectors';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard';
@@ -35,13 +37,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     // eslint-disable-next-line no-unused-vars
     const { t } = useTranslation('profilePage');
     const dispatch = useAppDispatch();
-    const data = useSelector(selectProfileTemp);
+    const data = useSelector(selectProfile);
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
     const validateErrors = useSelector(selectValidateErrors);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const validateErrorTranslations = {
@@ -56,12 +60,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
             <ProfileCard data={data} isLoading={isLoading} error={error} />
             {validateErrors?.length
                 ? validateErrors.map((error) => (
-                    <Text
-                        key={error}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslations[error]}
-                    />
-                ))
+                      <Text
+                          key={error}
+                          theme={TextTheme.ERROR}
+                          text={validateErrorTranslations[error]}
+                      />
+                  ))
                 : null}
         </div>
     );

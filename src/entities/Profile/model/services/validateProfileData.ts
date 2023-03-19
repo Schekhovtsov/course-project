@@ -1,6 +1,6 @@
 import { Profile, ValidateProfileErrors } from '../types/profile';
 
-export const validateProdileData = (profile: Profile) => {
+export const validateProfileData = (profile: Profile) => {
     const { firstName, lastName } = profile;
     const errors: ValidateProfileErrors[] = [];
 

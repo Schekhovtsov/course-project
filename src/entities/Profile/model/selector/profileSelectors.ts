@@ -1,9 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 
-export const selectProfile = (state: StateSchema) => state.profile?.data;
-
-export const selectProfileTemp = (state: StateSchema) =>
-    state.profile?.tempData;
+export const selectProfile = (state: StateSchema) => state.profile?.tempData;
 
 export const selectReadOnlyStatus = (state: StateSchema) =>
     state.profile?.readOnly;

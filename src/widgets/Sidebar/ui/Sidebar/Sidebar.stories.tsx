@@ -11,5 +11,14 @@ const Template: ComponentStory<typeof Sidebar> = (args) => (
     <Sidebar {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.decorators = [StoreDecorator({})];
+export const NotAuthorized = Template.bind({});
+NotAuthorized.decorators = [StoreDecorator({})];
+
+export const Authorized = Template.bind({});
+Authorized.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {},
+        },
+    }),
+];

@@ -2,10 +2,11 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import axios, { AxiosStatic } from 'axios';
+import { ValidateProfileErrors } from 'entities/Profile';
 
 type ActionCreatorType<R, A, RejectedValue> = (
     arg: A
-) => AsyncThunkAction<R, A, { rejectValue: string }>;
+) => AsyncThunkAction<R, A, { rejectValue: RejectedValue }>;
 
 jest.mock('axios');
 const mockedAxios = jest.mocked(axios, true);
@@ -19,10 +20,13 @@ export class TestAsyncThunk<R, A, RejectedValue> {
 
     api: jest.MockedFunctionDeep<AxiosStatic>;
 
-    constructor(actionCreator: ActionCreatorType<R, A, RejectedValue>) {
+    constructor(
+        actionCreator: ActionCreatorType<R, A, RejectedValue>,
+        state?: DeepPartial<StateSchema>
+    ) {
         this.actionCreator = actionCreator;
         this.dispatch = jest.fn();
-        this.getState = jest.fn();
+        this.getState = jest.fn(() => state as StateSchema);
 
         this.api = mockedAxios;
     }
