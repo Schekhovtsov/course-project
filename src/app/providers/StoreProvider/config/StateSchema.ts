@@ -10,7 +10,6 @@ import { AxiosInstance } from 'axios';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
-import { Dispatch } from 'redux';
 
 export interface StateSchema {
     user: UserSchema;

@@ -2,12 +2,14 @@ import { classNames } from 'shared/lib/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { userActions } from 'entities/User';
+import { selectUserIsMounted, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 
 function App() {
     const dispatch = useAppDispatch();
+    const mounted = useSelector(selectUserIsMounted);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -19,7 +21,7 @@ function App() {
                 <Navbar />
                 <div className="body">
                     <Sidebar />
-                    <AppRouter />
+                    {mounted ? <AppRouter /> : null}
                 </div>
             </div>
         </Suspense>
