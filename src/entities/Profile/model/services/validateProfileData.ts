@@ -1,12 +1,14 @@
 import { Profile, ValidateProfileErrors } from '../types/profile';
 
-export const validateProfileData = (profile: Profile) => {
-    const { firstName, lastName } = profile;
+export const validateProfileData = (profile?: Profile) => {
     const errors: ValidateProfileErrors[] = [];
 
-    if (!firstName || !lastName) {
-        errors.push(ValidateProfileErrors.INCORRECT_USER_DATA);
-    }
+    if (profile) {
+        const { firstName, lastName } = profile;
 
+        if (!firstName || !lastName) {
+            errors.push(ValidateProfileErrors.INCORRECT_USER_DATA);
+        }
+    }
     return errors;
 };

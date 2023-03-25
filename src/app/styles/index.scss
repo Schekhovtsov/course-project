@@ -1,7 +1,8 @@
-@import "reset";
-@import "variables/global";
-@import "themes/light";
-@import "themes/dark";
+/* stylelint-disable string-quotes */
+@import 'reset';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
 
 body {
     font: var(--font-m);
@@ -20,7 +21,9 @@ body {
 }
 
 .page {
+    padding: 30px 40px 30px 30px;
     color: var(--text-primary-color);
-    padding: 30px;
-    flex-grow: 1;
+    width: 100%;
+    height: calc(100vh - var(--size-navbar-height));
+    overflow-y: auto;
 }

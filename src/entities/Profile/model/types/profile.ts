@@ -12,10 +12,10 @@ export enum ValidateProfileErrors {
 }
 
 export interface ProfileSchema {
-    data?: Profile;
-    tempData?: Profile;
+    data?: Profile | null;
+    tempData?: Profile | null;
     isLoading: boolean;
-    error?: string;
+    error?: string | null;
     readOnly?: boolean;
     validateErrors?: ValidateProfileErrors[];
 }

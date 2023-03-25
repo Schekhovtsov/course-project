@@ -7,6 +7,7 @@ import {
     CombinedState,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { ArticleSchema } from 'entities/Article';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
@@ -17,6 +18,7 @@ export interface StateSchema {
     // Async reducers
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    article?: ArticleSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -42,5 +44,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
     rejectValue: T;
     extra: ThunkExtraArg;
-    state: StateSchema,
+    state: StateSchema;
 }

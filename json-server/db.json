@@ -1,29 +1,68 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "body": "some comment",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "firstName": "Сережка",
-    "lastName": "Шеховцов",
-    "city": "Старый Оскол",
-    "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
-  },
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123"
-    }
-  ]
+    "posts": [
+        {
+            "id": "1",
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "articles": [
+        {
+            "id": "1",
+            "title": "Заголовок статьи",
+            "description": "Краткое описание статьи",
+            "img": "https://leonardo.osnova.io/97120a6a-7625-5424-b852-41b9bd4ffd3a/-/preview/2000/-/format/webp/",
+            "createdAt": "24.03.23",
+            "tags": ["Music", "Films"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок блока 1",
+                    "parahraphs": ["Текст, который почему-то в массиве"]
+                },
+                {
+                    "id": "1",
+                    "type": "IMAGE",
+                    "title": "Заголовок изображения 1",
+                    "src": "https://leonardo.osnova.io/97120a6a-7625-5424-b852-41b9bd4ffd3a/-/preview/2000/-/format/webp/"
+                },
+                {
+                    "id": "2",
+                    "type": "CODE",
+                    "code": "<div>\n\nИсходный блок</div>"
+                }
+            ]
+        }
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "text": "Wow! It's comment!",
+            "articleId": "1",
+            "userId": "1",
+            "role": "ADMIN"
+        },
+        {
+            "id": "2",
+            "text": "Yeah, true!",
+            "articleId": "1",
+            "userId": "2",
+            "role": "USER"
+        }
+    ],
+    "profile": {
+        "firstName": "Сережка",
+        "lastName": "Шеховцов",
+        "city": "Старый Оскол",
+        "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
+    },
+    "users": [
+        {
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "role": "ADMIN"
+        }
+    ]
 }

@@ -8,7 +8,7 @@ import { SidebarItemType } from 'widgets/Sidebar/model/items';
 import styles from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-    item?: SidebarItemType;
+    item: SidebarItemType;
     isCollapsed: boolean;
 }
 

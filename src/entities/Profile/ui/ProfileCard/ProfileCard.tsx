@@ -15,9 +15,9 @@ import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
-    data?: Profile;
-    isLoading: boolean;
-    error?: string;
+    data?: Profile | null;
+    isLoading?: boolean;
+    error?: string | null;
 }
 
 export const ProfileCard = ({

@@ -13,10 +13,12 @@ export const updateProfileData = createAsyncThunk<
 
     const formData = selectProfile(getState());
 
-    const errors = validateProfileData(formData);
+    if (formData) {
+        const errors = validateProfileData(formData);
 
-    if (errors.length) {
-        return rejectWithValue(errors);
+        if (errors.length) {
+            return rejectWithValue(errors);
+        }
     }
 
     try {

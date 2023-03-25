@@ -4,6 +4,6 @@ export interface User {
 }
 
 export interface UserSchema {
-    authData?: User;
+    authData?: User | null;
     _mounted: boolean;
 }

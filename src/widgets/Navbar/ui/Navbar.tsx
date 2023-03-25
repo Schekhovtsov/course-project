@@ -12,7 +12,7 @@ import styles from './Navbar.module.scss';
 interface NavbarProps {
     className?: string;
     portalProps?: {
-        portalElement: 'modal';
+        portalElement: 'modal' | 'root';
     };
 }
 
