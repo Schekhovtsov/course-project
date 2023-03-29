@@ -19,7 +19,7 @@ export interface ArticleImageBlock extends ArticleBlockRoot {
 export interface ArticleTextBlock extends ArticleBlockRoot {
     type: 'TEXT';
     title?: string;
-    parahraphs: string[];
+    paragraphs: string[];
 }
 
 export type ArticleBlock =

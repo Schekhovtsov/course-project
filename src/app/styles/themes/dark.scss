@@ -1,17 +1,28 @@
 :root,
 .app_dark_theme {
+    // Main colors
     --bg-color: #2f3940;
     --inverted-bg-color: #292323;
+    --third-bg-color: #ebebeb;
     --primary-color: var(--inverted-bg-color);
     --secondary-color: #bcbcbc;
+
+    // Text
     --text-primary-color: #f2ebeb;
     --link-primary-color: #ced3d6;
     --link-secondary-color: rgb(199 201 204);
     --inverted-link-primary-color: #ced3d6;
     --inverted-link-secondary-color: #62686f;
+
+    // Buttons
     --button-primary-background: var(--link-primary-color);
     --button-primary-text: var(--bg-color);
     --button-secondary-text: var(--link-primary-color);
     --button-secondary-background: var(--bg-color);
+
+    // Skeleton
     --skeleton-color: var(--inverted-bg-color);
+
+    // Code
+    --code-background-color: #23262f;
 }

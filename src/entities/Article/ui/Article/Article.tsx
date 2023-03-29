@@ -1,10 +1,12 @@
-import { memo, useEffect } from 'react';
+/* eslint-disable indent */
+import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { ArticleBlock } from '../../model/types/Article';
 import {
     selectArticle,
     selectError,
@@ -12,6 +14,9 @@ import {
 } from '../../model/selector/articleSelectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import styles from './Article.module.scss';
+import { TextBlock } from '../TextBlock/TextBlock';
+import { CodeBlock } from '../CodeBlock/CodeBlock';
+import { ImageBlock } from '../ImageBlock/ImageBlock';
 
 interface ArticleProps {
     className?: string;
@@ -27,8 +32,23 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     const error = useSelector(selectError);
 
     useEffect(() => {
-        dispatch(fetchArticleById(id));
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
     }, [dispatch, id]);
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+            case 'TEXT':
+                return <TextBlock key={block.id} block={block} />;
+            case 'CODE':
+                return <CodeBlock key={block.id} block={block} />;
+            case 'IMAGE':
+                return <ImageBlock key={block.id} block={block} />;
+            default:
+                return null;
+        }
+    }, []);
 
     let content;
     if (isLoading) {
@@ -43,8 +63,15 @@ export const Article = memo(({ className, id }: ArticleProps) => {
         content = <Text title={error} theme={TextTheme.ERROR} />;
     } else if (data) {
         content = (
-            <div>
+            <div className={styles.blocks}>
                 <h1>{data.title}</h1>
+                <h2>{data.description}</h2>
+                <img
+                    src={data.img}
+                    alt={data.title}
+                    className={styles.mainImage}
+                />
+                {data.blocks?.map((block) => renderBlock(block))}
             </div>
         );
     }

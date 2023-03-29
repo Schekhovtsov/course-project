@@ -1,13 +1,25 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames';
+import { Text } from 'shared/ui/Text';
+import { ArticleImageBlock } from '../../model/types/Article';
+import styles from './ImageBlock.module.scss';
 
 interface ImageBlockProps {
     className?: string;
+    block: ArticleImageBlock;
 }
 
-export const ImageBlock = memo(({ className }: ImageBlockProps) => {
-    // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation();
+export const ImageBlock = memo(({ className, block }: ImageBlockProps) => {
+    const { src, title } = block;
 
-    return <div>{/* Content */}</div>;
+    return (
+        <div className={styles.container}>
+            <img
+                src={src}
+                alt={title}
+                className={classNames(styles.img, {}, [className])}
+            />
+            {title && <Text text={title} className={styles.title} />}
+        </div>
+    );
 });
