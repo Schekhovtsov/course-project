@@ -13,22 +13,39 @@ interface TextProps {
     title?: string;
     text?: string;
     theme?: TextTheme;
+    bold?: boolean;
 }
 
 export const Text = memo(
-    ({ className, title, text, theme = TextTheme.PRIMARY }: TextProps) => (
-        <div
-            className={classNames(styles.container, {}, [
-                className,
-                styles[theme],
-            ])}
-        >
-            {title && (
-                <p className={styles.title}>
-                    <b>{title}</b>
-                </p>
-            )}
-            {text && <span className={styles.text}>{text}</span>}
-        </div>
-    )
+    ({
+        className,
+        title,
+        text,
+        theme = TextTheme.PRIMARY,
+        bold = false,
+    }: TextProps) => {
+        const textElement = bold ? (
+            <span className={styles.text}>
+                <b>{text}</b>
+            </span>
+        ) : (
+            <span className={styles.text}>{text}</span>
+        );
+
+        return (
+            <div
+                className={classNames(styles.container, {}, [
+                    className,
+                    styles[theme],
+                ])}
+            >
+                {title && (
+                    <p className={styles.title}>
+                        <b>{title}</b>
+                    </p>
+                )}
+                {text && textElement}
+            </div>
+        );
+    }
 );

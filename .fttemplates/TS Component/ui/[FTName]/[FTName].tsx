@@ -10,7 +10,7 @@ interface [FTName]Props {
 
 export const [FTName] = memo(({ className }: [FTName]Props) => {
     const dispatch = useAppDispatch();
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <div className={classNames(styles.container, {}, [className])}>

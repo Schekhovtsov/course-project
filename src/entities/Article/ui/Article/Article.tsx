@@ -1,11 +1,12 @@
 /* eslint-disable indent */
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { ArticleBlock } from '../../model/types/Article';
 import {
     selectArticle,
@@ -31,11 +32,9 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     const data = useSelector(selectArticle);
     const error = useSelector(selectError);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

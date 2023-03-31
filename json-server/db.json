@@ -63,9 +63,17 @@
     "users": [
         {
             "id": "1",
-            "username": "admin",
+            "username": "Admin",
+            "password": "Admin",
+            "role": "ADMIN",
+            "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
+        },
+        {
+            "id": "2",
+            "username": "Лошок-петушок",
             "password": "123",
-            "role": "ADMIN"
+            "role": "USER",
+            "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
         }
     ]
 }
