@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { CommentsList } from './CommentsList';
 
 export default {
@@ -11,4 +12,16 @@ const Template: ComponentStory<typeof CommentsList> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    comments: [
+        {
+            id: '1',
+            text: 'Hello world',
+            user: {
+                id: '1',
+                username: 'Vasya',
+            },
+        },
+    ],
+};
+Primary.decorators = [StoreDecorator({})];

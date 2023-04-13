@@ -4,9 +4,11 @@ import avatar from 'shared/assets/icons/test/avatar.png';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {
+    id: '1',
     firstName: 'John',
     lastName: 'Malkovich',
     city: 'New York',
+    role: 'admin',
     avatar,
 };
 
@@ -15,7 +17,7 @@ describe('entity/Profile/services/fetchProfileData', () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
         thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(thunk.api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -26,7 +28,7 @@ describe('entity/Profile/services/fetchProfileData', () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
         thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
 
-        const result = await thunk.callThunk();
+        const result = await thunk.callThunk('1');
 
         expect(result.meta.requestStatus).toBe('rejected');
     });

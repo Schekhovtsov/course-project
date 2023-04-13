@@ -81,7 +81,7 @@ export const ProfileCard = ({
             <ProfilePageHeader />
             <div className={styles.formWrapper}>
                 <div className={styles.avatarWrapper}>
-                    {data?.avatar && <Avatar src={data?.avatar} />}
+                    {data?.avatar && <Avatar src={data?.avatar} size={128} />}
                 </div>
                 <div className={styles.form}>
                     <Input

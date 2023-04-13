@@ -9,3 +9,9 @@
 .comment {
     padding-bottom: 10px;
 }
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

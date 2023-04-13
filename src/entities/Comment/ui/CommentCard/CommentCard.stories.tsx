@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -11,4 +12,14 @@ const Template: ComponentStory<typeof CommentCard> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    comment: {
+        id: '1',
+        text: 'Hello world',
+        user: {
+            id: '1',
+            username: 'Vasya',
+        },
+    },
+};
+Primary.decorators = [StoreDecorator({})];

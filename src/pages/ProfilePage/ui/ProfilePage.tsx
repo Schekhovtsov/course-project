@@ -12,7 +12,6 @@ import {
     selectValidateErrors,
 } from 'entities/Profile/model/selector/profileSelectors';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
@@ -23,6 +22,8 @@ import {
 } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import styles from './ProfilePage.module.scss';
 
 interface ProfilePageProps {
@@ -41,12 +42,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(selectIsLoading);
     const error = useSelector(selectError);
     const validateErrors = useSelector(selectValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const validateErrorTranslations = {
         [ValidateProfileErrors.INCORRECT_USER_DATA]: t('Incorrect user data'),

@@ -15,9 +15,9 @@ type HTMLInputProps = Omit<
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | null;
     // eslint-disable-next-line no-unused-vars
-    onChange?: (value?: string) => void;
+    onChange?: (value: string) => void;
     autofocus?: boolean;
 }
 
@@ -48,7 +48,7 @@ export const Input = memo(
                 {...otherProps}
                 ref={inputRef}
                 type={type}
-                value={value}
+                value={value ?? ''}
                 onChange={onChangeHandler}
                 className={classNames(styles.container, {}, [className])}
                 style={{ width }}

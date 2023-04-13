@@ -1,5 +1,6 @@
 import {
     profileActions,
+    selectProfile,
     selectReadOnlyStatus,
     updateProfileData,
 } from 'entities/Profile';
@@ -10,6 +11,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
+import { selectUserAuthData } from 'entities/User';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -21,6 +23,11 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('profilePage');
     const readOnly = useSelector(selectReadOnlyStatus);
+
+    const authData = useSelector(selectUserAuthData);
+    const profileData = useSelector(selectProfile);
+
+    const canEdit = authData?.id === profileData?.id;
 
     const editButtonHandler = useCallback(() => {
         dispatch(profileActions.setReadOnly(false));
@@ -38,19 +45,27 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         <div className={classNames(styles.container, {}, [className])}>
             <Text title={t('Profile page')} />
             <div className={styles.buttons}>
-                {!readOnly ? (
-                    <>
-                        <Button
-                            theme={ButtonTheme.SECONDARY}
-                            onClick={cancelButtonHandler}
-                        >
-                            {t('Cancel')}
-                        </Button>
-                        <Button onClick={saveButtonHandler}>{t('Save')}</Button>
-                    </>
-                ) : (
-                    <Button onClick={editButtonHandler}>{t('Edit')}</Button>
-                )}
+                {canEdit ? (
+                    <div>
+                        {!readOnly ? (
+                            <>
+                                <Button
+                                    theme={ButtonTheme.SECONDARY}
+                                    onClick={cancelButtonHandler}
+                                >
+                                    {t('Cancel')}
+                                </Button>
+                                <Button onClick={saveButtonHandler}>
+                                    {t('Save')}
+                                </Button>
+                            </>
+                        ) : (
+                            <Button onClick={editButtonHandler}>
+                                {t('Edit')}
+                            </Button>
+                        )}
+                    </div>
+                ) : null}
             </div>
         </div>
     );

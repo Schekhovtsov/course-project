@@ -2,7 +2,6 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import axios, { AxiosStatic } from 'axios';
-import { ValidateProfileErrors } from 'entities/Profile';
 
 type ActionCreatorType<R, A, RejectedValue> = (
     arg: A

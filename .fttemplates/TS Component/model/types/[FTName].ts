@@ -1,4 +1,4 @@
-export type [FTName] = {
+export type [FTName]Type = {
     //
 }
 

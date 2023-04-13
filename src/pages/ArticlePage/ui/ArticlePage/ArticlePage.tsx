@@ -1,6 +1,6 @@
 import { Article, articleReducer } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { addCommentForArticle } from 'pages/ArticlePage/model/services/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/articlePageSelector';
 import {
     articlePageCommentsReducer,
@@ -34,6 +35,13 @@ const ArticlePage = () => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
+    const onSendComment = useCallback(
+        (value: string) => {
+            dispatch(addCommentForArticle(value));
+        },
+        [dispatch]
+    );
+
     if (!id) {
         return <div>{t('Article not found')}</div>;
     }
@@ -41,7 +49,11 @@ const ArticlePage = () => {
     return (
         <>
             <Article id={id} />
-            <CommentsList isLoading={commentsIsLoading} comments={comments} />
+            <CommentsList
+                isLoading={commentsIsLoading}
+                comments={comments}
+                onSendComment={onSendComment}
+            />
         </>
     );
 };
