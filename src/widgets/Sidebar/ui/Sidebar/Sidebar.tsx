@@ -1,10 +1,11 @@
-import { memo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { ToggleSidebar } from 'widgets/ToggleSidebar';
-import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
-import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import { useSelector } from 'react-redux';
+import { SidebarItem } from '../SidebarItem';
+import { selectSidebarItems } from '../../model/selector/selectSidebarItems';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -13,10 +14,23 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [isCollapsed, setCollapsed] = useState(false);
+    const sidebarItemsList = useSelector(selectSidebarItems);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
+
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    isCollapsed={isCollapsed}
+                    key={item.path}
+                />
+            )),
+        [isCollapsed, sidebarItemsList]
+    );
 
     return (
         <div
@@ -27,15 +41,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             )}
             data-testid="sidebar"
         >
-            <div className={styles.links}>
-                {SidebarItemsList.map((item) => (
-                    <SidebarItem
-                        item={item}
-                        isCollapsed={isCollapsed}
-                        key={item.path}
-                    />
-                ))}
-            </div>
+            <div className={styles.links}>{itemsList}</div>
 
             <div className={styles.switchers}>
                 <ToggleSidebar
