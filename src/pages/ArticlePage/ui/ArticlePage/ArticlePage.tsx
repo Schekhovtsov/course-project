@@ -2,14 +2,16 @@ import { Article, articleReducer } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { addCommentForArticle } from 'pages/ArticlePage/model/services/addCommentForArticle';
+import { Button } from 'shared/ui/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle';
 import { getArticleCommentsIsLoading } from '../../model/selectors/articlePageSelector';
 import {
     articlePageCommentsReducer,
@@ -25,6 +27,7 @@ const ArticlePage = () => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('articlePage');
     const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
 
     useDynamicReducerLoader(reducers, false);
 
@@ -42,12 +45,19 @@ const ArticlePage = () => {
         [dispatch]
     );
 
+    const onBackToArticlesList = useCallback(() => {
+        navigate(`${RoutePath.articles}`);
+    }, [navigate]);
+
     if (!id) {
         return <div>{t('Article not found')}</div>;
     }
 
     return (
         <>
+            <Button onClick={onBackToArticlesList}>
+                {t('Back to articles list')}
+            </Button>
             <Article id={id} />
             <CommentsList
                 isLoading={commentsIsLoading}

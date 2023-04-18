@@ -11,9 +11,9 @@ import { Loader } from 'shared/ui/Loader/Loader';
 export const AppRouter = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
-            <div className="page">
-                <Suspense fallback={<Loader />}>{route.element}</Suspense>
-            </div>
+            <Suspense fallback={<Loader />}>
+                <div className="page">{route.element}</div>
+            </Suspense>
         );
 
         return (

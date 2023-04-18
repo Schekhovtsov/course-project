@@ -16,15 +16,15 @@ function App() {
     }, [dispatch]);
 
     return (
-        <Suspense fallback="">
-            <div className={classNames('app', {}, [])}>
+        <div className={classNames('app', {}, [])}>
+            <Suspense fallback="">
                 <Navbar />
                 <div className="body">
                     <Sidebar />
                     {mounted ? <AppRouter /> : null}
                 </div>
-            </div>
-        </Suspense>
+            </Suspense>
+        </div>
     );
 }
 

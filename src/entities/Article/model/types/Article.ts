@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 export type ArticleBlockType = 'TEXT' | 'CODE' | 'IMAGE';
 
 export interface ArticleBlockRoot {
@@ -29,6 +31,7 @@ export type ArticleBlock =
 
 export type ArticleType = {
     id: string;
+    user: User;
     title: string;
     description: string;
     img: string;
@@ -42,3 +45,5 @@ export interface ArticleSchema {
     error?: string | null;
     data?: ArticleType | null;
 }
+
+export type ArticleViewType = 'tile' | 'list';

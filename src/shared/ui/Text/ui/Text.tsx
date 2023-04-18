@@ -14,6 +14,7 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     bold?: boolean;
+    withTitle?: boolean;
 }
 
 export const Text = memo(
@@ -22,14 +23,17 @@ export const Text = memo(
         title,
         text,
         theme = TextTheme.PRIMARY,
+        withTitle = false,
         bold = false,
     }: TextProps) => {
         const textElement = bold ? (
-            <span className={styles.text}>
+            <span className={styles.text} title={withTitle ? text : ''}>
                 <b>{text}</b>
             </span>
         ) : (
-            <span className={styles.text}>{text}</span>
+            <span className={styles.text} title={withTitle ? text : ''}>
+                {text}
+            </span>
         );
 
         return (
@@ -40,7 +44,7 @@ export const Text = memo(
                 ])}
             >
                 {title && (
-                    <p className={styles.title}>
+                    <p className={styles.title} title={withTitle ? title : ''}>
                         <b>{title}</b>
                     </p>
                 )}
