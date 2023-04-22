@@ -10,24 +10,13 @@ import styles from './CommentsList.module.scss';
 interface CommentsListProps {
     className?: string;
     comments?: CommentType[];
-    isLoading?: boolean;
     // eslint-disable-next-line no-unused-vars
     onSendComment?: (value: string) => void;
 }
 
 export const CommentsList = memo(
-    ({ className, comments, isLoading, onSendComment }: CommentsListProps) => {
+    ({ className, comments, onSendComment }: CommentsListProps) => {
         const { t } = useTranslation();
-
-        if (isLoading) {
-            return (
-                <div className={classNames(styles.container, {}, [className])}>
-                    <CommentCard isLoading />
-                    <CommentCard isLoading />
-                    <CommentCard isLoading />
-                </div>
-            );
-        }
 
         return (
             <div className={classNames(styles.container, {}, [className])}>
@@ -42,12 +31,18 @@ export const CommentsList = memo(
                             <CommentCard
                                 comment={comment}
                                 className={styles.comment}
-                                isLoading={isLoading}
                             />
                         ))}
                     </div>
                 ) : (
-                    <Text text={t('There is no comments yet')} />
+                    <div className={styles.block}>
+                        <Text
+                            title={t('Comments')}
+                            className={styles.commentsHeader}
+                        />
+                        <AddCommentForm onSendComment={onSendComment} />
+                        <Text text={t('There is no comments yet')} />
+                    </div>
                 )}
             </div>
         );

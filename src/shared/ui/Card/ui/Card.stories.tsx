@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Text } from 'shared/ui/Text';
 import { Card } from './Card';

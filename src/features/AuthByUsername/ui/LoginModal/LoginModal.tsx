@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal';
+import { useSelector } from 'react-redux';
+import { selectUserAuthData } from 'entities/User';
 import { LoginFormAsync } from '../../index';
 import styles from './LoginModal.module.scss';
 
@@ -14,6 +16,7 @@ interface LoginModalProps {
 
 export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
     const navigate = useNavigate();
+    const authData = useSelector(selectUserAuthData);
 
     const onCloseHandler = () => {
         onClose();
@@ -21,7 +24,11 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
 
     const onSuccessHandler = () => {
         onClose();
-        navigate('profile');
+        if (authData?.id) {
+            navigate(`profile/${authData.id}`);
+        } else {
+            navigate('');
+        }
     };
 
     return (
