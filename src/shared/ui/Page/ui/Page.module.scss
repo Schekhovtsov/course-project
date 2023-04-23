@@ -1,0 +1,7 @@
+.container {
+    padding: 40px 5%;
+    color: var(--text-primary-color);
+    width: 100%;
+    height: calc(100vh - var(--size-navbar-height));
+    overflow-y: auto;
+}

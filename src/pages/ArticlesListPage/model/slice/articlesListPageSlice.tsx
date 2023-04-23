@@ -26,6 +26,9 @@ const articlesListPageSlice = createSlice({
         view:
             (localStorage.getItem(LS_ARTICLES_LIST_VIEW) as ArticleViewType) ??
             'list',
+        hasMore: true,
+        limit: 3,
+        page: 1,
         ids: [],
         entities: {},
     }),
@@ -33,6 +36,9 @@ const articlesListPageSlice = createSlice({
         setView: (state, action: PayloadAction<ArticleViewType>) => {
             state.view = action.payload;
             localStorage.setItem(LS_ARTICLES_LIST_VIEW, action.payload);
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -45,7 +51,8 @@ const articlesListPageSlice = createSlice({
                 fetchArticlesList.fulfilled,
                 (state, action: PayloadAction<ArticleType[]>) => {
                     state.isLoading = false;
-                    articlesAdapter.setAll(state, action.payload);
+                    articlesAdapter.addMany(state, action.payload);
+                    state.hasMore = action.payload.length > 0;
                 }
             )
             .addCase(fetchArticlesList.rejected, (state, action) => {

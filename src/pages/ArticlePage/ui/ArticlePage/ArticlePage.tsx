@@ -11,8 +11,8 @@ import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetch
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
-import { getArticleCommentsIsLoading } from '../../model/selectors/articlePageSelector';
 import {
     articlePageCommentsReducer,
     getArticleComments,
@@ -36,7 +36,6 @@ const ArticlePage = () => {
     });
 
     const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
     const onSendComment = useCallback(
         (value: string) => {
@@ -50,21 +49,17 @@ const ArticlePage = () => {
     }, [navigate]);
 
     if (!id) {
-        return <div>{t('Article not found')}</div>;
+        return <Page>{t('Article not found')}</Page>;
     }
 
     return (
-        <>
+        <Page>
             <Button onClick={onBackToArticlesList}>
                 {t('Back to articles list')}
             </Button>
             <Article id={id} />
-            <CommentsList
-                isLoading={commentsIsLoading}
-                comments={comments}
-                onSendComment={onSendComment}
-            />
-        </>
+            <CommentsList comments={comments} onSendComment={onSendComment} />
+        </Page>
     );
 };
 

@@ -24,6 +24,7 @@ import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page';
 import styles from './ProfilePage.module.scss';
 
 interface ProfilePageProps {
@@ -58,7 +59,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     useDynamicReducerLoader(reducers, false);
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <Page className={classNames(styles.container, {}, [className])}>
             <ProfileCard data={data} isLoading={isLoading} error={error} />
             {validateErrors?.length
                 ? validateErrors.map((error) => (
@@ -69,7 +70,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                       />
                   ))
                 : null}
-        </div>
+        </Page>
     );
 };
 

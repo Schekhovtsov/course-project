@@ -34,6 +34,7 @@ export const ArticleViewSwitcher = ({
         <div className={classNames(styles.container, {}, [className])}>
             {viewTypes.map(({ view: _view, label }) => (
                 <Button
+                    key={label}
                     theme={
                         view === _view
                             ? ButtonTheme.PRIMARY

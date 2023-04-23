@@ -8,3 +8,12 @@ export const selectArticlesListPageError = (state: StateSchema) =>
 
 export const selectArticlesListPageView = (state: StateSchema) =>
     state.articlesListPage?.view;
+
+export const selectArticlesListPagePaginationPage = (state: StateSchema) =>
+    state.articlesListPage?.page ?? 1;
+
+export const selectArticlesListPagePaginationLimit = (state: StateSchema) =>
+    state.articlesListPage?.limit ?? 3;
+
+export const selectArticlesListPagePaginationHasMore = (state: StateSchema) =>
+    state.articlesListPage?.hasMore ?? true;
