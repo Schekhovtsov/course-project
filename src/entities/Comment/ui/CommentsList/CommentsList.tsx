@@ -29,6 +29,7 @@ export const CommentsList = memo(
                         <AddCommentForm onSendComment={onSendComment} />
                         {comments.map((comment) => (
                             <CommentCard
+                                key={comment.id}
                                 comment={comment}
                                 className={styles.comment}
                             />

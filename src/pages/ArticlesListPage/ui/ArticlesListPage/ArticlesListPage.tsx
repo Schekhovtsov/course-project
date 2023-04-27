@@ -11,8 +11,8 @@ import { useSelector } from 'react-redux';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { ArticleViewType } from 'entities/Article/model/types/Article';
 import { Page } from 'shared/ui/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesListPage/model/services/fetchNextArticlesPage';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage';
 import styles from './ArticlesListPage.module.scss';
 import {
     articlesListPageActions,
@@ -21,7 +21,6 @@ import {
 } from '../../model/slice/articlesListPageSlice';
 import {
     selectArticlesListPageIsLoading,
-    selectArticlesListPagePaginationPage,
     selectArticlesListPageView,
 } from '../../model/selector/articlesListPageSelectors';
 
@@ -39,18 +38,13 @@ const ArticlesListPage = ({ className }: ArticlesListPageProps) => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(selectArticlesListPageIsLoading);
     const view = useSelector(selectArticlesListPageView);
-    const page = useSelector(selectArticlesListPagePaginationPage);
 
     const onLoadNextBatch = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(
-            fetchArticlesList({
-                page,
-            })
-        );
+        dispatch(initArticlesPage());
     });
 
     useDynamicReducerLoader(reducers);

@@ -37,7 +37,12 @@ export const ArticleListItem = memo(
             <div className={styles.infoWrapper}>
                 <div className={styles.tags}>
                     {article.tags.map((tag) => (
-                        <div className={styles.tag}>{tag}</div>
+                        <div
+                            key={`${article.id}_${tag}`}
+                            className={styles.tag}
+                        >
+                            {tag}
+                        </div>
                     ))}
                 </div>
                 <Text

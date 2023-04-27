@@ -17,3 +17,6 @@ export const selectArticlesListPagePaginationLimit = (state: StateSchema) =>
 
 export const selectArticlesListPagePaginationHasMore = (state: StateSchema) =>
     state.articlesListPage?.hasMore ?? true;
+
+export const selectArticlesListPageInited = (state: StateSchema) =>
+    state.articlesListPage?._inited ?? false;

@@ -36,14 +36,16 @@ export const Article = memo(({ className, id }: ArticleProps) => {
         dispatch(fetchArticleById(id));
     });
 
-    const renderBlock = useCallback((block: ArticleBlock) => {
+    const renderBlock = useCallback((block: ArticleBlock, index: number) => {
         switch (block.type) {
             case 'TEXT':
-                return <TextBlock key={block.id} block={block} />;
+                return <TextBlock key={`${block.id}_${index}`} block={block} />;
             case 'CODE':
-                return <CodeBlock key={block.id} block={block} />;
+                return <CodeBlock key={`${block.id}_${index}`} block={block} />;
             case 'IMAGE':
-                return <ImageBlock key={block.id} block={block} />;
+                return (
+                    <ImageBlock key={`${block.id}_${index}`} block={block} />
+                );
             default:
                 return null;
         }
@@ -70,7 +72,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
                     alt={data.title}
                     className={styles.mainImage}
                 />
-                {data.blocks?.map((block) => renderBlock(block))}
+                {data.blocks?.map((block, index) => renderBlock(block, index))}
             </div>
         );
     }
