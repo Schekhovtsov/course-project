@@ -13,21 +13,7 @@ export const [FTName | lowercasefirstchar]Slice = createSlice({
     reducers: {
     },
     extraReducers: (builder) => {
-        builder
-            .addCase(service.pending, (state) => {
-                state.isLoading = true;
-                state.error = null;
-            })
-            .addCase(
-                service.fulfilled, (state, action: PayloadAction<[FTName]>) => {
-                    state.isLoading = false;
-                    state.data = action.payload;
-                }
-            )
-            .addCase(service.rejected, (state, action) => {
-                state.isLoading = false;
-                state.error = action.payload;
-            })
+      //
     },
 });
 

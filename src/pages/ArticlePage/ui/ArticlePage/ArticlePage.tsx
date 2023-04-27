@@ -11,7 +11,7 @@ import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetch
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
 import {
     articlePageCommentsReducer,

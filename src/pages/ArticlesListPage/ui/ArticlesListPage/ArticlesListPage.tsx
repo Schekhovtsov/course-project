@@ -10,7 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { ArticleViewType } from 'entities/Article/model/types/Article';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import styles from './ArticlesListPage.module.scss';

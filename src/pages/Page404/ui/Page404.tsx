@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 export const Page404 = () => {
     const { t } = useTranslation();
