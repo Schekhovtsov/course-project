@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    background-color: var(--inverted-bg-color);
+    color: var(--text-primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.active {
+    background-color: var(--primary-color);
+    color: var(--inverted-bg-color);
+}

@@ -20,3 +20,15 @@ export const selectArticlesListPagePaginationHasMore = (state: StateSchema) =>
 
 export const selectArticlesListPageInited = (state: StateSchema) =>
     state.articlesListPage?._inited ?? false;
+
+export const selectArticlesListPageSearch = (state: StateSchema) =>
+    state.articlesListPage?.search ?? '';
+
+export const selectArticlesListPageType = (state: StateSchema) =>
+    state.articlesListPage?.type ?? 'All';
+
+export const selectArticlesListPageSortOrder = (state: StateSchema) =>
+    state.articlesListPage?.order;
+
+export const selectArticlesListPageSort = (state: StateSchema) =>
+    state.articlesListPage?.sort;

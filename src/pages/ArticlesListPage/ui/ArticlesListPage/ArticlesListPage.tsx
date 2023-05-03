@@ -8,14 +8,13 @@ import {
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
-import { ArticleViewType } from 'entities/Article/model/types/Article';
 import { Page } from 'widgets/Page';
+import { useSearchParams } from 'react-router-dom';
+import { ArticlesListPageFilters } from '../ArticlesListPageFilters/ArticlesListPageFilters';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import styles from './ArticlesListPage.module.scss';
 import {
-    articlesListPageActions,
     articlesListPageReducer,
     getArticles,
 } from '../../model/slice/articlesListPageSlice';
@@ -39,29 +38,24 @@ const ArticlesListPage = ({ className }: ArticlesListPageProps) => {
     const isLoading = useSelector(selectArticlesListPageIsLoading);
     const view = useSelector(selectArticlesListPageView);
 
+    const [searchParams] = useSearchParams();
+
     const onLoadNextBatch = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
+        dispatch(initArticlesPage(searchParams));
     });
 
     useDynamicReducerLoader(reducers);
-
-    const onChangeView = useCallback(
-        (view: ArticleViewType) => {
-            dispatch(articlesListPageActions.setView(view));
-        },
-        [dispatch]
-    );
 
     return (
         <Page
             onScrollEnd={onLoadNextBatch}
             className={classNames(styles.container, {}, [className])}
         >
-            <ArticleViewSwitcher view={view} onChangeHandler={onChangeView} />
+            <ArticlesListPageFilters />
             <ArticleList
                 articles={articles}
                 isLoading={isLoading}

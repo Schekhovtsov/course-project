@@ -1,29 +1,41 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { useSelector } from 'react-redux';
+import { SortOrder } from 'shared/lib/types';
 import { fetchArticlesList } from '../services/fetchArticlesList';
-import {
-    selectArticlesListPageInited,
-    selectArticlesListPagePaginationPage,
-} from '../selector/articlesListPageSelectors';
+import { selectArticlesListPageInited } from '../selector/articlesListPageSelectors';
 import { articlesListPageActions } from '../slice/articlesListPageSlice';
 
 export const initArticlesPage = createAsyncThunk<
     void,
-    void,
+    URLSearchParams,
     ThunkConfig<string>
->('ArticlesListPage/initArticlesPage', async (_, thunkAPI) => {
-    const { dispatch } = thunkAPI;
-
-    const page = useSelector(selectArticlesListPagePaginationPage);
-    const _inited = useSelector(selectArticlesListPageInited);
+>('ArticlesListPage/initArticlesPage', async (searchParams, thunkAPI) => {
+    const { getState, dispatch } = thunkAPI;
+    const _inited = selectArticlesListPageInited(getState());
 
     if (!_inited) {
-        dispatch(
-            fetchArticlesList({
-                page,
-            })
-        );
+        const orderFromUrl = searchParams.get('order') as SortOrder;
+        const sortFromUrl = searchParams.get('sort');
+        const searchFromUrl = searchParams.get('search');
+        const typeFromUrl = searchParams.get('type');
+
+        if (orderFromUrl) {
+            dispatch(articlesListPageActions.setOrder(orderFromUrl));
+        }
+
+        if (sortFromUrl) {
+            dispatch(articlesListPageActions.setSort(sortFromUrl));
+        }
+
+        if (searchFromUrl) {
+            dispatch(articlesListPageActions.setSearch(searchFromUrl));
+        }
+
+        if (typeFromUrl) {
+            dispatch(articlesListPageActions.setType(typeFromUrl));
+        }
+
         dispatch(articlesListPageActions.setInited());
+        dispatch(fetchArticlesList({}));
     }
 });

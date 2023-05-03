@@ -4,5 +4,13 @@
   "Comments": "Comments",
   "There is no comments yet": "There is no comments yet",
   "Read more": "Read more",
-  "Back to articles list": "Back to articles list"
+  "Back to articles list": "Back to articles list",
+  "articlePage": {
+    "Search": "Search...",
+    "All": "All"
+  },
+  "All": "All",
+  "IT": "IT",
+  "Music": "Music",
+  "TV": "TV"
 }

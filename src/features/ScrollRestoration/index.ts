@@ -1,5 +1,3 @@
-export { ScrollRestoration } from './ui/ScrollRestoration/ScrollRestoration';
-
 export {
     ScrollRestorationSchema,
     ScrollSchema,
@@ -10,4 +8,4 @@ export { selectPageScrollByPath } from './model/selector/scrollRestorationSelect
 export {
     scrollRestorationReducer,
     scrollRestorationActions,
-} from './model/slice/ScrollRestorationSlice';
+} from './model/slice/scrollRestorationSlice';
