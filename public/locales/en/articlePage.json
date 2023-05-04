@@ -7,10 +7,14 @@
   "Back to articles list": "Back to articles list",
   "articlePage": {
     "Search": "Search...",
-    "All": "All"
+    "All": "All",
+    "Back to articles list": "Back to articles list",
+    "Article not found": "Article not found",
+    "Read more": "Read more"
   },
   "All": "All",
   "IT": "IT",
   "Music": "Music",
-  "TV": "TV"
+  "TV": "TV",
+  "Recommend": "Recommend to read"
 }

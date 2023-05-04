@@ -1,22 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { CommentType } from 'entities/Comment';
+import { ArticleType } from 'entities/Article';
 
-export const fetchCommentsByArticleId = createAsyncThunk<
-    CommentType[],
-    string | undefined,
+export const fetchArticlesRecommends = createAsyncThunk<
+    ArticleType[],
+    void,
     ThunkConfig<string>
->('ArticlePage/fetchCommentsByArticleId', async (articleId, thunkAPI) => {
+>('ArticlePage/fetchArticlesRecommentds', async (_, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI;
 
-    if (!articleId) {
-        return rejectWithValue('Article was not found');
-    }
-
     try {
-        const response = await extra.api.get<CommentType[]>('/comments/', {
+        const response = await extra.api.get<ArticleType[]>('/articles', {
             params: {
-                articleId,
+                _limit: 2,
                 _expand: 'user',
             },
         });
@@ -29,6 +25,6 @@ export const fetchCommentsByArticleId = createAsyncThunk<
     } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e);
-        return rejectWithValue('Error when loading profile');
+        return rejectWithValue('Error when fetching articles');
     }
 });

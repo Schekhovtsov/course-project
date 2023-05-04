@@ -1,4 +1,4 @@
-import { Article, articleReducer } from 'entities/Article';
+import { Article, ArticleList, articleReducer } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -12,15 +12,15 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
+import { articlePageReducer } from 'pages/ArticlePage/model/slice';
+import { fetchArticlesRecommends } from '../../model/services/fetchArticleRecommends';
+import { getArticleRecommends } from '../../model/slice/articlePageRecommendsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
-import {
-    articlePageCommentsReducer,
-    getArticleComments,
-} from '../../model/slice/articlePageCommentsSlice';
+import { getArticleComments } from '../../model/slice/articlePageCommentsSlice';
 
 const reducers: ReducersList = {
     article: articleReducer,
-    articleComments: articlePageCommentsReducer,
+    articlePage: articlePageReducer,
 };
 
 const ArticlePage = () => {
@@ -33,9 +33,11 @@ const ArticlePage = () => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticlesRecommends());
     });
 
     const comments = useSelector(getArticleComments.selectAll);
+    const recommends = useSelector(getArticleRecommends.selectAll);
 
     const onSendComment = useCallback(
         (value: string) => {
@@ -58,6 +60,7 @@ const ArticlePage = () => {
                 {t('Back to articles list')}
             </Button>
             <Article id={id} />
+            <ArticleList articles={recommends} view="tile" target="_blank" />
             <CommentsList comments={comments} onSendComment={onSendComment} />
         </Page>
     );

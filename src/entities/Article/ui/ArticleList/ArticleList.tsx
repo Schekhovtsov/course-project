@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItem.skeleton';
 import { ArticleListItem } from '../ArticleListItem';
@@ -10,6 +10,7 @@ interface ArticleListProps {
     articles: ArticleType[];
     isLoading?: boolean;
     view?: ArticleViewType;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleViewType) =>
@@ -23,9 +24,20 @@ const getSkeletons = (view: ArticleViewType) =>
     ));
 
 export const ArticleList = memo(
-    ({ className, articles, isLoading, view = 'list' }: ArticleListProps) => {
+    ({
+        className,
+        articles,
+        isLoading,
+        view = 'list',
+        target = '_self',
+    }: ArticleListProps) => {
         const renderArticle = (article: ArticleType) => (
-            <ArticleListItem article={article} view={view} key={article.id} />
+            <ArticleListItem
+                article={article}
+                view={view}
+                key={article.id}
+                target={target}
+            />
         );
 
         return (

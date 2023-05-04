@@ -1,3 +1,7 @@
 export { ArticlePageAsync as ArticlePage } from './ui/ArticlePage/ArticlePage.async';
 
-export { ArticlePageCommentsSchema } from './model/types/ArticlePage.types';
+export {
+    ArticlePageSchema,
+    ArticlePageCommentsSchema,
+    ArticlePageRecommendsSchema,
+} from './model/types/ArticlePage.types';

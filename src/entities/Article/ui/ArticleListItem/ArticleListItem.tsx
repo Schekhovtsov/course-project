@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -7,7 +7,7 @@ import { Card } from 'shared/ui/Card';
 import { Avatar } from 'shared/ui/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { TextBlock } from 'entities/Article/ui/TextBlock/TextBlock';
-import { useNavigate } from 'react-router-dom';
+import { AppLink } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
     ArticleTextBlock,
@@ -20,18 +20,14 @@ interface ArticleListItemProps {
     className?: string;
     article: ArticleType;
     view: ArticleViewType;
+    target: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo(
-    ({ className, article, view }: ArticleListItemProps) => {
+    ({ className, article, view, target }: ArticleListItemProps) => {
         // eslint-disable-next-line no-unused-vars
         const dispatch = useAppDispatch();
-        const navigate = useNavigate();
         const { t } = useTranslation('articlePage');
-
-        const onOpenArticle = useCallback(() => {
-            navigate(`${RoutePath.articles}/${article.id}`);
-        }, [article.id, navigate]);
 
         const infoWrapper = (
             <div className={styles.infoWrapper}>
@@ -62,22 +58,27 @@ export const ArticleListItem = memo(
                         styles[view],
                     ])}
                 >
-                    <Card className={styles.card} onClick={onOpenArticle}>
-                        <div className={styles.imageWrapper}>
-                            <img
-                                src={article.img}
-                                alt={article.title}
-                                width={300}
-                                height={300}
-                                className={styles.image}
-                            />
-                            <Text
-                                text={article.createdAt}
-                                className={styles.createdAt}
-                            />
-                            {infoWrapper}
-                        </div>
-                    </Card>
+                    <AppLink
+                        target={target}
+                        to={`${RoutePath.articles}/${article.id}`}
+                    >
+                        <Card className={styles.card}>
+                            <div className={styles.imageWrapper}>
+                                <img
+                                    src={article.img}
+                                    alt={article.title}
+                                    width={300}
+                                    height={300}
+                                    className={styles.image}
+                                />
+                                <Text
+                                    text={article.createdAt}
+                                    className={styles.createdAt}
+                                />
+                                {infoWrapper}
+                            </div>
+                        </Card>
+                    </AppLink>
                 </div>
             );
         }
@@ -94,45 +95,52 @@ export const ArticleListItem = memo(
                         styles[view],
                     ])}
                 >
-                    <Card className={styles.card}>
-                        <div className={styles.imageWrapper}>
-                            <img
-                                src={article.img}
-                                alt={article.title}
-                                width={300}
-                                height={300}
-                                className={styles.image}
-                            />
-                            <div className={styles.author}>
-                                <Text
-                                    text={article.createdAt}
-                                    className={styles.createdAt}
+                    <AppLink
+                        target={target}
+                        to={`${RoutePath.articles}/${article.id}`}
+                    >
+                        <Card className={styles.card}>
+                            <div className={styles.imageWrapper}>
+                                <img
+                                    src={article.img}
+                                    alt={article.title}
+                                    width={300}
+                                    height={300}
+                                    className={styles.image}
                                 />
-                                <Avatar
-                                    size={32}
-                                    src={article.user.avatar!}
-                                    className={styles.avatar}
-                                />
-                                <Text text={article.user.username} />
+                                <div className={styles.author}>
+                                    <Text
+                                        text={article.createdAt}
+                                        className={styles.createdAt}
+                                    />
+                                    <Avatar
+                                        size={32}
+                                        src={article.user.avatar!}
+                                        className={styles.avatar}
+                                    />
+                                    <Text text={article.user.username} />
+                                </div>
+                                {infoWrapper}
                             </div>
-                            {infoWrapper}
-                        </div>
-                        <div className={styles.footer}>
-                            {textBlock ? (
-                                <TextBlock
-                                    block={textBlock}
-                                    className={styles.textBlock}
-                                    withoutTitle
-                                />
-                            ) : null}
-                            <Button
-                                onClick={onOpenArticle}
-                                theme={ButtonTheme.SECONDARY}
-                            >
-                                {t('Read more')}
-                            </Button>
-                        </div>
-                    </Card>
+                            <div className={styles.footer}>
+                                {textBlock ? (
+                                    <TextBlock
+                                        block={textBlock}
+                                        className={styles.textBlock}
+                                        withoutTitle
+                                    />
+                                ) : null}
+                                <AppLink
+                                    target={target}
+                                    to={`${RoutePath.articles}/${article.id}`}
+                                >
+                                    <Button theme={ButtonTheme.SECONDARY}>
+                                        {t('Read more')}
+                                    </Button>
+                                </AppLink>
+                            </div>
+                        </Card>
+                    </AppLink>
                 </div>
             );
         }

@@ -19,3 +19,16 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scroll-bar-track {
+    background-color: var(--inverted-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
