@@ -2,17 +2,16 @@ import { Article, ArticleList, articleReducer } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Button } from 'shared/ui/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
 import { articlePageReducer } from 'pages/ArticlePage/model/slice';
+import { ArticleHeader } from 'pages/ArticlePage/ui/ArticleHeader/ArticleHeader';
 import { fetchArticlesRecommends } from '../../model/services/fetchArticleRecommends';
 import { getArticleRecommends } from '../../model/slice/articlePageRecommendsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
@@ -27,7 +26,6 @@ const ArticlePage = () => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('articlePage');
     const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
 
     useDynamicReducerLoader(reducers, false);
 
@@ -46,19 +44,13 @@ const ArticlePage = () => {
         [dispatch]
     );
 
-    const onBackToArticlesList = useCallback(() => {
-        navigate(`${RoutePath.articles}`);
-    }, [navigate]);
-
     if (!id) {
         return <Page>{t('Article not found')}</Page>;
     }
 
     return (
         <Page>
-            <Button onClick={onBackToArticlesList}>
-                {t('Back to articles list')}
-            </Button>
+            <ArticleHeader />
             <Article id={id} />
             <ArticleList articles={recommends} view="tile" target="_blank" />
             <CommentsList comments={comments} onSendComment={onSendComment} />

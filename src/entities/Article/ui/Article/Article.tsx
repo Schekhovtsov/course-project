@@ -66,7 +66,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
         content = (
             <div className={styles.blocks}>
                 <h1>{data.title}</h1>
-                <h2>{data.description}</h2>
+                <span>{data.description}</span>
                 <img
                     src={data.img}
                     alt={data.title}
