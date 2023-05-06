@@ -4,7 +4,7 @@ import {
     ProfileSchema,
     updateProfileData,
     ValidateProfileErrors,
-} from '../../../profile';
+} from '../../../Profile';
 
 const data = {
     firstName: 'John',
