@@ -11,7 +11,7 @@ interface CommentsListProps {
     className?: string;
     comments?: CommentType[];
     // eslint-disable-next-line no-unused-vars
-    onSendComment?: (value: string) => void;
+    onSendComment: (value: string) => void;
 }
 
 export const CommentsList = memo(
