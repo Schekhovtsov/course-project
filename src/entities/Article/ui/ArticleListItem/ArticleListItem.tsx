@@ -9,6 +9,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { TextBlock } from 'entities/Article/ui/TextBlock/TextBlock';
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { LS_ARTICLES_LIST_ITEM_ID } from 'shared/constants/localStorage';
 import {
     ArticleTextBlock,
     ArticleType,
@@ -21,13 +22,21 @@ interface ArticleListItemProps {
     article: ArticleType;
     view: ArticleViewType;
     target: HTMLAttributeAnchorTarget;
+    index: number;
 }
 
 export const ArticleListItem = memo(
-    ({ className, article, view, target }: ArticleListItemProps) => {
+    ({ className, article, view, target, index }: ArticleListItemProps) => {
         // eslint-disable-next-line no-unused-vars
         const dispatch = useAppDispatch();
         const { t } = useTranslation('articlePage');
+
+        const handleOpenArticle = () => {
+            sessionStorage.setItem(
+                LS_ARTICLES_LIST_ITEM_ID,
+                JSON.stringify(index)
+            );
+        };
 
         const infoWrapper = (
             <div className={styles.infoWrapper}>
@@ -61,6 +70,7 @@ export const ArticleListItem = memo(
                     <AppLink
                         target={target}
                         to={`${RoutePath.articles}/${article.id}`}
+                        onClick={handleOpenArticle}
                     >
                         <Card className={styles.card}>
                             <div className={styles.imageWrapper}>
@@ -98,6 +108,7 @@ export const ArticleListItem = memo(
                     <AppLink
                         target={target}
                         to={`${RoutePath.articles}/${article.id}`}
+                        onClick={handleOpenArticle}
                     >
                         <Card className={styles.card}>
                             <div className={styles.imageWrapper}>
@@ -133,6 +144,7 @@ export const ArticleListItem = memo(
                                 <AppLink
                                     target={target}
                                     to={`${RoutePath.articles}/${article.id}`}
+                                    onClick={handleOpenArticle}
                                 >
                                     <Button theme={ButtonTheme.SECONDARY}>
                                         {t('Read more')}

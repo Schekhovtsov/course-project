@@ -1,4 +1,4 @@
-import { Article, ArticleList, articleReducer } from 'entities/Article';
+import { Article, articleReducer } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,6 @@ import { Page } from 'widgets/Page';
 import { articlePageReducer } from 'pages/ArticlePage/model/slice';
 import { ArticleHeader } from 'pages/ArticlePage/ui/ArticleHeader/ArticleHeader';
 import { fetchArticlesRecommends } from '../../model/services/fetchArticleRecommends';
-import { getArticleRecommends } from '../../model/slice/articlePageRecommendsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articlePageCommentsSlice';
 
@@ -35,7 +34,6 @@ const ArticlePage = () => {
     });
 
     const comments = useSelector(getArticleComments.selectAll);
-    const recommends = useSelector(getArticleRecommends.selectAll);
 
     const onSendComment = useCallback(
         (value: string) => {
@@ -52,7 +50,6 @@ const ArticlePage = () => {
         <Page>
             <ArticleHeader />
             <Article id={id} />
-            <ArticleList articles={recommends} view="tile" target="_blank" />
             <CommentsList comments={comments} onSendComment={onSendComment} />
         </Page>
     );

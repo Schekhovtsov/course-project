@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleList } from 'entities/Article';
 import {
     ReducersList,
@@ -8,9 +7,9 @@ import {
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { Page } from 'widgets/Page';
 import { useSearchParams } from 'react-router-dom';
-import { ArticlesListPageFilters } from '../ArticlesListPageFilters/ArticlesListPageFilters';
+import { ArticlesListPageFilters } from 'pages/ArticlesListPage/ui/ArticlesListPageFilters/ArticlesListPageFilters';
+import { Page } from 'widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import styles from './ArticlesListPage.module.scss';
@@ -31,6 +30,7 @@ const reducers: ReducersList = {
     articlesListPage: articlesListPageReducer,
 };
 
+// eslint-disable-next-line no-unused-vars
 const ArticlesListPage = ({ className }: ArticlesListPageProps) => {
     const dispatch = useAppDispatch();
 
@@ -51,15 +51,13 @@ const ArticlesListPage = ({ className }: ArticlesListPageProps) => {
     useDynamicReducerLoader(reducers);
 
     return (
-        <Page
-            onScrollEnd={onLoadNextBatch}
-            className={classNames(styles.container, {}, [className])}
-        >
+        <Page className={styles.container}>
             <ArticlesListPageFilters />
             <ArticleList
                 articles={articles}
                 isLoading={isLoading}
                 view={view}
+                onLoadNextBatch={onLoadNextBatch}
             />
         </Page>
     );
