@@ -5,8 +5,7 @@ export const api = axios.create({
     baseURL: __API__,
 });
 
-// @ts-ignore
-$api.interceptors.request.use((config) => {
+api.interceptors.request.use((config) => {
     if (config.headers) {
         config.headers.authorization = localStorage.getItem(LS_USER_KEY) || '';
     }
