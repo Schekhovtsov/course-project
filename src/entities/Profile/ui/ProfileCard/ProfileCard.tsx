@@ -1,6 +1,3 @@
-import { selectReadOnlyStatus } from 'entities/Profile/model/selector/profileSelectors';
-import { profileActions } from 'entities/Profile/model/slice/profileSlice';
-import { Profile } from 'entities/Profile/model/types/profile';
 import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -11,6 +8,9 @@ import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { selectReadOnlyStatus } from '../../model/selector/profileSelectors';
+import { Profile } from '../../model/types/profile';
+import { profileActions } from '../../model/slice/profileSlice';
 import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

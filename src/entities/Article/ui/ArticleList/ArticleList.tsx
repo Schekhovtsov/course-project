@@ -7,9 +7,9 @@ import {
     useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItem.skeleton';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 import { LS_ARTICLES_LIST_ITEM_ID } from 'shared/constants/localStorage';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItem.skeleton';
 import { ArticleListItem } from '../ArticleListItem';
 import { ArticleType, ArticleViewType } from '../../model/types/Article';
 import styles from './ArticleList.module.scss';
@@ -107,7 +107,7 @@ export const ArticleList = memo(
                 ) : (
                     <VirtuosoGrid
                         ref={virtuosoGridRef}
-                        style={{ height: '80vh' }}
+                        style={{ height: '80%' }}
                         totalCount={articles.length}
                         components={{
                             ScrollSeekPlaceholder: ItemContainerComp,

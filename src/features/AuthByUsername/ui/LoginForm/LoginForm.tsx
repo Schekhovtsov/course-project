@@ -1,4 +1,3 @@
-import { loginByUsername } from 'features/AuthByUsername';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -10,6 +9,7 @@ import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { loginByUsername } from '../../model/services/loginByUsername';
 import {
     selectError,
     selectIsLoading,

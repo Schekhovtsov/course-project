@@ -7,11 +7,11 @@ import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoade
 import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { fetchCommentsByArticleId } from 'pages/ArticlePage/model/services/fetchCommentsByArticleId';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Page } from 'widgets/Page';
-import { articlePageReducer } from 'pages/ArticlePage/model/slice';
-import { ArticleHeader } from 'pages/ArticlePage/ui/ArticleHeader/ArticleHeader';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';
+import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
+import { articlePageReducer } from '../../model/slice';
 import { fetchArticlesRecommends } from '../../model/services/fetchArticleRecommends';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articlePageCommentsSlice';

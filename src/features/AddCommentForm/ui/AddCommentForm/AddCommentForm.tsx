@@ -5,12 +5,12 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Input } from 'shared/ui/Input';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
+import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
+import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import {
     addCommentFormActions,
     addCommentFormReducer,
-} from 'features/AddCommentForm/model/slice/addCommentFormSlice';
-import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
-import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+} from '../../model/slice/addCommentFormSlice';
 import {
     getAddCommentFormError,
     getAddCommentFormText,

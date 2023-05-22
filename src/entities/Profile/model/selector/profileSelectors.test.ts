@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import avatar from 'shared/assets/icons/tests/avatar.png';
-import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
+import { ValidateProfileErrors } from '../types/profile';
 import {
     selectError,
     selectIsLoading,

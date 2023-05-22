@@ -1,9 +1,9 @@
-import { CommentCard } from 'entities/Comment/ui/CommentCard/CommentCard';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { CommentCard } from '../../ui/CommentCard/CommentCard';
 import { CommentType } from '../../model/types/Comment';
 import styles from './CommentsList.module.scss';
 

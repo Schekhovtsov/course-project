@@ -18,7 +18,14 @@ module.exports = {
         sourceType: 'module',
     },
     ignorePatterns: ['.fttemplates/*'],
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'feature-sliced-design',
+        // 'schekhovtsov-path-checker',
+    ],
     rules: {
         'react/jsx-indent': 'off',
         'react/jsx-indent-props': 'off',
@@ -61,6 +68,9 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': ['off'],
         'no-undef': 'off',
+        // 'path-checker/path-check': 'error',
+        'feature-sliced-design/relative-path-within-slice': 2,
+        // 'schekhovtsov-path-checker/path-check': 2,
     },
     globals: {
         __IS_DEV__: true,

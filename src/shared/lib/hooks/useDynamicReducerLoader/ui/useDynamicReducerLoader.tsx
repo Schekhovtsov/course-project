@@ -6,7 +6,7 @@ import {
 } from 'app/providers/StoreProvider/config/StateSchema';
 import { useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '../../useAppDispatch';
 
 export type ReducersList = {
     // eslint-disable-next-line no-unused-vars

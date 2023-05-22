@@ -5,8 +5,8 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
-import { selectCanEditArticle } from 'pages/ArticlePage/model/selectors/article';
 import { selectArticle } from 'entities/Article';
+import { selectCanEditArticle } from '../../model/selectors/article';
 import styles from './ArticleHeader.module.scss';
 
 interface ArticleHeaderProps {

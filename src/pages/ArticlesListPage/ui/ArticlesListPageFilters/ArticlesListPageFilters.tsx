@@ -7,10 +7,10 @@ import { useSelector } from 'react-redux';
 import { SortOrder } from 'shared/lib/types';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { fetchArticlesList } from 'pages/ArticlesListPage/model/services/fetchArticlesList';
 import { useTranslation } from 'react-i18next';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import { articlesListPageActions } from '../../model/slice/articlesListPageSlice';
 import {
     selectArticlesListPageSearch,

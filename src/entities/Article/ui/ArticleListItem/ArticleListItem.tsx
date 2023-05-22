@@ -6,10 +6,10 @@ import { Text } from 'shared/ui/Text';
 import { Card } from 'shared/ui/Card';
 import { Avatar } from 'shared/ui/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { TextBlock } from 'entities/Article/ui/TextBlock/TextBlock';
 import { AppLink } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { LS_ARTICLES_LIST_ITEM_ID } from 'shared/constants/localStorage';
+import { TextBlock } from '../../ui/TextBlock/TextBlock';
 import {
     ArticleTextBlock,
     ArticleType,
