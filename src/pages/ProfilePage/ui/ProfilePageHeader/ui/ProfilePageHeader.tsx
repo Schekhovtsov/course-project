@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import { selectUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -42,31 +43,31 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <HStack
+            justify="between"
+            max
+            className={classNames(styles.container, {}, [className])}
+        >
             <Text title={t('Profile page')} />
-            <div className={styles.buttons}>
-                {canEdit ? (
-                    <div>
-                        {!readOnly ? (
-                            <>
-                                <Button
-                                    theme={ButtonTheme.SECONDARY}
-                                    onClick={cancelButtonHandler}
-                                >
-                                    {t('Cancel')}
-                                </Button>
-                                <Button onClick={saveButtonHandler}>
-                                    {t('Save')}
-                                </Button>
-                            </>
-                        ) : (
-                            <Button onClick={editButtonHandler}>
-                                {t('Edit')}
+            {canEdit ? (
+                <HStack>
+                    {!readOnly ? (
+                        <>
+                            <Button
+                                theme={ButtonTheme.SECONDARY}
+                                onClick={cancelButtonHandler}
+                            >
+                                {t('Cancel')}
                             </Button>
-                        )}
-                    </div>
-                ) : null}
-            </div>
-        </div>
+                            <Button onClick={saveButtonHandler}>
+                                {t('Save')}
+                            </Button>
+                        </>
+                    ) : (
+                        <Button onClick={editButtonHandler}>{t('Edit')}</Button>
+                    )}
+                </HStack>
+            ) : null}
+        </HStack>
     );
 };

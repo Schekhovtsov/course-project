@@ -1,20 +1,5 @@
-.container,
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.formWrapper {
-    display: flex;
-    flex-direction: row;
-}
-
 .loading,
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: calc(90vh - var(--size-navbar-height));
 }
 

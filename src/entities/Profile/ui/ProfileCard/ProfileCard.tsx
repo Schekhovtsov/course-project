@@ -8,6 +8,7 @@ import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { VStack, HStack } from 'shared/ui/Stack';
 import { selectReadOnlyStatus } from '../../model/selector/profileSelectors';
 import { Profile } from '../../model/types/profile';
 import { profileActions } from '../../model/slice/profileSlice';
@@ -48,20 +49,20 @@ export const ProfileCard = ({
 
     if (isLoading) {
         return (
-            <div
+            <VStack
                 className={classNames(styles.container, {}, [
                     className,
                     styles.loading,
                 ])}
             >
                 <Loader />
-            </div>
+            </VStack>
         );
     }
 
     if (error) {
         return (
-            <div
+            <VStack
                 className={classNames(styles.container, {}, [
                     className,
                     styles.error,
@@ -72,18 +73,18 @@ export const ProfileCard = ({
                     text={t('Try to refresh page')}
                     theme={TextTheme.ERROR}
                 />
-            </div>
+            </VStack>
         );
     }
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <VStack className={classNames(styles.container, {}, [className])}>
             <ProfilePageHeader />
-            <div className={styles.formWrapper}>
-                <div className={styles.avatarWrapper}>
+            <VStack justify="center" max className={styles.formWrapper}>
+                <HStack max justify="center" className={styles.avatarWrapper}>
                     {data?.avatar && <Avatar src={data?.avatar} size={128} />}
-                </div>
-                <div className={styles.form}>
+                </HStack>
+                <VStack className={styles.form}>
                     <Input
                         value={data?.firstName}
                         placeholder={t('First name')}
@@ -108,8 +109,8 @@ export const ProfileCard = ({
                         disabled={disabled}
                         onChange={onAvatarChangeHandler}
                     />
-                </div>
-            </div>
-        </div>
+                </VStack>
+            </VStack>
+        </VStack>
     );
 };

@@ -4,6 +4,7 @@ import { LanguageSwitcher } from 'features/LanguageSwitcher';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { ToggleSidebar } from 'features/ToggleSidebar';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack';
 import { SidebarItem } from '../SidebarItem';
 import { selectSidebarItems } from '../../model/selector/selectSidebarItems';
 import styles from './Sidebar.module.scss';
@@ -41,7 +42,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             )}
             data-testid="sidebar"
         >
-            <div className={styles.links}>{itemsList}</div>
+            <VStack className={styles.links}>{itemsList}</VStack>
 
             <div className={styles.switchers}>
                 <ToggleSidebar
