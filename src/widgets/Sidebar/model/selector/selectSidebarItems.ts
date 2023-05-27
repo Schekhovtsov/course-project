@@ -23,20 +23,12 @@ export const selectSidebarItems = createSelector(
         ];
 
         if (userData) {
-            sidebarItemsList.push(
-                {
-                    path: RoutePath.profile + userData.id,
-                    text: 'Profile',
-                    Icon: ProfileIcon,
-                    authOnly: true,
-                },
-                {
-                    path: RoutePath.articles,
-                    text: 'Articles',
-                    Icon: ProfileIcon,
-                    authOnly: true,
-                }
-            );
+            sidebarItemsList.push({
+                path: RoutePath.articles,
+                text: 'Articles',
+                Icon: ProfileIcon,
+                authOnly: true,
+            });
         }
 
         return sidebarItemsList;
