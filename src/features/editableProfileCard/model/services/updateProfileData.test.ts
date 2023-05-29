@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import avatar from 'shared/assets/icons/test/avatar.png';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
-import { ValidateProfileErrors } from '../types/profile';
+import { ValidateProfileErrors } from '../types/editableProfileCard';
 import { updateProfileData } from './updateProfileData';
 
 const data = {

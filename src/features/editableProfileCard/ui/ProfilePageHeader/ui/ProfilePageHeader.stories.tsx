@@ -3,7 +3,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { ProfilePageHeader } from './ProfilePageHeader';
 
 export default {
-    title: 'shared/ProfilePageHeader',
+    title: 'feature/editableProfileCard/ProfilePageHeader',
     component: ProfilePageHeader,
 } as ComponentMeta<typeof ProfilePageHeader>;
 

@@ -1,9 +1,3 @@
-import {
-    profileActions,
-    selectProfile,
-    selectReadOnlyStatus,
-    updateProfileData,
-} from 'entities/Profile';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -13,6 +7,12 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import { selectUserAuthData } from 'entities/User';
 import { HStack } from 'shared/ui/Stack';
+import {
+    selectProfile,
+    selectReadOnlyStatus,
+} from '../../../model/selector/profileSelectors';
+import { profileActions } from '../../../model/slice/profileSlice';
+import { updateProfileData } from '../../../model/services/updateProfileData';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {

@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import avatar from 'shared/assets/icons/tests/avatar.png';
-import { ValidateProfileErrors } from '../types/profile';
+import { ValidateProfileErrors } from '../types/editableProfileCard';
 import {
     selectError,
     selectIsLoading,

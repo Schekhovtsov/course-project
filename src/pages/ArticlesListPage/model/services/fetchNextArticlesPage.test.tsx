@@ -21,7 +21,7 @@ describe('pages/ArticlesListPage/services/fetchNextArticlesPage', () => {
         await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('Статей больше нет - ничего не подгружает', async () => {

@@ -8,17 +8,19 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { ArticleSchema } from 'entities/Article';
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername/model/types/loginSchema';
 import { ScrollRestorationSchema } from 'features/ScrollRestoration';
+import { ProfileSchema } from 'features/editableProfileCard';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 import { ArticlesListPageSchema } from 'pages/ArticlesListPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     user: UserSchema;
     scrollRestoration: ScrollRestorationSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers
     loginForm?: LoginSchema;
