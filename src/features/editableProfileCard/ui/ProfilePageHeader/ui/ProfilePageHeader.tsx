@@ -56,15 +56,24 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             <Button
                                 theme={ButtonTheme.SECONDARY}
                                 onClick={cancelButtonHandler}
+                                data-testid="ProfilePageHeader.CancelButton"
                             >
                                 {t('Cancel')}
                             </Button>
-                            <Button onClick={saveButtonHandler}>
+                            <Button
+                                onClick={saveButtonHandler}
+                                data-testid="ProfilePageHeader.SaveButton"
+                            >
                                 {t('Save')}
                             </Button>
                         </>
                     ) : (
-                        <Button onClick={editButtonHandler}>{t('Edit')}</Button>
+                        <Button
+                            onClick={editButtonHandler}
+                            data-testid="ProfilePageHeader.EditButton"
+                        >
+                            {t('Edit')}
+                        </Button>
                     )}
                 </HStack>
             ) : null}

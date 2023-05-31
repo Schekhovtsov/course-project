@@ -20,6 +20,7 @@ interface TextProps {
     theme?: TextTheme;
     bold?: boolean;
     withTitle?: boolean;
+    'data-testid'?: string;
 }
 
 const mapSizeToHeaderTag: Record<TitleSize, HeaderTag> = {
@@ -37,14 +38,23 @@ export const Text = memo(
         theme = TextTheme.PRIMARY,
         withTitle = false,
         bold = false,
+        'data-testid': dataTestId = '',
     }: TextProps) => {
         const HeaderTag = mapSizeToHeaderTag[titleSize];
         const textElement = bold ? (
-            <span className={styles.text} title={withTitle ? text : ''}>
+            <span
+                className={styles.text}
+                title={withTitle ? text : ''}
+                data-testid={`${dataTestId}.Text`}
+            >
                 <b>{text}</b>
             </span>
         ) : (
-            <span className={styles.text} title={withTitle ? text : ''}>
+            <span
+                className={styles.text}
+                title={withTitle ? text : ''}
+                data-testid={`${dataTestId}.Text`}
+            >
                 {text}
             </span>
         );
@@ -57,7 +67,11 @@ export const Text = memo(
                 ])}
             >
                 {title && (
-                    <HeaderTag className={styles.title} title={withTitle ? title : ''}>
+                    <HeaderTag
+                        className={styles.title}
+                        title={withTitle ? title : ''}
+                        data-testid={`${dataTestId}.Header`}
+                    >
                         <b>{title}</b>
                     </HeaderTag>
                 )}

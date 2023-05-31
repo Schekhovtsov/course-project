@@ -69,19 +69,6 @@ export const EditableProfileCard = memo(
             }
         });
 
-        if (isLoading) {
-            return (
-                <VStack
-                    className={classNames(styles.container, {}, [
-                        className,
-                        styles.loading,
-                    ])}
-                >
-                    <Loader />
-                </VStack>
-            );
-        }
-
         if (error) {
             return (
                 <VStack
@@ -94,6 +81,7 @@ export const EditableProfileCard = memo(
                         title={t('Error')}
                         text={t('Try to refresh page')}
                         theme={TextTheme.ERROR}
+                        data-testid="EditableProfileCard.Error"
                     />
                 </VStack>
             );
@@ -119,6 +107,7 @@ export const EditableProfileCard = memo(
                                       error as keyof typeof validateErrorTranslations
                                   ]
                               }
+                              data-testid="EditableProfileCard.Error"
                           />
                       ))
                     : null}
@@ -141,12 +130,14 @@ export const EditableProfileCard = memo(
                                 placeholder={t('First name')}
                                 disabled={disabled}
                                 onChange={onFirstNameChangeHandler}
+                                data-testid="EditableProfileCard.FirstnameInput"
                             />
                             <Input
                                 value={data?.lastName}
                                 placeholder={t('Last name')}
                                 disabled={disabled}
                                 onChange={onLastNameChangeHandler}
+                                data-testid="EditableProfileCard.LastnameInput"
                             />
                             <Input
                                 value={data?.city}
