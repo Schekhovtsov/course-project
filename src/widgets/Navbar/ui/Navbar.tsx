@@ -1,4 +1,9 @@
-import { selectUserAuthData, userActions } from 'entities/User';
+import {
+    selectIsUserModerator,
+    selectIsUserAdmin,
+    selectUserAuthData,
+    userActions,
+} from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -25,6 +30,10 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
     const authData = useSelector(selectUserAuthData);
     const { isModalOpen, openModal, closeModal } = useModal();
 
+    const isAdmin = useSelector(selectIsUserAdmin);
+    const isModerator = useSelector(selectIsUserModerator);
+    const isAdminPanelAvailable = isAdmin || isModerator;
+
     const logoutHandler = () => {
         dispatch(userActions.logout());
     };
@@ -39,6 +48,14 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
                             content: t('Profile'),
                             href: RoutePath.profile + authData.id,
                         },
+                        ...(isAdminPanelAvailable
+                            ? [
+                                  {
+                                      content: t('Admin panel'),
+                                      href: RoutePath.admin_panel,
+                                  },
+                              ]
+                            : []),
                         {
                             content: t('Log out'),
                             onClick: logoutHandler,
