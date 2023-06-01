@@ -7,6 +7,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
 import { useDynamicReducerLoader } from 'shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+import { VStack } from 'shared/ui/Stack';
 import {
     addCommentFormActions,
     addCommentFormReducer,
@@ -50,7 +51,11 @@ const AddCommentForm = memo(
         }, [onSendComment, onTextChange, text]);
 
         return (
-            <div className={classNames(styles.container, {}, [className])}>
+            <VStack
+                max
+                gap={10}
+                className={classNames(styles.container, {}, [className])}
+            >
                 <Input
                     placeholder={t('Введите текст комментария')}
                     value={text}
@@ -60,7 +65,7 @@ const AddCommentForm = memo(
                 <Button theme={ButtonTheme.SECONDARY} onClick={onSendHandler}>
                     {t('Отправить комментарий')}
                 </Button>
-            </div>
+            </VStack>
         );
     }
 );

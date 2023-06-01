@@ -19,7 +19,7 @@ export const CommentCard = memo(({ className, comment }: CommentCardProps) => {
     }
 
     return (
-        <VStack className={classNames(styles.container, {}, [className])}>
+        <VStack max className={classNames(styles.container, {}, [className])}>
             <AppLink
                 to={`${RoutePath.profile}${comment?.user.id}`}
                 className={styles.header}
