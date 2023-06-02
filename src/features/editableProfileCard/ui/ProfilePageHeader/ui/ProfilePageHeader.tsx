@@ -48,7 +48,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
             max
             className={classNames(styles.container, {}, [className])}
         >
-            <Text title={t('Profile page')} />
+            <Text title={`${t('Profile page')}`} />
             {canEdit ? (
                 <HStack>
                     {!readOnly ? (
@@ -58,13 +58,13 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                                 onClick={cancelButtonHandler}
                                 data-testid="ProfilePageHeader.CancelButton"
                             >
-                                {t('Cancel')}
+                                {`${t('Cancel')}`}
                             </Button>
                             <Button
                                 onClick={saveButtonHandler}
                                 data-testid="ProfilePageHeader.SaveButton"
                             >
-                                {t('Save')}
+                                {`${t('Save')}`}
                             </Button>
                         </>
                     ) : (
@@ -72,7 +72,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                             onClick={editButtonHandler}
                             data-testid="ProfilePageHeader.EditButton"
                         >
-                            {t('Edit')}
+                            {`${t('Edit')}`}
                         </Button>
                     )}
                 </HStack>

@@ -7,7 +7,7 @@ export const ForbiddenPage = () => {
 
     return (
         <Page>
-            <Text title={t('Forbidden')} />
+            <Text title={`${t('Forbidden')}`} />
         </Page>
     );
 };

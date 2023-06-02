@@ -57,13 +57,13 @@ const AddCommentForm = memo(
                 className={classNames(styles.container, {}, [className])}
             >
                 <Input
-                    placeholder={t('Введите текст комментария')}
+                    placeholder={`${t('Введите текст комментария')}`}
                     value={text}
                     onChange={onTextChange}
                     className={styles.input}
                 />
                 <Button theme={ButtonTheme.SECONDARY} onClick={onSendHandler}>
-                    {t('Отправить комментарий')}
+                    {`${t('Отправить комментарий')}`}
                 </Button>
             </VStack>
         );

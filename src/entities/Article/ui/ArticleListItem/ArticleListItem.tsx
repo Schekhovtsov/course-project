@@ -147,7 +147,7 @@ export const ArticleListItem = memo(
                                     onClick={handleOpenArticle}
                                 >
                                     <Button theme={ButtonTheme.SECONDARY}>
-                                        {t('Read more')}
+                                        {`${t('Read more')}`}
                                     </Button>
                                 </AppLink>
                             </div>

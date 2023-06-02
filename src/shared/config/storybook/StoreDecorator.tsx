@@ -7,7 +7,6 @@ import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCo
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice';
 import { articlePageReducer } from 'pages/ArticlePage/model/slice';
-import { rtkApi } from 'shared/api/rtkApi';
 import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 
 const defaultAsyncReducers: ReducersList = {
@@ -16,7 +15,6 @@ const defaultAsyncReducers: ReducersList = {
     article: articleReducer,
     addCommentForm: addCommentFormReducer,
     articlePage: articlePageReducer,
-    [rtkApi.reducerPath]: rtkApi.reducer,
 };
 
 export const StoreDecorator =

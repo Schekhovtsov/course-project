@@ -8,7 +8,7 @@ import { getArticleComments } from '../../model/slice/articlePageCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
 
 interface ArticleCommentsProps {
-    id: string;
+    id?: string;
 }
 
 export const ArticleComments = ({ id }: ArticleCommentsProps) => {

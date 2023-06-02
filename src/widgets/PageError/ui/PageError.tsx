@@ -11,7 +11,7 @@ export const PageError = ({ className }: PageErrorProps) => {
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <p>{t('Something went wrong')}</p>
+            <p>{`${t('Something went wrong')}`}</p>
         </div>
     );
 };

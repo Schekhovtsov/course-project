@@ -23,7 +23,7 @@ export const Avatar = ({ className, src, size = 48 }: AvatarProps) => {
     return (
         <img
             className={classNames(styles.container, {}, [className])}
-            alt={t('Avatar')}
+            alt={`${t('Avatar')}`}
             style={style}
             src={src}
         />

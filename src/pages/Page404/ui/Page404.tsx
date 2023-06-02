@@ -3,5 +3,5 @@ import { Page } from 'widgets/Page';
 
 export const Page404 = () => {
     const { t } = useTranslation();
-    return <Page>{t('Page not found')}</Page>;
+    return <Page>{`${t('Page not found')}`}</Page>;
 };

@@ -22,7 +22,7 @@ import { ImageBlock } from '../ImageBlock/ImageBlock';
 
 interface ArticleProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const Article = memo(({ className, id }: ArticleProps) => {

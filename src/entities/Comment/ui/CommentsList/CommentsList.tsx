@@ -19,7 +19,10 @@ export const CommentsList = memo(
 
         return comments?.length ? (
             <VStack max gap={10}>
-                <Text title={t('Comments')} className={styles.commentsHeader} />
+                <Text
+                    title={`${t('Comments')}`}
+                    className={styles.commentsHeader}
+                />
                 <AddCommentForm onSendComment={onSendComment} />
                 {comments.map((comment) => (
                     <CommentCard
@@ -31,9 +34,12 @@ export const CommentsList = memo(
             </VStack>
         ) : (
             <VStack max gap={10}>
-                <Text title={t('Comments')} className={styles.commentsHeader} />
+                <Text
+                    title={`${t('Comments')}`}
+                    className={styles.commentsHeader}
+                />
                 <AddCommentForm onSendComment={onSendComment} />
-                <Text text={t('There is no comments yet')} />
+                <Text text={`${t('There is no comments yet')}`} />
             </VStack>
         );
     }

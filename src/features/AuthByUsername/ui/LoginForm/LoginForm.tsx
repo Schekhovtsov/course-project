@@ -61,27 +61,29 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <Text title={t('Login form')} />
-            <span className={styles.inputPlaceholder}>{t('Login')}</span>
+            <Text title={`${t('Login form')}`} />
+            <span className={styles.inputPlaceholder}>{`${t('Login')}`}</span>
             <Input
                 onChange={onChangeUsernameHandler}
                 value={username}
-                placeholder={t('Login')}
+                placeholder={`${t('Login')}`}
                 type="text"
                 className={styles.input}
                 autofocus
             />
-            <span className={styles.inputPlaceholder}>{t('Password')}</span>
+            <span className={styles.inputPlaceholder}>
+                {`${t('Password')}`}
+            </span>
             <Input
                 onChange={onChangePasswordHandler}
                 value={password}
-                placeholder={t('Password')}
+                placeholder={`${t('Password')}`}
                 type="text"
                 className={styles.input}
             />
             {error && (
                 <Text
-                    text={t('Wrong username or password')}
+                    text={`${t('Wrong username or password')}`}
                     theme={TextTheme.ERROR}
                 />
             )}
@@ -90,7 +92,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 onClick={onLoginClickHandler}
                 className={styles.loginBtn}
             >
-                {t('Log in')}
+                {`${t('Log in')}`}
             </Button>
         </div>
     );

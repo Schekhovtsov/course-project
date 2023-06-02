@@ -30,10 +30,10 @@ export const ArticleHeader = ({ className }: ArticleHeaderProps) => {
     return (
         <div className={classNames(styles.container, {}, [className])}>
             <Button onClick={onBackToArticlesList}>
-                {t('Back to articles list')}
+                {`${t('Back to articles list')}`}
             </Button>
             {canEditArticle ? (
-                <Button onClick={onToEditMode}>{t('Edit')}</Button>
+                <Button onClick={onToEditMode}>{`${t('Edit')}`}</Button>
             ) : null}
         </div>
     );

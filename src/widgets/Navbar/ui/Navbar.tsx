@@ -41,7 +41,7 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
     if (authData) {
         return (
             <div className={classNames(styles.container, {}, [className])}>
-                <span className={styles.title}>{t('Site name')}</span>
+                <span className={styles.title}>{`${t('Site name')}`}</span>
                 <Dropdown
                     items={[
                         {
@@ -70,9 +70,9 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <span className={styles.title}>{t('Site name')}</span>
+            <span className={styles.title}>{`${t('Site name')}`}</span>
             <Button onClick={openModal} theme={ButtonTheme.TEXT}>
-                {t('Log in')}
+                {`${t('Log in')}`}
             </Button>
             <LoginModal
                 isOpen={isModalOpen}

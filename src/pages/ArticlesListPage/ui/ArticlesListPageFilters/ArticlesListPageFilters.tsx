@@ -98,7 +98,7 @@ export const ArticlesListPageFilters = ({
                     <Input
                         value={search}
                         onChange={onChangeSearch}
-                        placeholder={t('Search')}
+                        placeholder={`${t('Search')}`}
                         className={styles.search}
                     />
                 </div>

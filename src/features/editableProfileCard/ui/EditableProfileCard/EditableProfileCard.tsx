@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { Loader } from 'shared/ui/Loader/Loader';
 import { classNames } from 'shared/lib/classNames';
 import { Input } from 'shared/ui/Input';
 import { Avatar } from 'shared/ui/Avatar';
@@ -15,7 +14,6 @@ import { ReducersList } from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDyn
 import { ProfilePageHeader } from '../ProfilePageHeader';
 import {
     selectError,
-    selectIsLoading,
     selectProfile,
     selectReadOnlyStatus,
     selectValidateErrors,
@@ -27,7 +25,7 @@ import styles from './EditableProfileCard.module.scss';
 
 interface editableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const reducers: ReducersList = {
@@ -37,7 +35,6 @@ const reducers: ReducersList = {
 export const EditableProfileCard = memo(
     ({ className, id }: editableProfileCardProps) => {
         const data = useSelector(selectProfile);
-        const isLoading = useSelector(selectIsLoading);
         const error = useSelector(selectError);
         const validateErrors = useSelector(selectValidateErrors);
 
@@ -78,8 +75,8 @@ export const EditableProfileCard = memo(
                     ])}
                 >
                     <Text
-                        title={t('Error')}
-                        text={t('Try to refresh page')}
+                        title={`${t('Error')}`}
+                        text={`${t('Try to refresh page')}`}
                         theme={TextTheme.ERROR}
                         data-testid="EditableProfileCard.Error"
                     />
@@ -127,27 +124,27 @@ export const EditableProfileCard = memo(
                         <VStack className={styles.form}>
                             <Input
                                 value={data?.firstName}
-                                placeholder={t('First name')}
+                                placeholder={`${t('First name')}`}
                                 disabled={disabled}
                                 onChange={onFirstNameChangeHandler}
                                 data-testid="EditableProfileCard.FirstnameInput"
                             />
                             <Input
                                 value={data?.lastName}
-                                placeholder={t('Last name')}
+                                placeholder={`${t('Last name')}`}
                                 disabled={disabled}
                                 onChange={onLastNameChangeHandler}
                                 data-testid="EditableProfileCard.LastnameInput"
                             />
                             <Input
                                 value={data?.city}
-                                placeholder={t('City')}
+                                placeholder={`${t('City')}`}
                                 disabled={disabled}
                                 onChange={onCityChangeHandler}
                             />
                             <Input
                                 value={data?.avatar}
-                                placeholder={t('Avatar')}
+                                placeholder={`${t('Avatar')}`}
                                 disabled={disabled}
                                 onChange={onAvatarChangeHandler}
                             />

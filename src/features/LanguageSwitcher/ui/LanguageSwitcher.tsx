@@ -24,8 +24,8 @@ export const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
             onClick={toggleLanguage}
             className={classNames(styles.container, {}, [className])}
             src={icon}
-            alt={t('Language')}
-            title={t('Language')}
+            alt={`${t('Language')}`}
+            title={`${t('Language')}`}
         />
     );
 });
