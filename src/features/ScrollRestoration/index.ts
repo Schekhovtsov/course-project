@@ -1,4 +1,4 @@
-export {
+export type {
     ScrollRestorationSchema,
     ScrollSchema,
 } from './model/types/ScrollRestoration';

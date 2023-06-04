@@ -1,12 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
+import { AppLinkTheme } from '../model/consts/consts';
 import styles from './AppLink.module.scss';
-
-export enum AppLinkTheme {
-    PRIMARY = 'primary',
-}
 
 interface AppLinkProps extends LinkProps {
     className?: string;

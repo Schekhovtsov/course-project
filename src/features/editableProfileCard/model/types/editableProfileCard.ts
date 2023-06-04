@@ -1,10 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Profile } from 'entities/Profile';
-
-export enum ValidateProfileErrors {
-    INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
-    SERVER_ERROR = 'SERVER_ERROR',
-}
+import { ValidateProfileErrors } from '../consts/consts';
 
 export interface ProfileSchema {
     data?: Profile | null;

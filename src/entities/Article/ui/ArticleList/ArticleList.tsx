@@ -43,7 +43,7 @@ export const ArticleList = memo(
         const virtuosoGridRef = useRef<VirtuosoGridHandle>(null);
 
         useEffect(() => {
-            const paged = sessionStorage.getItem(LS_ARTICLES_LIST_ITEM_ID) || 1;
+            const paged = sessionStorage.getItem(LS_ARTICLES_LIST_ITEM_ID) || 0;
             setSelectedArticleId(+paged);
         }, []);
 

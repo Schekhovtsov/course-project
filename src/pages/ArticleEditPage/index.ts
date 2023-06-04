@@ -1,3 +1,3 @@
 export { ArticleEditPageAsync as ArticleEditPage } from './ui/ArticleEditPage/ArticleEditPage.async';
 
-export { ArticleEditPageSchema } from './model/types/ArticleEditPage';
+export type { ArticleEditPageSchema } from './model/types/ArticleEditPage';

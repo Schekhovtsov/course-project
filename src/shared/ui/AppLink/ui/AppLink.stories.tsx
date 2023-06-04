@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { AppLink, AppLinkTheme } from './AppLink';
+import { AppLink } from './AppLink';
+import { AppLinkTheme } from '../model/consts/consts';
 
 export default {
     title: 'shared/AppLink',

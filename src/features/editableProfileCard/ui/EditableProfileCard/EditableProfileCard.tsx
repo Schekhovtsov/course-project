@@ -18,7 +18,7 @@ import {
     selectReadOnlyStatus,
     selectValidateErrors,
 } from '../../model/selector/profileSelectors';
-import { ValidateProfileErrors } from '../../model/types/editableProfileCard';
+import { ValidateProfileErrors } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import styles from './EditableProfileCard.module.scss';

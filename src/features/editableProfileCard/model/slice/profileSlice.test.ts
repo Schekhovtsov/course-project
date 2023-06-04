@@ -1,9 +1,7 @@
 import avatar from 'shared/assets/icons/test/avatar.png';
 import { updateProfileData } from '../services/updateProfileData';
-import {
-    ProfileSchema,
-    ValidateProfileErrors,
-} from '../types/editableProfileCard';
+import { ProfileSchema } from '../types/editableProfileCard';
+import { ValidateProfileErrors } from '../consts/consts';
 import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
