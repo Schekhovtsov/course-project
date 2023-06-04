@@ -5,7 +5,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal';
 import { useSelector } from 'react-redux';
 import { selectUserAuthData } from 'entities/User';
-import { LoginFormAsync } from '../../index';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 import styles from './LoginModal.module.scss';
 
 interface LoginModalProps {
