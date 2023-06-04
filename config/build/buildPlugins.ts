@@ -31,10 +31,6 @@ export function buildPlugins({
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
         }),
-        new CircularDependencyPlugin({
-            exclude: /a\.js|node_modules/,
-            failOnError: true,
-        }),
     ];
 
     if (isDev) {
@@ -52,6 +48,13 @@ export function buildPlugins({
         );
 
         plugins.push(new ReactRefreshWebpaclPlugin());
+
+        plugins.push(
+            new CircularDependencyPlugin({
+                exclude: /a\.js|node_modules/,
+                failOnError: true,
+            })
+        );
     }
 
     return plugins;
