@@ -4,7 +4,9 @@ import { classNames } from 'shared/lib/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
 import { AppLink } from 'shared/ui/AppLink';
+import { mapDirectionClass } from '../../styles/consts';
 import styles from './Dropdown.module.scss';
+import popupStyles from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -20,13 +22,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': styles.optionsBottomLeft,
-    'bottom right': styles.optionsBottomRight,
-    'top right': styles.optionsTopRight,
-    'top left': styles.optionsTopLeft,
-};
-
 export const Dropdown = ({
     className,
     items,
@@ -37,16 +32,23 @@ export const Dropdown = ({
     return (
         <Menu
             as="div"
-            className={classNames(styles.container, {}, [className])}
+            className={classNames(popupStyles.container, {}, [className])}
         >
-            <Menu.Button className={styles.button}>{trigger}</Menu.Button>
+            <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
                 {items.map((item) => {
-                    const content = ({ active }: { active: boolean }) => (
+                    const content = ({
+                        active,
+                        disabled,
+                    }: {
+                        active: boolean;
+                        disabled: boolean;
+                    }) => (
                         <button
                             type="button"
                             className={classNames(styles.item, {
-                                [styles.active]: active,
+                                [popupStyles.active]: active,
+                                [popupStyles.disabled]: disabled,
                             })}
                             onClick={item.onClick}
                         >

@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { selectUserAuthData } from 'entities/User';
 import HomeIcon from 'shared/assets/icons/home.svg';
 import AboutIcon from 'shared/assets/icons/about.svg';
-import ProfileIcon from 'shared/assets/icons/profile.svg';
+import ArticlesIcon from 'shared/assets/icons/articles.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { SidebarItemType } from '../types/sidebar';
 
@@ -26,7 +26,7 @@ export const selectSidebarItems = createSelector(
             sidebarItemsList.push({
                 path: RoutePath.articles,
                 text: 'Articles',
-                Icon: ProfileIcon,
+                Icon: ArticlesIcon,
                 authOnly: true,
             });
         }

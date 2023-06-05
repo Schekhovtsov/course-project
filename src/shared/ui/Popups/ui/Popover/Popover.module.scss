@@ -1,0 +1,8 @@
+.panel {
+    background: var(--code-background-color);
+    position: absolute;
+    z-index: 100;
+    border-radius: 10px;
+    border: 1px solid var(--button-primary-text);
+    padding: 15px;
+}

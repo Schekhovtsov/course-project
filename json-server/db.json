@@ -255,5 +255,20 @@
             "roles": ["USER"],
             "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png"
         }
+    ],
+    "notifications": [
+        {
+            "id": "1",
+            "title": "Уведомление 1",
+            "description": "Произошло событие 1",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "title": "Уведомление 2",
+            "description": "Произошло событие 2",
+            "userId": "1",
+            "href": "http://google.com"
+        }
     ]
 }

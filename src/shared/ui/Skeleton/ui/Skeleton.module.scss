@@ -1,7 +1,3 @@
 .container {
     background-color: var(--skeleton-color);
-
-    &:not(:first-child) {
-        margin-top: 10px;
-    }
 }

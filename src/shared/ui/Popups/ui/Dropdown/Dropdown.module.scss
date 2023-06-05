@@ -1,0 +1,22 @@
+.menu {
+    width: 150px;
+    background: var(--code-background-color);
+    position: absolute;
+    z-index: 100;
+    border-radius: 10px;
+    border: 1px solid var(--button-primary-text);
+    flex-direction: column;
+    display: flex;
+}
+
+.item {
+    width: 150px;
+    align-items: flex-start;
+    display: flex;
+    padding: 10px 25px;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}

@@ -61,6 +61,7 @@ module.exports = {
                     'align',
                     'gap',
                     'role',
+                    'titleSize'
                 ],
             },
         ],
