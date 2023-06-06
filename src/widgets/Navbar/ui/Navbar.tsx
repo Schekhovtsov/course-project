@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { selectUserAuthData } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo } from 'react';

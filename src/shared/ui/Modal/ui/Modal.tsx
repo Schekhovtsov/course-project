@@ -1,15 +1,15 @@
 import {
-    MouseEvent,
     ReactNode,
     useRef,
     useState,
     useEffect,
     useCallback,
-    MutableRefObject,
+    MutableRefObject
 } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { ModsType } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal';
+import { Overlay } from 'shared/ui/Overlay';
 import styles from './Modal.module.scss';
 
 interface ModalProps {
@@ -58,10 +58,6 @@ export const Modal = ({
         }, ANIMATION_DELAY);
     }, [onClose]);
 
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
-
     const mods: ModsType = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing,
@@ -93,21 +89,12 @@ export const Modal = ({
     return (
         <Portal element={document.getElementById(portalElement)}>
             <div className={classNames(styles.container, mods, [className])}>
+                <Overlay onClick={closeModalHandler} />
                 <div
-                    className={styles.overlay}
-                    onClick={closeModalHandler}
-                    role="banner"
-                    onKeyDown={() => {}}
+                    className={classNames(styles.content, mods, [])}
+                    style={{ width }}
                 >
-                    <div
-                        className={classNames(styles.content, mods, [])}
-                        style={{ width }}
-                        onClick={onContentClick}
-                        role="alertdialog"
-                        onKeyDown={() => {}}
-                    >
-                        {children}
-                    </div>
+                    {children}
                 </div>
             </div>
         </Portal>
