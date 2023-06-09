@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { Drawer } from 'shared/ui/Drawer';
 import { useCallback, useState } from 'react';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import styles from './NotificationButton.module.scss';
 
 export const NotificationButton = () => {
@@ -38,9 +39,11 @@ export const NotificationButton = () => {
 
             <MobileView>
                 {trigger}
-                <Drawer isOpen={open} onClose={toggleDrawer}>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={open} onClose={toggleDrawer}>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </>
     );
