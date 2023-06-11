@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
-import { selectUserAuthData } from '@/entities/User';
-import { LoginModal } from '@/features/AuthByUsername';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { LoginModal } from '@/features/AuthByUsername';
+import { selectUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal';
 import { Button, ButtonTheme } from '@/shared/ui/Button';

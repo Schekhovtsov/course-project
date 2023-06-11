@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames';
 import { HTMLAttributes, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 import styles from './Card.module.scss';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {

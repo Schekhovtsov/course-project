@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Text } from '@/shared/ui/Text';
-import { useSelector } from 'react-redux';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { TextTheme } from '@/shared/ui/Text/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';

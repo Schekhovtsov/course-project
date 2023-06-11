@@ -1,12 +1,12 @@
+import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { useCallback, useState } from 'react';
 import { Popover } from '@/shared/ui/Popups';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { NotificationList } from '@/entities/Notification';
-import { useTranslation } from 'react-i18next';
-import { BrowserView, MobileView } from 'react-device-detect';
 import { Drawer } from '@/shared/ui/Drawer';
-import { useCallback, useState } from 'react';
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import styles from './NotificationButton.module.scss';
 

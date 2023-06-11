@@ -1,7 +1,7 @@
+import { useParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames';
 import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { useParams } from 'react-router-dom';
 import styles from './ProfilePage.module.scss';
 
 interface ProfilePageProps {

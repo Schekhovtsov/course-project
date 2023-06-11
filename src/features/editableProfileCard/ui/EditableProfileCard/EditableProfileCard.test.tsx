@@ -1,7 +1,7 @@
-import { componentRender } from '@/shared/lib/tests/componentRender';
-import { Profile } from '@/entities/Profile';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/dom';
+import { componentRender } from '@/shared/lib/tests/componentRender';
+import { Profile } from '@/entities/Profile';
 import { api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';

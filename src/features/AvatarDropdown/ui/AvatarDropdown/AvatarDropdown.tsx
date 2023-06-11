@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
-import { useSelector } from 'react-redux';
 import {
     selectIsUserAdmin,
     selectIsUserModerator,

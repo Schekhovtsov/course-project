@@ -10,6 +10,7 @@ export const notificationSlice = createSlice({
     name: 'notification',
     initialState,
     reducers: {},
+    // eslint-disable-next-line no-unused-vars
     extraReducers: (builder) => {
         //
     },
