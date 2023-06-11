@@ -11,6 +11,16 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config.resolve!.extensions!.push('.ts', '.tsx');
 
+    config.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@/shared': path.resolve(__dirname, '..', '..', 'src', 'shared'),
+        '@/entities': path.resolve(__dirname, '..', '..', 'src', 'entities'),
+        '@/features': path.resolve(__dirname, '..', '..', 'src', 'features'),
+        '@/widgets': path.resolve(__dirname, '..', '..', 'src', 'widgets'),
+        '@/pages': path.resolve(__dirname, '..', '..', 'src', 'pages'),
+        '@/app': path.resolve(__dirname, '..', '..', 'src', 'app'),
+    };
+
     config.module!.rules = config.module!.rules!.map(
         (rule: RuleSetRule | '...') => {
             if (rule !== '...' && /svg/.test(rule.test as string)) {

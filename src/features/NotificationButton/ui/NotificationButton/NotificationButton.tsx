@@ -7,7 +7,6 @@ import NotificationIcon from '@/shared/assets/icons/notification.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { NotificationList } from '@/entities/Notification';
 import { Drawer } from '@/shared/ui/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import styles from './NotificationButton.module.scss';
 
 export const NotificationButton = () => {
@@ -32,18 +31,20 @@ export const NotificationButton = () => {
     return (
         <>
             <BrowserView>
-                <Popover direction="bottom left" trigger={trigger} className={styles.popover}>
+                <Popover
+                    direction="bottom left"
+                    trigger={trigger}
+                    className={styles.popover}
+                >
                     <NotificationList className={styles.container} />
                 </Popover>
             </BrowserView>
 
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpen={open} onClose={toggleDrawer}>
-                        <NotificationList />
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpen={open} onClose={toggleDrawer}>
+                    <NotificationList />
+                </Drawer>
             </MobileView>
         </>
     );

@@ -44,6 +44,7 @@ export default {
         '.+\\.(svg)': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '.+\\.(png)$': 'jest-transform-stub',
         axios: 'axios/dist/node/axios.cjs',
+        '^@/(.*)$': '<rootDir>src/$1',
     },
 
     // A set of global variables that need to be available in all test environments
