@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import avatar from 'shared/assets/icons/tests/avatar.png';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import avatar from '@/shared/assets/icons/tests/avatar.png';
 import ProfilePage from './ProfilePage';
 
 export default {

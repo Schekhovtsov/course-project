@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/Text';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { VStack } from 'shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { VStack } from '@/shared/ui/Stack';
 import { CommentCard } from '../../ui/CommentCard/CommentCard';
 import { CommentType } from '../../model/types/Comment';
 import styles from './CommentsList.module.scss';

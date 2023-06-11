@@ -2,7 +2,7 @@
     width: 150px;
     background: var(--code-background-color);
     position: absolute;
-    z-index: 100;
+    z-index: var(--z-index-modal);
     border-radius: 10px;
     border: 1px solid var(--button-primary-text);
     flex-direction: column;

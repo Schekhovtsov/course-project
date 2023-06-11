@@ -1,9 +1,9 @@
-import { selectUserAuthData } from 'entities/User';
+import { selectUserAuthData } from '@/entities/User';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames';
-import { AppLink } from 'shared/ui/AppLink';
+import { classNames } from '@/shared/lib/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
 import { SidebarItemType } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
 

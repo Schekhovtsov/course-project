@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 import { Menu } from '@headlessui/react';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { Fragment, ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from 'shared/ui/AppLink';
+import { DropdownDirection } from '@/shared/types/ui';
+import { AppLink } from '@/shared/ui/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import styles from './Dropdown.module.scss';
 import popupStyles from '../../styles/popup.module.scss';

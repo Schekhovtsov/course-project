@@ -1,7 +1,7 @@
 import { Popover as HeadlessPopover } from '@headlessui/react';
 import { ReactNode } from 'react';
-import { DropdownDirection } from 'shared/types/ui';
-import { classNames } from 'shared/lib/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
+import { classNames } from '@/shared/lib/classNames';
 import { mapDirectionClass } from '../../styles/consts';
 import styles from './Popover.module.scss';
 import popupStyles from '../../styles/popup.module.scss';
@@ -19,12 +19,10 @@ export const Popover = ({
     direction = 'bottom right',
     children,
 }: PopoverProps) => {
-    const panelClasses = [mapDirectionClass[direction]];
+    const panelClasses = [mapDirectionClass[direction], className];
 
     return (
-        <HeadlessPopover
-            className={classNames(popupStyles.container, {}, [className])}
-        >
+        <HeadlessPopover className={classNames(popupStyles.container, {}, [])}>
             <HeadlessPopover.Button className={popupStyles.trigger}>
                 {trigger}
             </HeadlessPopover.Button>

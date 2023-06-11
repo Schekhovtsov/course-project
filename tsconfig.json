@@ -11,7 +11,7 @@
         "allowSyntheticDefaultImports": true, // позволяет писать импорты без *.
         "baseUrl": ".",
         "paths": {
-            "*": ["./src/*"]
+            "@/*": ["./src/*"]
         },
         "strict": true,
         "isolatedModules": true

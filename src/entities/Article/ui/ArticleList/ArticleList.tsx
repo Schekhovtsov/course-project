@@ -6,9 +6,9 @@ import {
     useRef,
     useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
-import { LS_ARTICLES_LIST_ITEM_ID } from 'shared/constants/localStorage';
+import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItem.skeleton';
 import { ArticleListItem } from '../ArticleListItem';
 import { ArticleType, ArticleViewType } from '../../model/types/Article';

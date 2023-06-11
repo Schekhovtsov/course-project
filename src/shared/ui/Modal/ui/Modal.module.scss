@@ -19,6 +19,7 @@
     border-radius: 5px;
     transition: transform 0.2s;
     transform: scale(0.5);
+    z-index: var(--z-index-modal);
 }
 
 .opened {

@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { Skeleton } from 'shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { useNotifications } from '../../api/notificationApi';
 
@@ -18,7 +18,7 @@ export const NotificationList = memo(({ className }: NotificationListProps) => {
 
     if (isLoading) {
         return (
-            <VStack max>
+            <VStack max className={className}>
                 <Text title={`${t('Notifications')}`} />
                 {new Array(2).fill(true).map(() => (
                     <Skeleton height={100} width={400} />

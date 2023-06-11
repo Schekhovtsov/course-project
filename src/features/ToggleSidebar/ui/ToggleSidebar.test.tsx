@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender';
 import { ToggleSidebar } from './ToggleSidebar';
 
 describe('Toggle sidebar button', () => {

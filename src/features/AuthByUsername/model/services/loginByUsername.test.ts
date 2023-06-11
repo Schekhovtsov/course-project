@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { userActions } from 'entities/User';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
 import { loginByUsername } from '../services/loginByUsername';
 
 describe('feature/AuthByUsername/services/loginByUsername', () => {

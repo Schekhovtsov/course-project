@@ -1,6 +1,6 @@
-import { CommentsList } from 'entities/Comment';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { CommentsList } from '@/entities/Comment';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';

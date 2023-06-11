@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/Page';
+import { Page } from '@/widgets/Page';
 import styles from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {

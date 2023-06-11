@@ -1,7 +1,7 @@
-import ruFlag from 'shared/assets/icons/flags/ru.png';
-import enFlag from 'shared/assets/icons/flags/en.png';
+import ruFlag from '@/shared/assets/icons/flags/ru.png';
+import enFlag from '@/shared/assets/icons/flags/en.png';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { memo } from 'react';
 import styles from './LanguageSwitcher.module.scss';
 

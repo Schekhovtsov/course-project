@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { classNames } from '@/shared/lib/classNames';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { selectUserIsMounted, userActions } from 'entities/User';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { selectUserIsMounted, userActions } from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 

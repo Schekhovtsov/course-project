@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import ArrowRightIcon from 'shared/assets/icons/arrows/right.svg';
-import { classNames } from 'shared/lib/classNames';
+import ArrowRightIcon from '@/shared/assets/icons/arrows/right.svg';
+import { classNames } from '@/shared/lib/classNames';
 import styles from './ToggleSidebar.module.scss';
 
 interface ToggleSidebarProps {

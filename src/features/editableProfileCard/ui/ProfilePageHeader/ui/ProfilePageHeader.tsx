@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text';
-import { selectUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
+import { selectUserAuthData } from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack';
 import {
     selectProfile,
     selectReadOnlyStatus,

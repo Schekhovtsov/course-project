@@ -1,8 +1,8 @@
-import { ArticleList } from 'entities/Article';
+import { ArticleList } from '@/entities/Article';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useSearchParams } from 'react-router-dom';
 // import { rtkApi } from 'shared/api/rtkApi';
 import { getArticles } from '../../model/slice/articlesListPageSlice';

@@ -3,11 +3,11 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { ArticleType } from 'entities/Article';
-import { ArticleViewType } from 'entities/Article/model/types/Article';
-import { LS_ARTICLES_LIST_VIEW } from 'shared/constants/localStorage';
-import { SortOrder } from 'shared/lib/types';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleType } from '@/entities/Article';
+import { ArticleViewType } from '@/entities/Article/model/types/Article';
+import { LS_ARTICLES_LIST_VIEW } from '@/shared/constants/localStorage';
+import { SortOrder } from '@/shared/lib/types';
 import { fetchArticlesList } from '../services/fetchArticlesList';
 import { ArticlesListPageSchema } from '../types/articlesListPageSchema';
 

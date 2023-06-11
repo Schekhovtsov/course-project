@@ -2,8 +2,8 @@ import { memo } from 'react';
 import {
     ReducersList,
     useDynamicReducerLoader,
-} from 'shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { Page } from 'widgets/Page';
+} from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+import { Page } from '@/widgets/Page';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesListPageFilters } from '../ArticlesListPageFilters/ArticlesListPageFilters';
 import styles from './ArticlesListPage.module.scss';

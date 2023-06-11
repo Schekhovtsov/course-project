@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import { AppLinkTheme } from '../model/consts/consts';
 import styles from './AppLink.module.scss';
 

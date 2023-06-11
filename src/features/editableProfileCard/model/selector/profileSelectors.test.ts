@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import avatar from 'shared/assets/icons/tests/avatar.png';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import avatar from '@/shared/assets/icons/tests/avatar.png';
 import { ValidateProfileErrors } from '../consts/consts';
 import {
     selectError,

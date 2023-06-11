@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Profile } from 'entities/Profile';
+import { Profile } from '@/entities/Profile';
 import { ValidateProfileErrors } from '../consts/consts';
 
 export interface ProfileSchema {

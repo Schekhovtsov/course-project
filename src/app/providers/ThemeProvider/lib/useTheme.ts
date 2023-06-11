@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { LS_THEME_KEY } from 'shared/constants/localStorage';
+import { LS_THEME_KEY } from '@/shared/constants/localStorage';
 import { Theme } from '../consts/consts';
 import { ThemeContext } from './ThemeContext';
 

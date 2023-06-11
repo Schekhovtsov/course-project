@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames';
-import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
-import { ArticleViewType } from 'entities/Article/model/types/Article';
+import { classNames } from '@/shared/lib/classNames';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { SortOrder } from 'shared/lib/types';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Input } from 'shared/ui/Input';
+import { SortOrder } from '@/shared/lib/types';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 import { useTranslation } from 'react-i18next';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import { articlesListPageActions } from '../../model/slice/articlesListPageSlice';
 import {

@@ -1,4 +1,4 @@
-import avatar from 'shared/assets/icons/test/avatar.png';
+import avatar from '@/shared/assets/icons/test/avatar.png';
 import { updateProfileData } from '../services/updateProfileData';
 import { ProfileSchema } from '../types/editableProfileCard';
 import { ValidateProfileErrors } from '../consts/consts';
