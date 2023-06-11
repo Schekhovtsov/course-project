@@ -36,7 +36,7 @@ export const Dropdown = ({
         >
             <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({
                         active,
                         disabled,
@@ -50,6 +50,8 @@ export const Dropdown = ({
                                 [popupStyles.active]: active,
                                 [popupStyles.disabled]: disabled,
                             })}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
                             onClick={item.onClick}
                         >
                             {item.content}
@@ -62,6 +64,7 @@ export const Dropdown = ({
                                 as={AppLink}
                                 to={item.href}
                                 disabled={item.disabled}
+                                key={item.href}
                             >
                                 {content}
                             </Menu.Item>
@@ -69,7 +72,12 @@ export const Dropdown = ({
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            as={Fragment}
+                            disabled={item.disabled}
+                            // eslint-disable-next-line react/no-array-index-key
+                            key={index}
+                        >
                             {content}
                         </Menu.Item>
                     );
