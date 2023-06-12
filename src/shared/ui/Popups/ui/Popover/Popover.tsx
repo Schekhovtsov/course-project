@@ -23,7 +23,7 @@ export const Popover = ({
 
     return (
         <HeadlessPopover className={classNames(popupStyles.container, {}, [])}>
-            <HeadlessPopover.Button className={popupStyles.trigger}>
+            <HeadlessPopover.Button as="div" className={popupStyles.trigger}>
                 {trigger}
             </HeadlessPopover.Button>
 

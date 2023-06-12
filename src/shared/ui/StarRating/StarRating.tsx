@@ -1,0 +1,67 @@
+import { memo, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import styles from './StarRating.module.scss';
+import StarIcon from '@/shared/assets/icons/star.svg';
+import { Icon } from '@/shared/ui/Icon';
+
+interface StarRatingProps {
+    className?: string;
+    // eslint-disable-next-line no-unused-vars
+    onSelect?: (startCount: number) => void;
+    size?: number;
+    selectedStars?: number;
+}
+
+const stars = [1, 2, 3, 4, 5];
+
+export const StarRating = memo(
+    ({ className, onSelect, selectedStars, size = 50 }: StarRatingProps) => {
+        const [currentStarsCount, setCurrentStarsCount] = useState(0);
+        const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
+
+        const onHover = (starsCount: number) => () => {
+            if (!isSelected) {
+                setCurrentStarsCount(starsCount);
+            }
+        };
+
+        const onLeave = () => () => {
+            if (!isSelected) {
+                setCurrentStarsCount(0);
+            }
+        };
+
+        const onClick = (starsCount: number) => () => {
+            if (!isSelected) {
+                onSelect?.(starsCount);
+                setCurrentStarsCount(starsCount);
+                setIsSelected(true);
+            }
+        };
+
+        return (
+            <div className={classNames(styles.container, {}, [className])}>
+                {stars.map((starNumber) => (
+                    <Icon
+                        Svg={StarIcon}
+                        key={starNumber}
+                        width={size}
+                        height={size}
+                        className={classNames(
+                            styles.star,
+                            { [styles.selected]: isSelected },
+                            [
+                                currentStarsCount >= starNumber
+                                    ? styles.hovered
+                                    : styles.notHovered,
+                            ]
+                        )}
+                        onMouseLeave={onLeave}
+                        onMouseEnter={onHover(starNumber)}
+                        onClick={onClick(starNumber)}
+                    />
+                ))}
+            </div>
+        );
+    }
+);

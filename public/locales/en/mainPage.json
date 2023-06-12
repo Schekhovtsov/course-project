@@ -2,5 +2,12 @@
   "Main page": "Main page",
   "Admin panel": "Admin panel",
   "Forbidden": "Forbidden",
-  "Notifications": "Notifications"
+  "Notifications": "Notifications",
+  "aboutPage": {
+    "Rate the article": "Rate the article",
+    "Enjoyed": "Enjoyed?"
+  },
+  "Close": "Close",
+  "Sent": "Sent",
+  "Leave your messsage": "Leave your message"
 }

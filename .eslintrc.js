@@ -54,6 +54,7 @@ module.exports = {
                     'data-testid',
                     'aria-label',
                     'to',
+                    'as',
                     'view',
                     'target',
                     'direction',
@@ -61,7 +62,7 @@ module.exports = {
                     'align',
                     'gap',
                     'role',
-                    'titleSize'
+                    'titleSize',
                 ],
             },
         ],

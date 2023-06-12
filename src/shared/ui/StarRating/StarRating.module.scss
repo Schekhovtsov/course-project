@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.star {
+    fill: var(--secondary-color);
+}
+
+.notHovered {
+    fill: var(--secondary-color);
+}
+
+.hovered {
+    fill: var(--color-red);
+    cursor: pointer;
+}
+
+.selected {
+    cursor: auto;
+}
