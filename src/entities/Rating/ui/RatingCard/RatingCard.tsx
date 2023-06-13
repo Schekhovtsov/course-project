@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { ChangeEvent, memo, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import styles from './RatingCard.module.scss';
 import { Card } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
@@ -20,8 +19,9 @@ interface RatingCardProps {
     title?: string;
     feedbackTitle?: string;
     hasFeedback?: boolean;
-    onCancel?: (startCount: number) => void;
-    onAccept?: (startCount: number, feedback?: string) => void;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    rating?: number;
 }
 
 export const RatingCard = memo(
@@ -32,16 +32,16 @@ export const RatingCard = memo(
         hasFeedback,
         onAccept,
         onCancel,
+        rating = 0,
     }: RatingCardProps) => {
-        const dispatch = useAppDispatch();
         const { t } = useTranslation();
         const { closeModal, isModalOpen, openModal } = useModal();
-        const [startCount, setStartCount] = useState(0);
+        const [starsCount, setStarsCount] = useState(rating);
         const [feedback, setFeedback] = useState('');
 
         const onSelectStars = useCallback(
             (selectedStartCount: number) => {
-                setStartCount(selectedStartCount);
+                setStarsCount(selectedStartCount);
                 if (hasFeedback) {
                     openModal();
                 } else {
@@ -54,13 +54,13 @@ export const RatingCard = memo(
 
         const onAcceptHandler = useCallback(() => {
             closeModal();
-            onAccept?.(startCount, feedback);
-        }, [closeModal, feedback, onAccept, startCount]);
+            onAccept?.(starsCount, feedback);
+        }, [closeModal, feedback, onAccept, starsCount]);
 
         const onCloseHandler = useCallback(() => {
             closeModal();
-            onCancel?.(startCount);
-        }, [closeModal, onCancel, startCount]);
+            onCancel?.(starsCount);
+        }, [closeModal, onCancel, starsCount]);
 
         const modalContent = (
             <>
@@ -81,10 +81,13 @@ export const RatingCard = memo(
         );
 
         return (
-            <Card className={classNames(styles.container, {}, [className])}>
-                <VStack max>
-                    <Text title={title} />
-                    <StarRating onSelect={onSelectStars} />
+            <Card max className={classNames(styles.container, {}, [className])}>
+                <VStack className={styles.container} max>
+                    <Text title={starsCount ? 'Thank you' : title} />
+                    <StarRating
+                        selectedStars={starsCount}
+                        onSelect={onSelectStars}
+                    />
                 </VStack>
                 <BrowserView>
                     <Modal isOpen={isModalOpen} onClose={closeModal}>

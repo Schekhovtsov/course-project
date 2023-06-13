@@ -19,6 +19,7 @@ import styles from './Article.module.scss';
 import { TextBlock } from '../TextBlock/TextBlock';
 import { CodeBlock } from '../CodeBlock/CodeBlock';
 import { ImageBlock } from '../ImageBlock/ImageBlock';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleProps {
     className?: string;
@@ -73,6 +74,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
                     className={styles.mainImage}
                 />
                 {data.blocks?.map((block, index) => renderBlock(block, index))}
+                <ArticleRating articleId={data.id} />
             </VStack>
         );
     }
