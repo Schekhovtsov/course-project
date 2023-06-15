@@ -24,7 +24,6 @@ module.exports = {
         'i18next',
         'react-hooks',
         'feature-sliced-design',
-        // 'schekhovtsov-path-checker',
     ],
     rules: {
         'react/jsx-indent': 'off',
@@ -75,12 +74,21 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': ['off'],
         'no-undef': 'off',
-        // 'path-checker/path-check': 'error',
         'feature-sliced-design/relative-path-within-slice': [
             'error',
             { alias: '@' },
         ],
-        // 'schekhovtsov-path-checker/path-check': 2,
+        // 'feature-sliced-design/public-api-slice-import': [
+        //     'warn',
+        //     {
+        //         alias: '@',
+        //         testFiles: [
+        //             '**/*.test.ts',
+        //             '**/*.test.tsx',
+        //             '**/StoreDecorator.tsx',
+        //         ],
+        //     },
+        // ],
     },
     globals: {
         __IS_DEV__: true,

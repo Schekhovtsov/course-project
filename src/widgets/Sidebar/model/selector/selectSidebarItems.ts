@@ -3,8 +3,8 @@ import { selectUserAuthData } from '@/entities/User';
 import HomeIcon from '@/shared/assets/icons/home.svg';
 import AboutIcon from '@/shared/assets/icons/about.svg';
 import ArticlesIcon from '@/shared/assets/icons/articles.svg';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { SidebarItemType } from '../types/sidebar';
+import { RoutePath } from '@/shared/constants/router';
 
 export const selectSidebarItems = createSelector(
     selectUserAuthData,

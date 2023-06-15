@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {
-    AppRouteProps,
-    routeConfig,
-} from '@/shared/config/routeConfig/routeConfig';
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { RequireAuth } from './RequireAuth';
+import { AppRouteProps } from '@/shared/types/router';
+import { routerConfig } from '../config/routerConfig';
 
 export const AppRouter = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
@@ -29,5 +27,7 @@ export const AppRouter = memo(() => {
         );
     }, []);
 
-    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
+    return (
+        <Routes>{Object.values(routerConfig).map(renderWithWrapper)}</Routes>
+    );
 });

@@ -9,7 +9,7 @@ import {
     userActions,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/constants/router';
 
 export const AvatarDropdown = () => {
     const { t } = useTranslation();
