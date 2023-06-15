@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { CommentsList } from './CommentsList';
 
 export default {
-    title: 'entity/Comment/CommentsList',
+    title: 'entities/Comment/CommentsList',
     component: CommentsList,
 } as ComponentMeta<typeof CommentsList>;
 

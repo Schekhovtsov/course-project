@@ -4,7 +4,7 @@ import { ArticleType } from '../../../Article';
 import { ArticleList } from './ArticleList';
 
 export default {
-    title: 'entity/Article/ArticleList',
+    title: 'entities/Article/ArticleList',
     component: ArticleList,
 } as ComponentMeta<typeof ArticleList>;
 

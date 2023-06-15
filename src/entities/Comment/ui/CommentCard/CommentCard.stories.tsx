@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { CommentCard } from './CommentCard';
 
 export default {
-    title: 'entity/Comment/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
 } as ComponentMeta<typeof CommentCard>;
 

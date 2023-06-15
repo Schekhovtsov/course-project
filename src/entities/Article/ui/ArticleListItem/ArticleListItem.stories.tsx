@@ -4,7 +4,7 @@ import { ArticleType } from '../../model/types/Article';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
-    title: 'entity/Article/ArticleListItem',
+    title: 'entities/Article/ArticleListItem',
     component: ArticleListItem,
 } as ComponentMeta<typeof ArticleListItem>;
 

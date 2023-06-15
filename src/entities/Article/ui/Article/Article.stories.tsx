@@ -3,7 +3,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { Article } from './Article';
 
 export default {
-    title: 'entity/Article',
+    title: 'entities/Article',
     component: Article,
 } as ComponentMeta<typeof Article>;
 
