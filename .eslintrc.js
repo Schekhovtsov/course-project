@@ -76,7 +76,10 @@ module.exports = {
         'no-param-reassign': ['off'],
         'no-undef': 'off',
         // 'path-checker/path-check': 'error',
-        'feature-sliced-design/relative-path-within-slice': 2,
+        'feature-sliced-design/relative-path-within-slice': [
+            'error',
+            { alias: '@' },
+        ],
         // 'schekhovtsov-path-checker/path-check': 2,
     },
     globals: {
