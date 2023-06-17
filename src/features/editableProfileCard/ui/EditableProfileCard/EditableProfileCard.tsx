@@ -2,17 +2,19 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { ProfilePageHeader } from '../ProfilePageHeader';
+import { ValidateProfileErrors } from '../../model/consts/consts';
 import {
     selectError,
     selectProfile,
     selectReadOnlyStatus,
     selectValidateErrors,
 } from '../../model/selector/profileSelectors';
-import { ValidateProfileErrors } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
+import { ProfilePageHeader } from '../ProfilePageHeader';
+
 import styles from './EditableProfileCard.module.scss';
+
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
