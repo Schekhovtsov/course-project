@@ -24,6 +24,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'feature-sliced-design',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': 'off',
@@ -81,6 +82,17 @@ module.exports = {
         'feature-sliced-design/layers-hierarchy': [
             'error',
             { alias: '@', ignoredImports: ['**/StoreProvider'] },
+        ],
+        'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+            'warn',
+            {
+                vars: 'all',
+                varsIgnorePattern: '^_',
+                args: 'after-used',
+                argsIgnorePattern: '^_',
+            },
         ],
         // 'feature-sliced-design/public-api-slice-import': [
         //     'warn',

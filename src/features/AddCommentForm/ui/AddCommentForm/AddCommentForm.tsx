@@ -12,10 +12,7 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
-import {
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from '../../model/selector/addCommentFormSelector';
+import { getAddCommentFormText } from '../../model/selector/addCommentFormSelector';
 import styles from './AddCommentForm.module.scss';
 
 interface AddCommentFormProps {
@@ -33,8 +30,6 @@ const AddCommentForm = memo(
         const dispatch = useAppDispatch();
         const { t } = useTranslation();
         const text = useSelector(getAddCommentFormText);
-        // eslint-disable-next-line no-unused-vars
-        const error = useSelector(getAddCommentFormError);
 
         useDynamicReducerLoader(reducers);
 

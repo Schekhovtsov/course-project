@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import { RouteProps } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { Page404 } from '@/pages/Page404';

@@ -1,7 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Text } from '@/shared/ui/Text';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -27,8 +26,6 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(
     ({ className, article, view, target, index }: ArticleListItemProps) => {
-        // eslint-disable-next-line no-unused-vars
-        const dispatch = useAppDispatch();
         const { t } = useTranslation('articlePage');
 
         const handleOpenArticle = () => {

@@ -13,6 +13,6 @@ export const rtkApi = createApi({
             return headers;
         },
     }),
-    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
     endpoints: (builder) => ({}),
 });
