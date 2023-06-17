@@ -1,24 +1,27 @@
 /* eslint-disable indent */
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text } from '@/shared/ui/Text';
-import { TextTheme } from '@/shared/ui/Text/ui/Text';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { VStack } from '@/shared/ui/Stack';
-import { ArticleBlock } from '../../model/types/Article';
+
 import {
     selectArticle,
     selectError,
     selectIsLoading,
 } from '../../model/selector/articleSelectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
-import styles from './Article.module.scss';
-import { TextBlock } from '../TextBlock/TextBlock';
+import { ArticleBlock } from '../../model/types/Article';
 import { CodeBlock } from '../CodeBlock/CodeBlock';
 import { ImageBlock } from '../ImageBlock/ImageBlock';
+import { TextBlock } from '../TextBlock/TextBlock';
+
+import styles from './Article.module.scss';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { TextTheme } from '@/shared/ui/Text/ui/Text';
 
 interface ArticleProps {
     className?: string;

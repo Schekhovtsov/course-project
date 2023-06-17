@@ -4,12 +4,14 @@ import {
     Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { userReducer } from '@/entities/User';
-import { api } from '@/shared/api/api';
-import { scrollRestorationReducer } from '@/features/ScrollRestoration';
-import { rtkApi } from '@/shared/api/rtkApi';
+
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
+
+import { userReducer } from '@/entities/User';
+import { scrollRestorationReducer } from '@/features/ScrollRestoration';
+import { api } from '@/shared/api/api';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
     initialState?: StateSchema,

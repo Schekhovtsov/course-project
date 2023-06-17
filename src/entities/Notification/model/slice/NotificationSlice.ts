@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { NotificationSchema } from '../types/notification';
 
 const initialState: NotificationSchema = {

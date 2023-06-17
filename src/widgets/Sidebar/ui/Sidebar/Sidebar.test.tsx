@@ -1,6 +1,8 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { componentRender } from '@/shared/lib/tests/componentRender';
+
 import { Sidebar } from './Sidebar';
+
+import { componentRender } from '@/shared/lib/tests/componentRender';
 
 describe('Sidebar', () => {
     test('Проверяет, отображается ли сайдбар на экране', () => {

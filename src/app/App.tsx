@@ -1,11 +1,13 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
+import { AppRouter } from './providers/router';
+
+import { selectUserIsMounted, userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { selectUserIsMounted, userActions } from '@/entities/User';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { AppRouter } from './providers/router';
 
 function App() {
     const dispatch = useAppDispatch();

@@ -7,12 +7,15 @@ import {
     useState,
 } from 'react';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItem.skeleton';
-import { ArticleListItem } from '../ArticleListItem';
+
 import { ArticleType, ArticleViewType } from '../../model/types/Article';
+import { ArticleListItem } from '../ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItem.skeleton';
+
 import styles from './ArticleList.module.scss';
+
+import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleListProps {
     className?: string;

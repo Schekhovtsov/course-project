@@ -1,8 +1,10 @@
 import { memo } from 'react';
-import { useTheme } from '@/shared/lib/hooks/useTheme';
+
+import styles from './ThemeSwitcher.module.scss';
+
 import ChangeThemeIcon from '@/shared/assets/icons/changeThemeIcon.svg';
 import { classNames } from '@/shared/lib/classNames';
-import styles from './ThemeSwitcher.module.scss';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 
 interface ThemeSwitcherProps {
     className?: string;

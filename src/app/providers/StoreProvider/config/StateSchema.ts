@@ -7,12 +7,13 @@ import {
     CombinedState,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+
 import { ArticleSchema } from '@/entities/Article';
 import { UserSchema } from '@/entities/User';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
 import { LoginSchema } from '@/features/AuthByUsername/model/types/loginSchema';
-import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { ProfileSchema } from '@/features/editableProfileCard';
+import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { ArticlesListPageSchema } from '@/pages/ArticlesListPage';
 import { rtkApi } from '@/shared/api/rtkApi';

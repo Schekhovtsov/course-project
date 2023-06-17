@@ -1,13 +1,15 @@
-import { useTranslation } from 'react-i18next';
-import { BrowserView, MobileView } from 'react-device-detect';
 import { useCallback, useState } from 'react';
-import { Popover } from '@/shared/ui/Popups';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import NotificationIcon from '@/shared/assets/icons/notification.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { NotificationList } from '@/entities/Notification';
-import { Drawer } from '@/shared/ui/Drawer';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { useTranslation } from 'react-i18next';
+
 import styles from './NotificationButton.module.scss';
+
+import { NotificationList } from '@/entities/Notification';
+import NotificationIcon from '@/shared/assets/icons/notification.svg';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Icon } from '@/shared/ui/Icon';
+import { Popover } from '@/shared/ui/Popups';
 
 export const NotificationButton = () => {
     const { t } = useTranslation();

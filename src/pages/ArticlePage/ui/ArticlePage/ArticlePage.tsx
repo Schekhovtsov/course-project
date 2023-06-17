@@ -1,13 +1,15 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { articlePageReducer } from '../../model/slice';
+import { ArticleComments } from '../ArticleComments/ArticleComments';
+import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
+
 import { Article, articleReducer } from '@/entities/Article';
+import { ArticleRating } from '@/features/ArticleRating';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { Page } from '@/widgets/Page';
-import { ArticleComments } from '../ArticleComments/ArticleComments';
-import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
-import { articlePageReducer } from '../../model/slice';
-import { ArticleRating } from '@/features/ArticleRating';
 
 const reducers: ReducersList = {
     article: articleReducer,

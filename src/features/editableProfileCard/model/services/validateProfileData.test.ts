@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
-import avatar from '@/shared/assets/icons/test/avatar.png';
 import { ValidateProfileErrors } from '../consts/consts';
+
 import { validateProfileData } from './validateProfileData';
+
+import avatar from '@/shared/assets/icons/test/avatar.png';
 
 const data = {
     id: '1',

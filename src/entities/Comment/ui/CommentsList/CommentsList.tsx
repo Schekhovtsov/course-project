@@ -1,6 +1,8 @@
-import { CommentCard } from '../../ui/CommentCard/CommentCard';
 import { CommentType } from '../../model/types/Comment';
+import { CommentCard } from '../../ui/CommentCard/CommentCard';
+
 import styles from './CommentsList.module.scss';
+
 import { VStack } from '@/shared/ui/Stack';
 
 interface CommentsListProps {

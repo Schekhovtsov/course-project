@@ -1,8 +1,10 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RatingCard } from '@/entities/Rating';
+
 import { useArticlesRating, useRateArticle } from '../../api/articleRatingApi';
+
+import { RatingCard } from '@/entities/Rating';
 import { selectUserAuthData } from '@/entities/User/model/selectors/userSelector';
 import { Skeleton } from '@/shared/ui/Skeleton';
 

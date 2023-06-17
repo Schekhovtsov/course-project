@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { MainPage } from '@/pages/MainPage';
+import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlePage } from '@/pages/ArticlePage';
+import { ArticlesListPage } from '@/pages/ArticlesListPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
 import { Page404 } from '@/pages/Page404';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { ArticlesListPage } from '@/pages/ArticlesListPage';
-import { ArticlePage } from '@/pages/ArticlePage';
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
-import { AdminPanelPage } from '@/pages/AdminPanelPage';
-import { UserRole } from '@/entities/User';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { AppRoutes, RoutePath } from '@/shared/constants/router';
 import { AppRouteProps } from '@/shared/types/router';
 

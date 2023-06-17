@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'eslint:recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -25,6 +26,7 @@ module.exports = {
         'react-hooks',
         'feature-sliced-design',
         'unused-imports',
+        'import',
     ],
     rules: {
         'react/jsx-indent': 'off',
@@ -36,7 +38,6 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',
@@ -92,6 +93,38 @@ module.exports = {
                 varsIgnorePattern: '^_',
                 args: 'after-used',
                 argsIgnorePattern: '^_',
+            },
+        ],
+        'import/order': [
+            'error',
+            {
+                'newlines-between': 'always',
+                pathGroups: [
+                    {
+                        pattern: 'react',
+                        group: 'builtin',
+                        position: 'after',
+                    },
+                    {
+                        pattern: '@adept/**',
+                        group: 'external',
+                        position: 'after',
+                    },
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                    },
+                    {
+                        pattern: '**.module.scss',
+                        group: 'internal',
+                        position: 'before',
+                    },
+                ],
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: true,
+                },
+                distinctGroup: false,
             },
         ],
         // 'feature-sliced-design/public-api-slice-import': [

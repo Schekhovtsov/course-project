@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { ArticleEditPageSchema } from '../types/ArticleEditPage';
 
 const initialState: ArticleEditPageSchema = {

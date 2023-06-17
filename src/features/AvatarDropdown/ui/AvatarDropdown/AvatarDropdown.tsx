@@ -1,15 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Dropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar';
+
 import {
     selectIsUserAdmin,
     selectIsUserModerator,
     selectUserAuthData,
     userActions,
 } from '@/entities/User';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { RoutePath } from '@/shared/constants/router';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
 
 export const AvatarDropdown = () => {
     const { t } = useTranslation();

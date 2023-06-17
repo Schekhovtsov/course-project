@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
+import { ValidateProfileErrors } from '../consts/consts';
+
+import { updateProfileData } from './updateProfileData';
+
 import avatar from '@/shared/assets/icons/test/avatar.png';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
-import { ValidateProfileErrors } from '../consts/consts';
-import { updateProfileData } from './updateProfileData';
 
 const data = {
     id: '1',

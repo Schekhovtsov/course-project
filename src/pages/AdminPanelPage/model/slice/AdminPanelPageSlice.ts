@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { AdminPanelPageSchema } from '../types/AdminPanelPage';
 
 const initialState: AdminPanelPageSchema = {

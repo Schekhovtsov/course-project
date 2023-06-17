@@ -1,10 +1,11 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
 import {
     selectError,
     selectIsLoading,
     selectUsername,
     selectPassword,
 } from './loginSelectors';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('loginSelectors', () => {
     test('SelectError: Должен вернуть ошибку', () => {

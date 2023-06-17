@@ -5,8 +5,10 @@ import {
     useEffect,
     useRef,
 } from 'react';
-import { classNames } from '@/shared/lib/classNames';
+
 import styles from './Input.module.scss';
+
+import { classNames } from '@/shared/lib/classNames';
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
