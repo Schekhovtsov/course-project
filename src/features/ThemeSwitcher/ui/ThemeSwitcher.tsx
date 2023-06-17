@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 import ChangeThemeIcon from '@/shared/assets/icons/changeThemeIcon.svg';
 import { classNames } from '@/shared/lib/classNames';
 import styles from './ThemeSwitcher.module.scss';

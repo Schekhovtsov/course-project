@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
-import { LS_THEME_KEY } from '@/shared/constants/localStorage';
-import { Theme } from '../consts/consts';
-import { ThemeContext } from './ThemeContext';
+import { LS_THEME_KEY } from '../../../constants/localStorage';
+import { Theme } from '../../../constants/theme';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 
 export type useThemeType = {
     theme: Theme;

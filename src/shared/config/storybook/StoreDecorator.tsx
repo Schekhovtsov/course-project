@@ -1,3 +1,4 @@
+/* eslint-disable feature-sliced-design/layers-hierarchy */
 /* eslint-disable indent */
 /* eslint-disable react/jsx-indent */
 import { Story } from '@storybook/react';

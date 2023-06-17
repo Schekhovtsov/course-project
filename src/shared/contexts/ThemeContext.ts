@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { createContext } from 'react';
-import { Theme } from '../consts/consts';
+import { Theme } from '../constants/theme';
 
 export type ThemeContextProps = {
     theme?: Theme;

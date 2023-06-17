@@ -1,17 +1,23 @@
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CommentsList } from '@/entities/Comment';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articlePageCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import styles from './ArticleComments.module.scss';
 
 interface ArticleCommentsProps {
     id?: string;
 }
 
 export const ArticleComments = ({ id }: ArticleCommentsProps) => {
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
@@ -27,5 +33,22 @@ export const ArticleComments = ({ id }: ArticleCommentsProps) => {
         [dispatch]
     );
 
-    return <CommentsList comments={comments} onSendComment={onSendComment} />;
+    return comments?.length ? (
+        <VStack max gap={10}>
+            <Text
+                title={`${t('Comments')}`}
+                className={styles.commentsHeader}
+            />
+            <AddCommentForm onSendComment={onSendComment} />
+            <CommentsList comments={comments} />
+        </VStack>
+    ) : (
+        <VStack max gap={10}>
+            <Text
+                title={`${t('Comments')}`}
+                className={styles.commentsHeader}
+            />
+            <Text text={`${t('There is no comments yet')}`} />
+        </VStack>
+    );
 };

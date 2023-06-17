@@ -7,6 +7,7 @@ import { Page } from '@/widgets/Page';
 import { ArticleComments } from '../ArticleComments/ArticleComments';
 import { ArticleHeader } from '../ArticleHeader/ArticleHeader';
 import { articlePageReducer } from '../../model/slice';
+import { ArticleRating } from '@/features/ArticleRating';
 
 const reducers: ReducersList = {
     article: articleReducer,
@@ -15,13 +16,17 @@ const reducers: ReducersList = {
 
 const ArticlePage = () => {
     const { id } = useParams<{ id: string }>();
-
     useDynamicReducerLoader(reducers, false);
+
+    if (!id) {
+        return null;
+    }
 
     return (
         <Page>
             <ArticleHeader />
             <Article id={id} />
+            <ArticleRating articleId={id} />
             <ArticleComments id={id} />
         </Page>
     );

@@ -78,6 +78,10 @@ module.exports = {
             'error',
             { alias: '@' },
         ],
+        'feature-sliced-design/layers-hierarchy': [
+            'error',
+            { alias: '@', ignoredImports: ['**/StoreProvider'] },
+        ],
         // 'feature-sliced-design/public-api-slice-import': [
         //     'warn',
         //     {
