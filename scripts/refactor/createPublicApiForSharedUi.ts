@@ -28,9 +28,10 @@ function isAbsolute(value: string) {
 componentsDirs?.forEach((directory) => {
     const indexFilePath = `${directory.getPath()}/index.ts`;
     const indexFile = directory.getSourceFile(indexFilePath);
+    const moduleNamePath = directory.getBaseName();
 
     if (!indexFile) {
-        const sourceCode = `export * from './${directory.getBaseName()}';\n`;
+        const sourceCode = `export { ${moduleNamePath} } from './${moduleNamePath}';\n`;
         const file = directory.createSourceFile(indexFilePath, sourceCode, {
             overwrite: true,
         });
