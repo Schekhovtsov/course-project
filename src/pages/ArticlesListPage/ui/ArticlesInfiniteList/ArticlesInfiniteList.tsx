@@ -1,6 +1,9 @@
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+import { ArticleList } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 
 import {
     selectArticlesListPageIsLoading,
@@ -9,10 +12,6 @@ import {
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage';
 import { getArticles } from '../../model/slice/articlesListPageSlice';
-
-import { ArticleList } from '@/entities/Article';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 // import { rtkApi } from 'shared/api/rtkApi';
 
 // const articlesApi = rtkApi.injectEndpoints({

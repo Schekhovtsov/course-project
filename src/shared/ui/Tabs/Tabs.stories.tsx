@@ -1,9 +1,8 @@
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { action } from '@storybook/addon-actions';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Tabs } from './Tabs';
-
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 export default {
     title: 'shared/Tabs',

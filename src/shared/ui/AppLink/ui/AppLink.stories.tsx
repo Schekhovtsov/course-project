@@ -1,7 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AppLinkTheme } from '../model/consts/consts';
-
 import { AppLink } from './AppLink';
 
 export default {

@@ -1,16 +1,15 @@
 import { memo } from 'react';
+import {
+    ReducersList,
+    useDynamicReducerLoader,
+} from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+import { Page } from '@/widgets/Page';
 
 import { articlesListPageReducer } from '../../model/slice/articlesListPageSlice';
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesListPageFilters } from '../ArticlesListPageFilters/ArticlesListPageFilters';
 
 import styles from './ArticlesListPage.module.scss';
-
-import {
-    ReducersList,
-    useDynamicReducerLoader,
-} from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { Page } from '@/widgets/Page';
 
 const reducers: ReducersList = {
     articlesListPage: articlesListPageReducer,

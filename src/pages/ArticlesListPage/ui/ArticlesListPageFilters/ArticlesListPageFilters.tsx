@@ -1,6 +1,15 @@
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { ArticleViewType } from '@/entities/Article/model/types/Article';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { SortOrder } from '@/shared/lib/types';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 
 import {
     selectArticlesListPageSearch,
@@ -12,16 +21,6 @@ import { fetchArticlesList } from '../../model/services/fetchArticlesList';
 import { articlesListPageActions } from '../../model/slice/articlesListPageSlice';
 
 import styles from './ArticlesListPageFilters.module.scss';
-
-import { ArticleViewType } from '@/entities/Article/model/types/Article';
-import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
-import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
-import { classNames } from '@/shared/lib/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce';
-import { SortOrder } from '@/shared/lib/types';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
 
 interface ArticlesListPageFiltersProps {
     className?: string;

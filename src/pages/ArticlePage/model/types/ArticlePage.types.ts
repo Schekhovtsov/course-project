@@ -1,7 +1,6 @@
-import { EntityState } from '@reduxjs/toolkit';
-
 import { ArticleType } from '@/entities/Article';
 import { CommentType } from '@/entities/Comment';
+import { EntityState } from '@reduxjs/toolkit';
 
 export interface ArticlePageCommentsSchema extends EntityState<CommentType> {
     isLoading?: boolean;

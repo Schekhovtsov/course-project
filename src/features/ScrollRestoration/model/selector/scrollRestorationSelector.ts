@@ -1,6 +1,5 @@
-import { createSelector } from '@reduxjs/toolkit';
-
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { createSelector } from '@reduxjs/toolkit';
 
 export const selectPageScroll = (state: StateSchema) => state.scrollRestoration.scroll;
 

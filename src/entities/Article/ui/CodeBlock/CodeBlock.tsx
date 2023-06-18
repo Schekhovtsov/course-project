@@ -1,8 +1,7 @@
 import { memo } from 'react';
+import { Code } from '@/shared/ui/Code';
 
 import { ArticleCodeBlock } from '../../model/types/Article';
-
-import { Code } from '@/shared/ui/Code';
 
 interface CodeBlockProps {
     className?: string;

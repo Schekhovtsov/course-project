@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Tabs } from '@/shared/ui/Tabs';
 import { TabItem } from '@/shared/ui/Tabs/Tabs';
 

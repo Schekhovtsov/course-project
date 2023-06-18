@@ -1,6 +1,6 @@
-import { selectArticle } from './articleSelectors';
-
 import { StateSchema } from '@/app/providers/StoreProvider';
+
+import { selectArticle } from './articleSelectors';
 
 describe('articleSelectors', () => {
     test('selectArticle: Должен вернуть данные', () => {

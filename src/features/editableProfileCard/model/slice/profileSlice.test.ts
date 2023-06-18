@@ -1,10 +1,9 @@
+import avatar from '@/shared/assets/icons/test/avatar.png';
+
 import { ValidateProfileErrors } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData';
 import { ProfileSchema } from '../types/editableProfileCard';
-
 import { profileActions, profileReducer } from './profileSlice';
-
-import avatar from '@/shared/assets/icons/test/avatar.png';
 
 const data = {
     firstName: 'John',

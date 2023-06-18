@@ -1,9 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { SidebarItem } from './SidebarItem';
-
 import HomeIcon from '@/shared/assets/icons/home.svg';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { SidebarItem } from './SidebarItem';
 
 export default {
     title: 'widget/SidebarItem',

@@ -1,13 +1,4 @@
 /* eslint-disable no-unused-vars */
-import {
-    AnyAction,
-    EnhancedStore,
-    ReducersMapObject,
-    Reducer,
-    CombinedState,
-} from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
-
 import { ArticleSchema } from '@/entities/Article';
 import { UserSchema } from '@/entities/User';
 import { AddCommentFormSchema } from '@/features/AddCommentForm';
@@ -17,6 +8,15 @@ import { ScrollRestorationSchema } from '@/features/ScrollRestoration';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { ArticlesListPageSchema } from '@/pages/ArticlesListPage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import {
+    AnyAction,
+    CombinedState,
+    EnhancedStore,
+    Reducer,
+    ReducersMapObject,
+} from '@reduxjs/toolkit';
+
+import { AxiosInstance } from 'axios';
 
 export interface StateSchema {
     user: UserSchema;

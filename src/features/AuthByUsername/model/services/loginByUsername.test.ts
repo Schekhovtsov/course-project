@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { loginByUsername } from '../services/loginByUsername';
-
 import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
+
+import { loginByUsername } from '../services/loginByUsername';
 
 describe('feature/AuthByUsername/services/loginByUsername', () => {
     const userValue = { username: '123', id: '1' };

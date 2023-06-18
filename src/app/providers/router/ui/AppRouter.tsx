@@ -1,13 +1,11 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
-import { routerConfig } from '../config/routerConfig';
-
-import { RequireAuth } from './RequireAuth';
-
 import { AppRouteProps } from '@/shared/types/router';
 import { Loader } from '@/shared/ui/Loader/Loader';
+
+import { routerConfig } from '../config/routerConfig';
+import { RequireAuth } from './RequireAuth';
 
 export const AppRouter = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {

@@ -1,9 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import ProfilePage from './ProfilePage';
-
 import avatar from '@/shared/assets/icons/tests/avatar.png';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import ProfilePage from './ProfilePage';
 
 export default {
     title: 'page/Profile',

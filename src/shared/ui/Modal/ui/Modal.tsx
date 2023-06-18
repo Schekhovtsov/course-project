@@ -1,12 +1,11 @@
 import { ReactNode } from 'react';
-
-import styles from './Modal.module.scss';
-
 import { classNames } from '@/shared/lib/classNames';
 import { ModsType } from '@/shared/lib/classNames/classNames';
 import { useUlbiModal } from '@/shared/lib/hooks/useUlbiModal';
 import { Overlay } from '@/shared/ui/Overlay';
 import { Portal } from '@/shared/ui/Portal';
+
+import styles from './Modal.module.scss';
 
 interface ModalProps {
     isOpen: boolean;

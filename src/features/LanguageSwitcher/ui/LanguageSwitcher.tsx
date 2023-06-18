@@ -1,11 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import styles from './LanguageSwitcher.module.scss';
-
 import enFlag from '@/shared/assets/icons/flags/en.png';
 import ruFlag from '@/shared/assets/icons/flags/ru.png';
 import { classNames } from '@/shared/lib/classNames';
+
+import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
     className?: string;

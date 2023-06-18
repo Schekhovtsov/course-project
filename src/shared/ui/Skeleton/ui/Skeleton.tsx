@@ -1,8 +1,7 @@
 import { CSSProperties } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 
 import styles from './Skeleton.module.scss';
-
-import { classNames } from '@/shared/lib/classNames';
 
 interface SkeletonProps {
     className?: string;

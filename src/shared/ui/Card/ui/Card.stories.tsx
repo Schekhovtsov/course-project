@@ -1,9 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Text } from '@/shared/ui/Text';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Card } from './Card';
-
-import { Text } from '@/shared/ui/Text';
 
 export default {
     title: 'shared/Card',

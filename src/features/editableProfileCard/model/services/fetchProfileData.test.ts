@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import { fetchProfileData } from './fetchProfileData';
-
 import avatar from '@/shared/assets/icons/test/avatar.png';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
+
+import { fetchProfileData } from './fetchProfileData';
 
 const data = {
     id: '1',

@@ -1,6 +1,15 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
+import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Input } from '@/shared/ui/Input';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 import { ValidateProfileErrors } from '../../model/consts/consts';
 import {
@@ -14,17 +23,6 @@ import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ProfilePageHeader } from '../ProfilePageHeader';
 
 import styles from './EditableProfileCard.module.scss';
-
-import { classNames } from '@/shared/lib/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
-import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Input } from '@/shared/ui/Input';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
-import { TextTheme } from '@/shared/ui/Text/ui/Text';
 
 interface editableProfileCardProps {
     className?: string;

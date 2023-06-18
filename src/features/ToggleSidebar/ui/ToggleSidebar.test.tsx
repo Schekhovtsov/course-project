@@ -1,8 +1,7 @@
+import { componentRender } from '@/shared/lib/tests/componentRender';
 import { screen } from '@testing-library/react';
 
 import { ToggleSidebar } from './ToggleSidebar';
-
-import { componentRender } from '@/shared/lib/tests/componentRender';
 
 describe('Toggle sidebar button', () => {
     test('Проверяет, отображается ли toggle sidebar на экране', () => {

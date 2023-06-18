@@ -1,9 +1,8 @@
 import { CSSProperties, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import styles from './Avatar.module.scss';
-
-import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface AvatarProps {
     className?: string;

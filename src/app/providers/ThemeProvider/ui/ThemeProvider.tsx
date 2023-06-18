@@ -1,5 +1,4 @@
-import { useState, useMemo, ReactNode } from 'react';
-
+import { ReactNode, useMemo, useState } from 'react';
 import { LS_THEME_KEY } from '@/shared/constants/localStorage';
 import { Theme } from '@/shared/constants/theme';
 import { ThemeContext } from '@/shared/contexts/ThemeContext';

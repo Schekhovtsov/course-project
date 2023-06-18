@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames';
 
 import styles from './Text.module.scss';
-
-import { classNames } from '@/shared/lib/classNames';
 
 export enum TextTheme {
     PRIMARY = 'primary',

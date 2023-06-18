@@ -1,8 +1,8 @@
-import styles from './ArticleViewSwitcher.module.scss';
-
 import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
+
+import styles from './ArticleViewSwitcher.module.scss';
 
 interface ArticleViewSwitcherProps {
     className?: string;

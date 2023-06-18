@@ -26,7 +26,7 @@ module.exports = {
         'react-hooks',
         'feature-sliced-design',
         'unused-imports',
-        'import',
+        'simple-import-sort',
     ],
     rules: {
         'react/jsx-indent': 'off',
@@ -84,49 +84,7 @@ module.exports = {
             'error',
             { alias: '@', ignoredImports: ['**/StoreProvider'] },
         ],
-        'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
-        'unused-imports/no-unused-imports': 'error',
-        'unused-imports/no-unused-vars': [
-            'warn',
-            {
-                vars: 'all',
-                varsIgnorePattern: '^_',
-                args: 'after-used',
-                argsIgnorePattern: '^_',
-            },
-        ],
-        'import/order': [
-            'error',
-            {
-                'newlines-between': 'always',
-                pathGroups: [
-                    {
-                        pattern: 'react',
-                        group: 'builtin',
-                        position: 'after',
-                    },
-                    {
-                        pattern: '@adept/**',
-                        group: 'external',
-                        position: 'after',
-                    },
-                    {
-                        pattern: '@/**',
-                        group: 'internal',
-                    },
-                    {
-                        pattern: '**.module.scss',
-                        group: 'internal',
-                        position: 'before',
-                    },
-                ],
-                alphabetize: {
-                    order: 'asc',
-                    caseInsensitive: true,
-                },
-                distinctGroup: false,
-            },
-        ],
+
         // 'feature-sliced-design/public-api-slice-import': [
         //     'warn',
         //     {
@@ -138,6 +96,29 @@ module.exports = {
         //         ],
         //     },
         // ],
+        // 'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
+        // 'unused-imports/no-unused-imports': 'error',
+        // 'unused-imports/no-unused-vars': [
+        //     'warn',
+        //     {
+        //         vars: 'all',
+        //         varsIgnorePattern: '^_',
+        //         args: 'after-used',
+        //         argsIgnorePattern: '^_',
+        //     },
+        // ],
+        'import/order': 'off',
+        'simple-import-sort/imports': [
+            'error',
+            {
+                groups: [
+                    ['^react', '^@/?\\w'],
+                    ['^'],
+                    ['^\\.'],
+                    ['.module.scss'],
+                ],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
