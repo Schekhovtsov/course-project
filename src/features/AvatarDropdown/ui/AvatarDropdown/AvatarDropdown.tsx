@@ -6,7 +6,7 @@ import {
     selectUserAuthData,
     userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/constants/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
@@ -34,13 +34,13 @@ export const AvatarDropdown = () => {
             items={[
                 {
                     content: t('Profile'),
-                    href: RoutePath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                 },
                 ...(isAdminPanelAvailable
                     ? [
                           {
                               content: t('Admin panel'),
-                              href: RoutePath.admin_panel,
+                              href: getRouteAdmin(),
                           },
                       ]
                     : []),

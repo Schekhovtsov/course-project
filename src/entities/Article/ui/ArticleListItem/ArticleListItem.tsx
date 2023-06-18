@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
-import { RoutePath } from '@/shared/constants/router';
+import { getRouteArticle } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -68,7 +68,7 @@ export const ArticleListItem = memo(
                 >
                     <AppLink
                         target={target}
-                        to={`${RoutePath.articles}/${article.id}`}
+                        to={getRouteArticle(article.id)}
                         onClick={handleOpenArticle}
                     >
                         <Card className={styles.card}>
@@ -106,7 +106,7 @@ export const ArticleListItem = memo(
                 >
                     <AppLink
                         target={target}
-                        to={`${RoutePath.articles}/${article.id}`}
+                        to={getRouteArticle(article.id)}
                         onClick={handleOpenArticle}
                     >
                         <Card className={styles.card}>
@@ -142,7 +142,7 @@ export const ArticleListItem = memo(
                                 ) : null}
                                 <AppLink
                                     target={target}
-                                    to={`${RoutePath.articles}/${article.id}`}
+                                    to={getRouteArticle(article.id)}
                                     onClick={handleOpenArticle}
                                 >
                                     <Button theme={ButtonTheme.SECONDARY}>

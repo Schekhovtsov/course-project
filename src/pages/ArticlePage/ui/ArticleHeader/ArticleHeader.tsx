@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectArticle } from '@/entities/Article';
-import { RoutePath } from '@/shared/constants/router';
+import {
+    getRouteArticleEdit,
+    getRouteArticles,
+} from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { Button } from '@/shared/ui/Button';
 
@@ -22,11 +25,11 @@ export const ArticleHeader = ({ className }: ArticleHeaderProps) => {
     const canEditArticle = useSelector(selectCanEditArticle);
 
     const onBackToArticlesList = useCallback(() => {
-        navigate(`${RoutePath.articles}`);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onToEditMode = useCallback(() => {
-        navigate(`${RoutePath.articles}/${article?.id}/edit`);
+        navigate(getRouteArticleEdit(article!.id));
     }, [navigate, article]);
 
     return (
