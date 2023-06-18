@@ -10,7 +10,6 @@ import { Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from '../../useAppDispatch';
 
 export type ReducersList = {
-    // eslint-disable-next-line no-unused-vars
     [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
@@ -41,7 +40,6 @@ export const useDynamicReducerLoader = (
                 }
             });
         };
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 };
