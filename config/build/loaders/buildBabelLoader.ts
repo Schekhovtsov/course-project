@@ -10,12 +10,14 @@ export function buildBabelLoader({
     isDev,
     isTsx,
 }: BuildBabelLoaderPluginProps) {
+    const isProd = !isDev;
     return {
         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',
             options: {
+                cacheDirectory: true,
                 presets: ['@babel/preset-env'],
                 plugins: [
                     isDev && require.resolve('react-refresh/babel'),
@@ -26,12 +28,13 @@ export function buildBabelLoader({
                         },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && [
-                        babelRemovePropsPlugin,
-                        {
-                            props: ['data-testid'],
-                        },
-                    ],
+                    isTsx &&
+                        isProd && [
+                            babelRemovePropsPlugin,
+                            {
+                                props: ['data-testid'],
+                            },
+                        ],
                 ].filter(Boolean),
             },
         },

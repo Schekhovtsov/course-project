@@ -17,18 +17,12 @@ export function buildPlugins({
     project,
     apiUrl,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+    const isProd = !isDev;
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
         new webpack.ProgressPlugin(),
-        new MiniCssExctractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
-        new CopyPlugin({
-            patterns: [{ from: paths.locales, to: paths.buildLocales }],
-        }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
@@ -68,6 +62,21 @@ export function buildPlugins({
                     },
                     mode: 'write-references',
                 },
+            })
+        );
+    }
+
+    if (isProd) {
+        plugins.push(
+            new MiniCssExctractPlugin({
+                filename: 'css/[name].[contenthash:8].css',
+                chunkFilename: 'css/[name].[contenthash:8].css',
+            })
+        );
+
+        plugins.push(
+            new CopyPlugin({
+                patterns: [{ from: paths.locales, to: paths.buildLocales }],
             })
         );
     }
