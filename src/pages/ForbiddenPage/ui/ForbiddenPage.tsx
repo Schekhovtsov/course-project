@@ -6,7 +6,7 @@ export const ForbiddenPage = () => {
     const { t } = useTranslation('Main page');
 
     return (
-        <Page>
+        <Page data-testid="Forbidden page">
             <Text title={`${t('Forbidden')}`} />
         </Page>
     );

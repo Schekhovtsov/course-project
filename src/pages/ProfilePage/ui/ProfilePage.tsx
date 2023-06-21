@@ -13,7 +13,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const { id } = useParams<{ id: string }>();
 
     return (
-        <Page className={classNames(styles.container, {}, [className])}>
+        <Page
+            data-testid="Profile page"
+            className={classNames(styles.container, {}, [className])}
+        >
             <EditableProfileCard id={id} />
         </Page>
     );

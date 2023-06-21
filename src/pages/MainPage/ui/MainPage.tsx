@@ -7,7 +7,7 @@ function MainPage() {
     const { t } = useTranslation('mainPage');
 
     return (
-        <Page>
+        <Page data-testid="Main page">
             TO-DO:
             <br />
             <br />
