@@ -3,10 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
 import { getRouteArticle } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 
 import {
@@ -73,7 +75,10 @@ export const ArticleListItem = memo(
                     >
                         <Card className={styles.card}>
                             <div className={styles.imageWrapper}>
-                                <img
+                                <AppImage
+                                    fallback={
+                                        <Skeleton width={300} height={300} />
+                                    }
                                     src={article.img}
                                     alt={article.title}
                                     width={300}
@@ -111,7 +116,10 @@ export const ArticleListItem = memo(
                     >
                         <Card className={styles.card}>
                             <div className={styles.imageWrapper}>
-                                <img
+                                <AppImage
+                                    fallback={
+                                        <Skeleton width={300} height={300} />
+                                    }
                                     src={article.img}
                                     alt={article.title}
                                     width={300}

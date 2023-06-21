@@ -1,6 +1,8 @@
 import { CSSProperties, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import styles from './Avatar.module.scss';
 
@@ -22,7 +24,10 @@ export const Avatar = ({ className, src, size = 48 }: AvatarProps) => {
     );
 
     return (
-        <img
+        <AppImage
+            fallback={
+                <Skeleton width={size} height={size} borderRadius="50%" />
+            }
             className={classNames(styles.container, {}, [className])}
             alt={`${t('Avatar')}`}
             style={style}
