@@ -10,9 +10,9 @@ import { Text } from '@/shared/ui/Text';
 import { TextTheme } from '@/shared/ui/Text/ui/Text';
 
 import {
-    selectArticle,
     selectError,
     selectIsLoading,
+    useSelectArticle,
 } from '../../model/selector/articleSelectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { ArticleBlock } from '../../model/types/Article';
@@ -31,7 +31,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     const dispatch = useAppDispatch();
 
     const isLoading = useSelector(selectIsLoading);
-    const data = useSelector(selectArticle);
+    const data = useSelectArticle();
     const error = useSelector(selectError);
 
     useInitialEffect(() => {
