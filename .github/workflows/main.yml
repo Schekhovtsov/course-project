@@ -113,7 +113,7 @@ jobs:
                 node-version: [17.x]
         steps:
             - uses: actions/checkout@v2
-            
+
             - name: Staring Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v1
               with:
@@ -174,7 +174,7 @@ jobs:
               if: always()
 
             - name: linting css
-              run: npm run lint:scss
+              run: npm run lint:css
 
             - name: unit testing
               if: always()
