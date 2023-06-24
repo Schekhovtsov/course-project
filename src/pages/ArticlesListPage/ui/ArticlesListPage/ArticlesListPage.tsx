@@ -19,7 +19,7 @@ const ArticlesListPage = () => {
     useDynamicReducerLoader(reducers);
 
     return (
-        <Page className={styles.container}>
+        <Page className={styles.container} data-testid="Articles page">
             <ArticlesListPageFilters />
             <ArticlesInfiniteList />
         </Page>
