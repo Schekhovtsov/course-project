@@ -25,7 +25,7 @@ export const NotificationButton = () => {
             theme={ButtonTheme.TEXT}
             title={`${t('Notifications')}`}
         >
-            <Icon Svg={NotificationIcon} />
+            <Icon Svg={NotificationIcon} width={30} height={30} />
         </Button>
     );
 
