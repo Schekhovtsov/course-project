@@ -51,6 +51,7 @@ export const ArticleComments = ({ id }: ArticleCommentsProps) => {
                 className={styles.commentsHeader}
             />
             <Text text={`${t('There is no comments yet')}`} />
+            <AddCommentForm onSendComment={onSendComment} />
         </VStack>
     );
 };

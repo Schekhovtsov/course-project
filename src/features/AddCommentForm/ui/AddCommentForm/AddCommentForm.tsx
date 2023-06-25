@@ -52,14 +52,20 @@ const AddCommentForm = memo(
                 max
                 gap={10}
                 className={classNames(styles.container, {}, [className])}
+                data-testid="AddCommentForm"
             >
                 <Input
                     placeholder={`${t('Введите текст комментария')}`}
                     value={text}
                     onChange={onTextChange}
                     className={styles.input}
+                    data-testid="AddCommentForm.Input"
                 />
-                <Button theme={ButtonTheme.SECONDARY} onClick={onSendHandler}>
+                <Button
+                    theme={ButtonTheme.SECONDARY}
+                    onClick={onSendHandler}
+                    data-testid="AddCommentForm.Button"
+                >
                     {`${t('Отправить комментарий')}`}
                 </Button>
             </VStack>

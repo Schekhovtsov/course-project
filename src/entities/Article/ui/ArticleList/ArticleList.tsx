@@ -92,6 +92,7 @@ export const ArticleList = memo(
 
         return (
             <div
+                data-testid="Article list"
                 className={classNames(styles.container, {}, [
                     className,
                     styles[view],

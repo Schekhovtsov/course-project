@@ -70,19 +70,28 @@ export const RatingCard = memo(
                     placeholder={`${t('Leave your messsage')}`}
                     value={feedback}
                     onChange={setFeedback}
+                    data-testid="RatingCard.Input"
                 />
             </>
         );
 
         const modalButtons = (
             <>
-                <Button onClick={onCloseHandler}>{`${t('Close')}`}</Button>
-                <Button onClick={onAcceptHandler}>{`${t('Sent')}`}</Button>
+                <Button onClick={onCloseHandler} data-testid="RatingCard.Close">
+                    {`${t('Close')}`}
+                </Button>
+                <Button onClick={onAcceptHandler} data-testid="RatingCard.Sent">
+                    {`${t('Sent')}`}
+                </Button>
             </>
         );
 
         return (
-            <Card max className={classNames(styles.container, {}, [className])}>
+            <Card
+                data-testid="RatingCard"
+                max
+                className={classNames(styles.container, {}, [className])}
+            >
                 <VStack className={styles.container} max>
                     <Text title={starsCount ? 'Thank you' : title} />
                     <StarRating

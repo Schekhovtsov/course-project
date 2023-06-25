@@ -63,6 +63,7 @@ export const ArticleListItem = memo(
         if (view === 'tile') {
             return (
                 <div
+                    data-testid="Article list item"
                     className={classNames(styles.container, {}, [
                         className,
                         styles[view],
@@ -104,6 +105,7 @@ export const ArticleListItem = memo(
 
             return (
                 <div
+                    data-testid="Article list item"
                     className={classNames(styles.container, {}, [
                         className,
                         styles[view],

@@ -80,7 +80,11 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     }
 
     return (
-        <VStack max className={classNames(styles.container, {}, [className])}>
+        <VStack
+            data-testid="Article"
+            max
+            className={classNames(styles.container, {}, [className])}
+        >
             {content}
         </VStack>
     );
