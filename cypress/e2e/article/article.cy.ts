@@ -19,14 +19,15 @@ describe('Взаимодействие со статьёй', () => {
         cy.get(selectByTestId('Article')).should('exist');
     });
 
-    // it('Комментарий отправляется', () => {
-    //     cy.get(selectByTestId('Article')).should('exist');
-    //     cy.get(selectByTestId('AddCommentForm')).scrollIntoView();
-    //     cy.addComment('Text');
-    //     cy.get(selectByTestId('CommentCard.Content')).should('exist');
-    // });
+    it.skip('Комментарий отправляется', () => {
+        cy.get(selectByTestId('Article')).should('exist');
+        cy.get(selectByTestId('AddCommentForm')).scrollIntoView();
+        cy.addComment('Text');
+        cy.get(selectByTestId('CommentCard.Content')).should('exist');
+    });
 
     it('Рейтинг ставится:', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article.json' });
         cy.get(selectByTestId('RatingCard')).should('exist').scrollIntoView();
         cy.setRate(5, 'feed');
         cy.get('[data-selected=true]').should('have.length', 5);
