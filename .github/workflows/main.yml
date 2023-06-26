@@ -56,7 +56,7 @@ jobs:
               if: always()
 
             - name: unit testing
-              run: npm tun test:unit
+              run: npm run test:unit
               if: always()
               with:
                   path: 'reports/report.html'
