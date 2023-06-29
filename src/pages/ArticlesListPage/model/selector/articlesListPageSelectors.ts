@@ -1,4 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { buildSelector } from '@/shared/store';
 
 export const selectArticlesListPageIsLoading = (state: StateSchema) =>
     state.articlesListPage?.isLoading;
@@ -32,3 +33,7 @@ export const selectArticlesListPageSortOrder = (state: StateSchema) =>
 
 export const selectArticlesListPageSort = (state: StateSchema) =>
     state.articlesListPage?.sort;
+
+export const [useArticleItemById] = buildSelector(
+    (state, id: string) => state.articlesListPage?.entities[id]
+);
