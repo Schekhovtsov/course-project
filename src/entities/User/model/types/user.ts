@@ -1,3 +1,5 @@
+import { FeatureFlagsType } from '@/shared/types/featureFlags';
+
 import { UserRole } from '../consts/consts';
 
 export interface User {
@@ -5,6 +7,7 @@ export interface User {
     username: string;
     roles?: UserRole[];
     avatar?: string;
+    features?: FeatureFlagsType;
 }
 
 export interface UserSchema {

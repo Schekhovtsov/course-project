@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Article, articleReducer } from '@/entities/Article';
 import { ArticleRating } from '@/features/ArticleRating';
+import { getFeatureFlag } from '@/shared/lib/features';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { Page } from '@/widgets/Page';
@@ -18,6 +19,7 @@ const reducers: ReducersList = {
 const ArticlePage = () => {
     const { id } = useParams<{ id: string }>();
     useDynamicReducerLoader(reducers, false);
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     if (!id) {
         return null;
@@ -27,7 +29,7 @@ const ArticlePage = () => {
         <Page>
             <ArticleHeader />
             <Article id={id} />
-            <ArticleRating articleId={id} />
+            {isArticleRatingEnabled && <ArticleRating articleId={id} />}
             <ArticleComments id={id} />
         </Page>
     );
