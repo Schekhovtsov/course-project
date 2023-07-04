@@ -1,28 +1,32 @@
 import { useContext, useEffect } from 'react';
+// eslint-disable-next-line feature-sliced-design/layers-hierarchy
+import { useJsonSettings } from '@/entities/User';
 
-import { LS_THEME_KEY } from '../../../constants/localStorage';
 import { Theme } from '../../../constants/theme';
 import { ThemeContext } from '../../../contexts/ThemeContext';
 
 export type useThemeType = {
     theme: Theme;
-    toggleTheme: () => void;
+    // eslint-disable-next-line no-unused-vars
+    toggleTheme: (saveAction: (theme: Theme) => void) => void;
 };
 
 export const useTheme = (): useThemeType => {
+    const { theme: storedTheme = Theme.LIGHT } = useJsonSettings();
     const { theme, setTheme } = useContext(ThemeContext);
 
-    const toggleTheme = () => {
+    // eslint-disable-next-line no-unused-vars
+    const toggleTheme = (saveAction?: (theme: Theme) => void) => {
         const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
         document.body.className = newTheme;
         setTheme?.(newTheme);
-        localStorage.setItem(LS_THEME_KEY, newTheme);
+
+        saveAction?.(newTheme);
     };
 
     useEffect(() => {
-        document.body.className =
-            (localStorage.getItem(LS_THEME_KEY) as Theme) ?? Theme.LIGHT;
-    }, []);
+        document.body.className = storedTheme;
+    }, [storedTheme]);
 
     return { theme: theme || Theme.LIGHT, toggleTheme };
 };

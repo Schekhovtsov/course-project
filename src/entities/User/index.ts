@@ -10,3 +10,7 @@ export {
     selectIsUserAdmin,
     selectIsUserModerator,
 } from './model/selectors/userSelector';
+
+export { useJsonSettings } from './model/selectors/jsonSettingsSelector';
+
+export { saveJsonSettings } from './model/services/saveJsonSettings';
