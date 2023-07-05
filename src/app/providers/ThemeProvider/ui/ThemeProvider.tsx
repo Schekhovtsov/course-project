@@ -17,7 +17,7 @@ export const ThemeProvider = ({
     const [isThemeInited, setIsThemeInited] = useState(false);
 
     useEffect(() => {
-        if (!isThemeInited) {
+        if (!isThemeInited && storedTheme) {
             setTheme(storedTheme);
             setIsThemeInited(true);
         }

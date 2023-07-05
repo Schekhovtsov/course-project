@@ -1,8 +1,9 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectUserIsMounted, userActions } from '@/entities/User';
+import { initAuthData, selectUserIsMounted } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Loader } from '@/shared/ui/Loader';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
@@ -13,8 +14,12 @@ function App() {
     const mounted = useSelector(selectUserIsMounted);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!mounted) {
+        return <Loader />;
+    }
 
     return (
         <div className={classNames('app', {}, [])}>
