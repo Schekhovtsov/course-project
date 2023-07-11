@@ -84,29 +84,6 @@ module.exports = {
             'error',
             { alias: '@', ignoredImports: ['**/StoreProvider'] },
         ],
-
-        // 'feature-sliced-design/public-api-slice-import': [
-        //     'warn',
-        //     {
-        //         alias: '@',
-        //         testFiles: [
-        //             '**/*.test.ts',
-        //             '**/*.test.tsx',
-        //             '**/StoreDecorator.tsx',
-        //         ],
-        //     },
-        // ],
-        // 'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
-        // 'unused-imports/no-unused-imports': 'error',
-        // 'unused-imports/no-unused-vars': [
-        //     'warn',
-        //     {
-        //         vars: 'all',
-        //         varsIgnorePattern: '^_',
-        //         args: 'after-used',
-        //         argsIgnorePattern: '^_',
-        //     },
-        // ],
         'import/order': 'off',
         'simple-import-sort/imports': [
             'error',
