@@ -1063,10 +1063,11 @@
       ],
       "avatar": "https://cs9.pikabu.ru/avatars/2254/x2254660-250255022.png",
       "features": {
-        "isArticleRatingEnabled": true
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme"
+        "theme": "app_dark_theme"
       }
     },
     {

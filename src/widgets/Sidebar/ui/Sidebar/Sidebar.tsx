@@ -4,6 +4,7 @@ import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { ToggleSidebar } from '@/features/ToggleSidebar';
 import { classNames } from '@/shared/lib/classNames';
+import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { VStack } from '@/shared/ui/Stack';
 
 import { selectSidebarItems } from '../../model/selector/selectSidebarItems';
@@ -36,26 +37,54 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     );
 
     return (
-        <aside
-            className={classNames(
-                styles.container,
-                { [styles.collapsed]: isCollapsed },
-                [className]
-            )}
-            data-testid="sidebar"
-        >
-            <VStack role="navigation" className={styles.links}>
-                {itemsList}
-            </VStack>
+        <ToggledFeatures
+            feature="isAppRedesigned"
+            on={
+                <aside
+                    className={classNames(
+                        styles.containerRedesigned,
+                        { [styles.collapsed]: isCollapsed },
+                        [className]
+                    )}
+                    data-testid="sidebar"
+                >
+                    <VStack role="navigation" className={styles.links}>
+                        {itemsList}
+                    </VStack>
 
-            <VStack gap={20} className={styles.switchers}>
-                <ToggleSidebar
-                    isCollapsed={isCollapsed}
-                    toggleSidebar={onToggle}
-                />
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-            </VStack>
-        </aside>
+                    <VStack gap={20} className={styles.switchers}>
+                        <ToggleSidebar
+                            isCollapsed={isCollapsed}
+                            toggleSidebar={onToggle}
+                        />
+                        <LanguageSwitcher />
+                        <ThemeSwitcher />
+                    </VStack>
+                </aside>
+            }
+            off={
+                <aside
+                    className={classNames(
+                        styles.container,
+                        { [styles.collapsed]: isCollapsed },
+                        [className]
+                    )}
+                    data-testid="sidebar"
+                >
+                    <VStack role="navigation" className={styles.links}>
+                        {itemsList}
+                    </VStack>
+
+                    <VStack gap={20} className={styles.switchers}>
+                        <ToggleSidebar
+                            isCollapsed={isCollapsed}
+                            toggleSidebar={onToggle}
+                        />
+                        <LanguageSwitcher />
+                        <ThemeSwitcher />
+                    </VStack>
+                </aside>
+            }
+        />
     );
 });

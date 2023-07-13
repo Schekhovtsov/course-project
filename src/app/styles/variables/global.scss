@@ -1,3 +1,5 @@
+/* stylelint-disable declaration-colon-newline-after */
+/* stylelint-disable string-quotes */
 :root {
     // Fonts
     --font-family: serif;
@@ -8,6 +10,14 @@
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family);
+    --font-family-title-redesigned: 'Roboto', sans-serif;
+    --font-family-text-redesigned: 'Nunito Sans', sans-serif;
+    --font-s-redesigned: var(--font-line-s) / var(--font-line-s)
+        var(--font-family-text-redesigned);
+    --font-m-redesigned: var(--font-line-m) / var(--font-line-m)
+        var(--font-family-text-redesigned);
+    --font-l-redesigned: var(--font-line-l) / var(--font-line-l)
+        var(--font-family-title-redesigned);
 
     // Sizes
     --size-navbar-height: 50px;

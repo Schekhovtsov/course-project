@@ -5,14 +5,20 @@
 @import 'themes/dark';
 
 body {
-    font: var(--font-m);
-    color: var(--text-primary-color);
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
 }
 
 .app {
     height: 100vh;
     width: 100vw;
     background: var(--bg-color);
+}
+
+.app_redesigned {
+    height: 100vh;
+    width: 100vw;
+    background: var(--background-redesigned);
 }
 
 .body {

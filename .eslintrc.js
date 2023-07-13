@@ -64,6 +64,7 @@ module.exports = {
                     'gap',
                     'role',
                     'titleSize',
+                    'feature',
                 ],
             },
         ],
@@ -96,6 +97,7 @@ module.exports = {
                 ],
             },
         ],
+        'react/jsx-wrap-multilines': 'off',
     },
     globals: {
         __IS_DEV__: true,

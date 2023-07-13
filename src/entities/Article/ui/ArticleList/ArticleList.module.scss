@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: calc(100vh - var(--size-navbar-height));
+    height: calc(100vh - 185px); // calc(100vh - var(--size-navbar-height));
 }
 
 .list {

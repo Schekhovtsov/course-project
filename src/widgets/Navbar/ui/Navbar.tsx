@@ -7,6 +7,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { classNames } from '@/shared/lib/classNames';
+import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useModal } from '@/shared/lib/hooks/useModal';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
@@ -27,27 +28,67 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
 
     if (authData) {
         return (
-            <div className={classNames(styles.container, {}, [className])}>
-                <span className={styles.title}>{`${t('Site name')}`}</span>
-                <HStack className={styles.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </div>
+            <ToggledFeatures
+                feature="isAppRedesigned"
+                on={
+                    <div
+                        className={classNames(styles.containerRedesigned, {}, [
+                            className,
+                        ])}
+                    >
+                        <HStack className={styles.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </div>
+                }
+                off={
+                    <div
+                        className={classNames(styles.container, {}, [
+                            className,
+                        ])}
+                    >
+                        <span className={styles.title}>
+                            {`${t('Site name')}`}
+                        </span>
+                        <HStack className={styles.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </div>
+                }
+            />
         );
     }
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
-            <span className={styles.title}>{`${t('Site name')}`}</span>
-            <Button onClick={openModal} theme={ButtonTheme.TEXT}>
-                {`${t('Log in')}`}
-            </Button>
-            <LoginModal
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                {...portalProps}
-            />
-        </div>
+        <ToggledFeatures
+            feature="isAppRedesigned"
+            on={
+                <div className={classNames(styles.container, {}, [className])}>
+                    <Button onClick={openModal} theme={ButtonTheme.TEXT}>
+                        {`${t('Log in')}`}
+                    </Button>
+                    <LoginModal
+                        isOpen={isModalOpen}
+                        onClose={closeModal}
+                        {...portalProps}
+                    />
+                </div>
+            }
+            off={
+                <div className={classNames(styles.container, {}, [className])}>
+                    <span className={styles.title}>{`${t('Site name')}`}</span>
+                    <Button onClick={openModal} theme={ButtonTheme.TEXT}>
+                        {`${t('Log in')}`}
+                    </Button>
+                    <LoginModal
+                        isOpen={isModalOpen}
+                        onClose={closeModal}
+                        {...portalProps}
+                    />
+                </div>
+            }
+        />
     );
 });

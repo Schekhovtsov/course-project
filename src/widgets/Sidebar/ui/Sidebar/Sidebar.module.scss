@@ -7,6 +7,13 @@
     transition: width 0.2s;
 }
 
+.containerRedesigned {
+    width: 220px;
+    height: 100%;
+    border-radius: 32px;
+    background: var(--background-light-redesigned);
+}
+
 .switchers {
     position: absolute;
     bottom: 30px;

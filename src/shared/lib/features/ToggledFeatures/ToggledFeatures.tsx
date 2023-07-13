@@ -4,15 +4,16 @@ import { getFeatureFlag } from '../setGetFeatures';
 
 interface FeatureFlagsType {
     isArticleRatingEnabled: boolean;
+    isAppRedesigned?: boolean;
 }
 
-interface ToggleFeaturesProps {
+interface ToggledFeaturesProps {
     feature: keyof FeatureFlagsType;
     on: ReactElement;
     off: ReactElement;
 }
 
-export const ToggleFeatures = ({ feature, on, off }: ToggleFeaturesProps) => {
+export const ToggledFeatures = ({ feature, on, off }: ToggledFeaturesProps) => {
     if (getFeatureFlag(feature)) {
         return on;
     }

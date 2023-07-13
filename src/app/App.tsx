@@ -1,7 +1,9 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { initAuthData, selectUserIsMounted } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts';
 import { classNames } from '@/shared/lib/classNames';
+import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Loader } from '@/shared/ui/Loader';
 import { Navbar } from '@/widgets/Navbar';
@@ -22,15 +24,33 @@ function App() {
     }
 
     return (
-        <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="body">
-                    <Sidebar />
-                    {mounted ? <AppRouter /> : null}
+        <ToggledFeatures
+            feature="isAppRedesigned"
+            on={
+                <div className={classNames('app_redesigned', {}, [])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            content={<AppRouter />}
+                            header={<Navbar />}
+                            sidebar={<Sidebar />}
+                            // eslint-disable-next-line i18next/no-literal-string
+                            toolbar={<div>T</div>}
+                        />
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            off={
+                <div className={classNames('app', {}, [])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="body">
+                            <Sidebar />
+                            {mounted ? <AppRouter /> : null}
+                        </div>
+                    </Suspense>
+                </div>
+            }
+        />
     );
 }
 

@@ -7,6 +7,7 @@ import {
     selectPageScrollByPath,
 } from '@/features/ScrollRestoration';
 import { classNames } from '@/shared/lib/classNames';
+import { toggleFeatures } from '@/shared/lib/features/toggleFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
@@ -62,7 +63,15 @@ export const Page = (props: PageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(styles.container, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => styles.containerRedesigned,
+                    off: () => styles.container,
+                }),
+                {},
+                [className]
+            )}
             onScroll={onScrollHandler}
             data-testid={datatestid ?? 'Page'}
         >
