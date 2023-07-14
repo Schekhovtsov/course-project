@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Modal } from '@/shared/ui/Modal';
+import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
+import { Modal } from '@/shared/ui/deprecated/Modal';
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 

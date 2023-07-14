@@ -8,7 +8,7 @@ import {
     getRouteArticles,
 } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 
 import { selectCanEditArticle } from '../../model/selectors/article';
 

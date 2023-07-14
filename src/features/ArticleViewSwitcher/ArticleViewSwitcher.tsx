@@ -1,6 +1,6 @@
 import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { classNames } from '@/shared/lib/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
 import styles from './ArticleViewSwitcher.module.scss';
 

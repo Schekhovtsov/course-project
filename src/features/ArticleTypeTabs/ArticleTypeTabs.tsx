@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Tabs } from '@/shared/ui/Tabs';
-import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { Tabs } from '@/shared/ui/deprecated/Tabs';
+import { TabItem } from '@/shared/ui/deprecated/Tabs/Tabs';
 
 interface ArticleTypeTabsProps {
     value: string;
