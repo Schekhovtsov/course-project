@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames';
 import { ModsType } from '@/shared/lib/classNames/classNames';
 import { useUlbiModal } from '@/shared/lib/hooks/useUlbiModal';
 
-import { Overlay } from '../../Overlay';
-import { Portal } from '../../Portal';
+import { Overlay } from '../../../redesigned/Overlay';
+import { Portal } from '../../../redesigned/Portal';
 
 import styles from './Modal.module.scss';
 

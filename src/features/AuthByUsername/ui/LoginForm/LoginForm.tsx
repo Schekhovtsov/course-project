@@ -6,9 +6,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { TextTheme } from '@/shared/ui/deprecated/Text/ui/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import {
     selectError,
@@ -86,7 +85,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             {error && (
                 <Text
                     text={`${t('Wrong username or password')}`}
-                    theme={TextTheme.ERROR}
+                    variant="error"
                 />
             )}
             <Button

@@ -2,8 +2,8 @@ import { CSSProperties, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
+import { Skeleton } from '../../../deprecated/Skeleton';
 import { AppImage } from '../../../redesigned/AppImage';
-import { Skeleton } from '../../Skeleton';
 
 import styles from './Avatar.module.scss';
 
@@ -12,11 +12,6 @@ interface AvatarProps {
     src: string;
     size?: number;
 }
-
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 
 export const Avatar = ({ className, src, size = 48 }: AvatarProps) => {
     const { t } = useTranslation();

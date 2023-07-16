@@ -1,0 +1,12 @@
+.item {
+    width: 150px;
+    align-items: flex-start;
+    display: flex;
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--text-primary-color);
+    font: var(--font-s-redesigned);
+    cursor: pointer;
+}

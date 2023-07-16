@@ -8,8 +8,8 @@ import {
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 export const AvatarDropdown = () => {
     const { t } = useTranslation();
@@ -49,7 +49,7 @@ export const AvatarDropdown = () => {
                     onClick: logoutHandler,
                 },
             ]}
-            trigger={<Avatar size={30} src={authData.avatar ?? ''} />}
+            trigger={<Avatar size={48} src={authData.avatar ?? ''} />}
             direction="bottom left"
         />
     );

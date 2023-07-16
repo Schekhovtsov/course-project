@@ -32,10 +32,21 @@
 }
 
 .active {
-    background-color: var(--third-bg-color) !important;
-    color: var(--bg-color) !important;
+    background-color: none;
+    color: var(--accent-redesigned) !important;
 }
 
 .disabled {
     opacity: 0.5;
+}
+
+.menu {
+    width: 150px;
+    background: var(--code-background-color);
+    position: absolute;
+    z-index: var(--z-index-modal);
+    border-radius: 10px;
+    border: 1px solid var(--button-primary-text);
+    flex-direction: column;
+    display: flex;
 }

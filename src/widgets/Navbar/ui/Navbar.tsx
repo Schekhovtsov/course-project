@@ -9,8 +9,8 @@ import { NotificationButton } from '@/features/NotificationButton';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useModal } from '@/shared/lib/hooks/useModal';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './Navbar.module.scss';
 

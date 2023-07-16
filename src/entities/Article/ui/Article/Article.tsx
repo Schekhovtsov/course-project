@@ -5,9 +5,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { TextTheme } from '@/shared/ui/deprecated/Text/ui/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import {
     selectError,
@@ -63,7 +62,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
             </VStack>
         );
     } else if (error) {
-        content = <Text title={error} theme={TextTheme.ERROR} />;
+        content = <Text title={error} variant="error" />;
     } else if (data) {
         content = (
             <VStack max gap={30}>

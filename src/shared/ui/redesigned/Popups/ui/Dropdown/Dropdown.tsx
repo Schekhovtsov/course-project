@@ -24,11 +24,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const Dropdown = ({
     className,
     items,
@@ -42,7 +37,9 @@ export const Dropdown = ({
             className={classNames(popupStyles.container, {}, [className])}
         >
             <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
-            <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
+            <Menu.Items
+                className={classNames(popupStyles.menu, {}, menuClasses)}
+            >
                 {items.map((item, index) => {
                     const content = ({
                         active,

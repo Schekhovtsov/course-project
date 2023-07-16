@@ -2,22 +2,22 @@
     width: 100%;
     display: grid;
     grid-template-areas: 'sidebar content rightbar';
-    grid-template-columns: 280px 1fr 100px;
+    grid-template-columns: min-content 1fr 100px;
     overflow-x: hidden;
 }
 
 .sidebar {
     grid-area: sidebar;
-    width: 280px;
+    max-width: 280px;
     padding: 32px;
 }
 
 .content {
     grid-area: content;
-    min-width: 900px;
-    max-width: 1200px;
-    justify-self: center;
-    padding: 32px;
+    width: 100%;
+
+    // justify-self: center;
+    padding: 32px 200px 32px 32px;
 }
 
 .rightbar {

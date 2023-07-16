@@ -1,15 +1,13 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
 import { getRouteArticle } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/deprecated/Text';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { Button } from '@/shared/ui/redesigned/Button';
 
 import {
     ArticleTextBlock,
@@ -30,8 +28,6 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(
     ({ className, article, view, target, index }: ArticleListItemProps) => {
-        const { t } = useTranslation('articlePage');
-
         const handleOpenArticle = () => {
             sessionStorage.setItem(
                 LS_ARTICLES_LIST_ITEM_ID,
@@ -150,15 +146,6 @@ export const ArticleListItem = memo(
                                         withoutTitle
                                     />
                                 ) : null}
-                                <AppLink
-                                    target={target}
-                                    to={getRouteArticle(article.id)}
-                                    onClick={handleOpenArticle}
-                                >
-                                    <Button variant="secondary">
-                                        {`${t('Read more')}`}
-                                    </Button>
-                                </AppLink>
                             </div>
                         </Card>
                     </AppLink>

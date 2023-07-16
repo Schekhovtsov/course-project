@@ -8,8 +8,8 @@ import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useD
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import { ValidateProfileErrors } from '../../model/consts/consts';
 import {
@@ -78,7 +78,7 @@ export const EditableProfileCard = memo(
                     <Text
                         title={`${t('Error')}`}
                         text={`${t('Try to refresh page')}`}
-                        theme={TextTheme.ERROR}
+                        variant="error"
                         data-testid="EditableProfileCard.Error"
                     />
                 </VStack>
@@ -99,7 +99,7 @@ export const EditableProfileCard = memo(
                     ? validateErrors.map((error: any) => (
                           <Text
                               key={error}
-                              theme={TextTheme.ERROR}
+                              variant="error"
                               text={
                                   validateErrorTranslations[
                                       error as keyof typeof validateErrorTranslations

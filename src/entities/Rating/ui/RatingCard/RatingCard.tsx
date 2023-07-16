@@ -8,10 +8,10 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Modal } from '@/shared/ui/deprecated/Modal';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './RatingCard.module.scss';
 
