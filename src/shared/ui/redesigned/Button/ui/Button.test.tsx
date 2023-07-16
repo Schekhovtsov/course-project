@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Button, ButtonTheme } from './Button';
+import { Button } from './Button';
 
 describe('Button', () => {
     test('Проверяет, отображается ли кнопка на экране', () => {
@@ -9,7 +9,7 @@ describe('Button', () => {
     });
 
     test('Проверяет, применяется ли тема к кнопке', () => {
-        render(<Button theme={ButtonTheme.SECONDARY}>Test</Button>);
+        render(<Button variant="secondary">Test</Button>);
         expect(screen.getByLabelText('button')).toHaveClass('secondary');
     });
 });

@@ -3,8 +3,8 @@ import { memo, useCallback } from 'react';
 import CopyIcon from '@/shared/assets/icons/copy.svg';
 import { classNames } from '@/shared/lib/classNames';
 
-import { Button, ButtonTheme } from '../../Button';
-import { Icon } from '../../Icon';
+import { Button } from '../../../redesigned/Button';
+import { Icon } from '../../../redesigned/Icon';
 
 import styles from './Code.module.scss';
 
@@ -28,7 +28,7 @@ export const Code = memo(({ className, text }: CodeProps) => {
             <Button
                 onClick={onButtonClick}
                 className={styles.button}
-                theme={ButtonTheme.TEXT}
+                variant="text"
             >
                 <Icon Svg={CopyIcon} />
             </Button>

@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Button } from '../../../Button';
+import { Button } from '../../../../redesigned/Button';
 import { Dropdown } from './Dropdown';
 
 export default {

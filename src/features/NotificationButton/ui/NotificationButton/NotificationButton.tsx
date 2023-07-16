@@ -3,10 +3,10 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import styles from './NotificationButton.module.scss';
 
@@ -22,7 +22,7 @@ export const NotificationButton = () => {
     const trigger = (
         <Button
             onClick={toggleDrawer}
-            theme={ButtonTheme.TEXT}
+            variant="text"
             title={`${t('Notifications')}`}
         >
             <Icon Svg={NotificationIcon} width={30} height={30} />

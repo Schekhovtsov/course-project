@@ -1,15 +1,14 @@
 .container {
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
     display: grid;
     grid-template-areas: 'sidebar content rightbar';
-    grid-template-columns: 284px 1fr 180px;
+    grid-template-columns: 280px 1fr 100px;
     overflow-x: hidden;
 }
 
 .sidebar {
     grid-area: sidebar;
-    justify-self: center;
+    width: 280px;
     padding: 32px;
 }
 

@@ -5,9 +5,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import { getAddCommentFormText } from '../../model/selector/addCommentFormSelector';
 import {
@@ -62,7 +62,7 @@ const AddCommentForm = memo(
                     data-testid="AddCommentForm.Input"
                 />
                 <Button
-                    theme={ButtonTheme.SECONDARY}
+                    variant="secondary"
                     onClick={onSendHandler}
                     data-testid="AddCommentForm.Button"
                 >

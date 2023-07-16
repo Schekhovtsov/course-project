@@ -5,10 +5,10 @@ import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { Button } from '@/shared/ui/deprecated/Button';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { TextTheme } from '@/shared/ui/deprecated/Text/ui/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import {
     selectError,

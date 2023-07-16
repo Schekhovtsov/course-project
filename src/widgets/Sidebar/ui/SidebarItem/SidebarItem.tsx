@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { selectUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
-import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import { SidebarItemType } from '../../model/types/sidebar';
 
@@ -16,7 +17,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, isCollapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
-    const { Icon, text, path } = item;
+    const { Icon: svg, text, path } = item;
     const isAuth = useSelector(selectUserAuthData);
 
     if (item.authOnly && !isAuth) {
@@ -29,8 +30,10 @@ export const SidebarItem = memo(({ item, isCollapsed }: SidebarItemProps) => {
             className={classNames(styles.item, {
                 [styles.collapsed]: isCollapsed,
             })}
+            title={text}
+            activeClassName={styles.active}
         >
-            <Icon className={styles.icon} />
+            <Icon Svg={svg} />
             <span className={styles.link}>{`${t(text)}`}</span>
         </AppLink>
     );

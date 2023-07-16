@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Menu } from '@headlessui/react';
 
-import { AppLink } from '../../../AppLink';
+import { AppLink } from '../../../../redesigned/AppLink';
 import { mapDirectionClass } from '../../styles/popup.consts';
 
 import popupStyles from '../../styles/popup.module.scss';

@@ -4,12 +4,12 @@ import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
 import { getRouteArticle } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '@/shared/ui/deprecated/AppImage';
-import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/deprecated/Text';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import {
     ArticleTextBlock,
@@ -155,7 +155,7 @@ export const ArticleListItem = memo(
                                     to={getRouteArticle(article.id)}
                                     onClick={handleOpenArticle}
                                 >
-                                    <Button theme={ButtonTheme.SECONDARY}>
+                                    <Button variant="secondary">
                                         {`${t('Read more')}`}
                                     </Button>
                                 </AppLink>

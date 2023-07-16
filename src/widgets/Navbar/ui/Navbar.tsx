@@ -9,8 +9,8 @@ import { NotificationButton } from '@/features/NotificationButton';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useModal } from '@/shared/lib/hooks/useModal';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import styles from './Navbar.module.scss';
 
@@ -66,7 +66,7 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
             feature="isAppRedesigned"
             on={
                 <div className={classNames(styles.container, {}, [className])}>
-                    <Button onClick={openModal} theme={ButtonTheme.TEXT}>
+                    <Button onClick={openModal} variant="text">
                         {`${t('Log in')}`}
                     </Button>
                     <LoginModal
@@ -79,7 +79,7 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
             off={
                 <div className={classNames(styles.container, {}, [className])}>
                     <span className={styles.title}>{`${t('Site name')}`}</span>
-                    <Button onClick={openModal} theme={ButtonTheme.TEXT}>
+                    <Button onClick={openModal} variant="text">
                         {`${t('Log in')}`}
                     </Button>
                     <LoginModal

@@ -1,6 +1,6 @@
 import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { classNames } from '@/shared/lib/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import styles from './ArticleViewSwitcher.module.scss';
 
@@ -36,11 +36,7 @@ export const ArticleViewSwitcher = ({
             {viewTypes.map(({ view: _view, label }) => (
                 <Button
                     key={label}
-                    theme={
-                        view === _view
-                            ? ButtonTheme.PRIMARY
-                            : ButtonTheme.SECONDARY
-                    }
+                    variant={view === _view ? 'primary' : 'secondary'}
                     onClick={onClickHandler(_view)}
                 >
                     {label}

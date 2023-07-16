@@ -1,28 +1,31 @@
-.icon {
-    position: absolute;
-    fill: var(--text-primary-color);
-    width: 36px;
-    height: 36px;
-
-    &:hover {
-        fill: var(--button-primary-background);
-    }
-}
-
 .item {
-    margin: 10px 0;
+    height: 40px;
     display: flex;
     align-items: center;
     white-space: nowrap;
 }
 
 .link {
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .collapsed {
     .link {
         opacity: 0;
-        transition: opacity 0.2s;
+        margin: 0;
     }
+}
+
+.active {
+    padding: 10px;
+    height: 40px;
+    margin-left: -12px;
+    /* stylelint-disable-next-line declaration-colon-newline-after */
+    // background: linear-gradient(
+    //     89.97deg,
+    //     rgb(20 89 255 / 30%) 1.15%,
+    //     rgb(94 211 243 / 0%) 99.97%
+    // );
+    position: relative;
+    border-left: 2px solid var(--accent-redesigned);
 }

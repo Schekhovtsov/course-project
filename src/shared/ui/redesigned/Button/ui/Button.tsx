@@ -4,28 +4,19 @@ import { classNames } from '@/shared/lib/classNames';
 
 import styles from './Button.module.scss';
 
-export enum ButtonTheme {
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
-    TEXT = 'text',
-}
+export type ButtonVariant = 'primary' | 'secondary' | 'text';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    theme?: ButtonTheme;
+    variant?: ButtonVariant;
     disabled?: boolean;
     children: ReactNode;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const Button = ({
     className,
     children,
-    theme = ButtonTheme.PRIMARY,
+    variant = 'primary',
     disabled,
     ...otherProps
 }: ButtonProps) => {
@@ -42,7 +33,7 @@ export const Button = ({
             className={classNames(styles.container, mods, [
                 styles.button,
                 className,
-                styles[theme],
+                styles[variant],
             ])}
         >
             {children}

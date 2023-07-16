@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 import { selectUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import {
     selectProfile,
@@ -56,7 +56,7 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                     {!readOnly ? (
                         <>
                             <Button
-                                theme={ButtonTheme.SECONDARY}
+                                variant="secondary"
                                 onClick={cancelButtonHandler}
                                 data-testid="ProfilePageHeader.CancelButton"
                             >

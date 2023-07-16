@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppLinkTheme } from '../model/consts/consts';
 import { AppLink } from './AppLink';
 
 export default {
@@ -15,5 +14,5 @@ const Template: ComponentStory<typeof AppLink> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
     children: 'Link',
-    theme: AppLinkTheme.PRIMARY,
+    variant: 'primary',
 };

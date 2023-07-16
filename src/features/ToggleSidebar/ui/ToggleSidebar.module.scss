@@ -8,12 +8,6 @@
 .icon {
     transform: rotate(180deg);
     transition: transform 0.3s;
-    fill: var(--link-primary-color);
-    cursor: pointer;
-
-    &:hover {
-        fill: var(--link-secondary-color);
-    }
 }
 
 .reverse {

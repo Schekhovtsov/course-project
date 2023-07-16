@@ -8,8 +8,8 @@ import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
 import { SortOrder } from '@/shared/lib/types';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Input } from '@/shared/ui/deprecated/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 import {
     selectArticlesListPageSearch,
@@ -109,11 +109,7 @@ export const ArticlesListPageFilters = ({
                     {sortOrder.map(({ order: _order, label }) => (
                         <Button
                             key={label}
-                            theme={
-                                order === _order
-                                    ? ButtonTheme.PRIMARY
-                                    : ButtonTheme.SECONDARY
-                            }
+                            variant={order === _order ? 'primary' : 'secondary'}
                             onClick={onChangeOrder(_order)}
                         >
                             {label}
