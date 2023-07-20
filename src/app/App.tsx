@@ -1,7 +1,7 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { initAuthData, selectUserIsMounted } from '@/entities/User';
-import { MainLayout } from '@/shared/layouts';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';

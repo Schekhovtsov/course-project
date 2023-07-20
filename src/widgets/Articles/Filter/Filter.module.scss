@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-light-redesigned);
+    width: 250px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.sortOrder {
+    display: flex;
+    gap: 10px;
+}
+
+.search {
+    height: 40px;
+}

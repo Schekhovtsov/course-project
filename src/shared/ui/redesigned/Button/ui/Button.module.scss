@@ -11,13 +11,13 @@
 }
 
 .button {
-    font: var(--font-m);
-    border-radius: 5px;
+    font: var(--font-m-redesigned);
+    border-radius: 16px;
     padding: 10px;
 }
 
 .primary {
-    background-color: var(--button-primary-background);
+    background-color: var(--text-redesigned);
     color: var(--button-primary-text);
 
     &:hover {
@@ -28,7 +28,7 @@
 .secondary {
     background-color: var(--button-secondary-background);
     color: var(--button-secondary-text);
-    border: 2px solid var(--link-secondary-color);
+    border: 1px solid var(--background-redesigned);
 
     &:hover {
         background-color: var(--link-secondary-color);

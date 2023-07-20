@@ -1,5 +1,6 @@
 import { memo, ReactNode, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { Card } from '../Card';
 
@@ -28,7 +29,7 @@ export const Tabs = memo(
         );
 
         return (
-            <div className={classNames(styles.container, {}, [className])}>
+            <VStack className={classNames(styles.container, {}, [className])}>
                 {tabs.map((tab) => (
                     // eslint-disable-next-line react/no-array-index-key
                     <Card
@@ -41,7 +42,7 @@ export const Tabs = memo(
                         {tab.content}
                     </Card>
                 ))}
-            </div>
+            </VStack>
         );
     }
 );

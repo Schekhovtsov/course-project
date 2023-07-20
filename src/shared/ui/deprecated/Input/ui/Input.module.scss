@@ -1,8 +1,9 @@
 .container {
     outline: 0;
     padding: 5px;
-    background-color: var(--color-gray);
-    font-size: var(--font-size-xm);
+    border-radius: 10px;
+    border: 1px solid var(--background-redesigned);
+    font-size: var(--font-size-xm-redesigned);
 
     :active {
         border: 0;
