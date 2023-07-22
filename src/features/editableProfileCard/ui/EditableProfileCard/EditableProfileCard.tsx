@@ -7,13 +7,15 @@ import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoa
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 import { ValidateProfileErrors } from '../../model/consts/consts';
 import {
     selectError,
+    selectIsLoading,
     selectProfile,
     selectReadOnlyStatus,
     selectValidateErrors,
@@ -44,6 +46,7 @@ export const EditableProfileCard = memo(
         const dispatch = useAppDispatch();
         const { t } = useTranslation('profilePage');
         const disabled = useSelector(selectReadOnlyStatus);
+        const isLoading = useSelector(selectIsLoading);
 
         const onFirstNameChangeHandler = (value?: string) => {
             dispatch(profileActions.updateProfile({ firstName: value ?? '' }));
@@ -109,26 +112,41 @@ export const EditableProfileCard = memo(
                           />
                       ))
                     : null}
-                <VStack
+                <HStack
                     className={classNames(styles.container, {}, [className])}
                 >
-                    <VStack justify="center" max className={styles.formWrapper}>
-                        <HStack
-                            max
-                            justify="center"
-                            className={styles.avatarWrapper}
-                        >
-                            {data?.avatar && (
+                    <div className={styles.avatarWrapper}>
+                        {isLoading ? (
+                            <Skeleton
+                                width={128}
+                                height={128}
+                                borderRadius="100px"
+                            />
+                        ) : (
+                            data?.avatar && (
                                 <Avatar src={data?.avatar} size={128} />
-                            )}
-                        </HStack>
-                        <VStack className={styles.form}>
+                            )
+                        )}
+                    </div>
+                    <VStack className={styles.form}>
+                        <HStack>
+                            <Text
+                                text="First name"
+                                className={styles.inputTitle}
+                            />
                             <Input
                                 value={data?.firstName}
                                 placeholder={`${t('First name')}`}
                                 disabled={disabled}
                                 onChange={onFirstNameChangeHandler}
                                 data-testid="EditableProfileCard.FirstnameInput"
+                                width={500}
+                            />
+                        </HStack>
+                        <HStack>
+                            <Text
+                                text="Last name"
+                                className={styles.inputTitle}
                             />
                             <Input
                                 value={data?.lastName}
@@ -136,22 +154,34 @@ export const EditableProfileCard = memo(
                                 disabled={disabled}
                                 onChange={onLastNameChangeHandler}
                                 data-testid="EditableProfileCard.LastnameInput"
+                                width={500}
                             />
+                        </HStack>
+                        <HStack>
+                            <Text text="City" className={styles.inputTitle} />
                             <Input
                                 value={data?.city}
                                 placeholder={`${t('City')}`}
                                 disabled={disabled}
                                 onChange={onCityChangeHandler}
+                                width={500}
+                            />
+                        </HStack>
+                        <HStack>
+                            <Text
+                                text="Avatar link name"
+                                className={styles.inputTitle}
                             />
                             <Input
                                 value={data?.avatar}
                                 placeholder={`${t('Avatar')}`}
                                 disabled={disabled}
                                 onChange={onAvatarChangeHandler}
+                                width={500}
                             />
-                        </VStack>
+                        </HStack>
                     </VStack>
-                </VStack>
+                </HStack>
             </>
         );
     }

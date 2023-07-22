@@ -2,8 +2,8 @@
 import { useTranslation } from 'react-i18next';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { SortOrder } from '@/shared/lib/types';
-import { Input } from '@/shared/ui/deprecated/Input';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './Filter.module.scss';

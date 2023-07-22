@@ -6,11 +6,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Input } from '@/shared/ui/deprecated/Input';
 import { Modal } from '@/shared/ui/deprecated/Modal';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './RatingCard.module.scss';

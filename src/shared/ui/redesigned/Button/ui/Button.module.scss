@@ -26,9 +26,9 @@
 }
 
 .secondary {
-    background-color: var(--button-secondary-background);
-    color: var(--button-secondary-text);
-    border: 1px solid var(--background-redesigned);
+    background-color: transparent;
+    border: 1px solid var(--hint-redesigned);
+    color: var(--text-redesigned);
 
     &:hover {
         background-color: var(--link-secondary-color);

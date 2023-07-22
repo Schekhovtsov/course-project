@@ -22,11 +22,6 @@ interface InputProps extends HTMLInputProps {
     autofocus?: boolean;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const Input = memo(
     ({
         className,
