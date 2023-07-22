@@ -24,7 +24,7 @@ interface TextProps {
 const mapSizeToHeaderTag: Record<TitleSize, HeaderTag> = {
     small: 'h3',
     medium: 'h2',
-    big: 'h3',
+    big: 'h1',
 };
 
 export const Text = memo(

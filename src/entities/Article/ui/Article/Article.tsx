@@ -66,7 +66,7 @@ export const Article = memo(({ className, id }: ArticleProps) => {
     } else if (data) {
         content = (
             <VStack max gap={30}>
-                <Text title={data.title} />
+                <Text title={data.title} className={styles.title} />
                 <Text text={data.description} />
                 <img
                     src={data.img}

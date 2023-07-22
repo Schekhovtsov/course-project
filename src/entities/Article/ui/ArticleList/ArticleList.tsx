@@ -28,7 +28,7 @@ interface ArticleListProps {
 const ItemContainerComp: FC<{ height: number; width: number; index: number }> =
     () => (
         <div className={styles.itemContainer}>
-            <ArticleListItemSkeleton className={styles.card} view="tile" />
+            <ArticleListItemSkeleton view="tile" />
         </div>
     );
 
@@ -110,7 +110,7 @@ export const ArticleList = memo(
                 ) : (
                     <VirtuosoGrid
                         ref={virtuosoGridRef}
-                        style={{ height: '80%' }}
+                        style={{ height: '90%' }}
                         totalCount={articles.length}
                         components={{
                             ScrollSeekPlaceholder: ItemContainerComp,

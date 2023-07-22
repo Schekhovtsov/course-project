@@ -65,6 +65,7 @@ const AddCommentForm = memo(
                     variant="secondary"
                     onClick={onSendHandler}
                     data-testid="AddCommentForm.Button"
+                    className={styles.button}
                 >
                     {`${t('Отправить комментарий')}`}
                 </Button>

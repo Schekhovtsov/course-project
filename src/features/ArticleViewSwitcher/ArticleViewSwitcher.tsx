@@ -1,6 +1,7 @@
 import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { classNames } from '@/shared/lib/classNames';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import styles from './ArticleViewSwitcher.module.scss';
 
@@ -32,7 +33,7 @@ export const ArticleViewSwitcher = ({
     };
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <VStack className={classNames(styles.container, {}, [className])}>
             {viewTypes.map(({ view: _view, label }) => (
                 <Button
                     key={label}
@@ -42,6 +43,6 @@ export const ArticleViewSwitcher = ({
                     {label}
                 </Button>
             ))}
-        </div>
+        </VStack>
     );
 };
