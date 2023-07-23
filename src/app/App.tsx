@@ -33,8 +33,6 @@ function App() {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
-                            // eslint-disable-next-line i18next/no-literal-string
-                            toolbar={<div>T</div>}
                         />
                     </Suspense>
                 </div>

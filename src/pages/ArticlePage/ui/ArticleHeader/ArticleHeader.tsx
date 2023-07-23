@@ -9,6 +9,7 @@ import {
 } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { selectCanEditArticle } from '../../model/selectors/article';
 
@@ -33,13 +34,13 @@ export const ArticleHeader = ({ className }: ArticleHeaderProps) => {
     }, [navigate, article]);
 
     return (
-        <div className={classNames(styles.container, {}, [className])}>
+        <VStack className={classNames(styles.container, {}, [className])}>
             <Button onClick={onBackToArticlesList}>
                 {`${t('Back to articles list')}`}
             </Button>
             {canEditArticle ? (
                 <Button onClick={onToEditMode}>{`${t('Edit')}`}</Button>
             ) : null}
-        </div>
+        </VStack>
     );
 };

@@ -10,7 +10,7 @@
 
 .content {
     grid-area: content;
-    max-width: 1200px;
+    max-width: 1600px;
     justify-self: self;
     padding: 0 16px;
     width: 100%;
@@ -22,7 +22,7 @@
 
 .left,
 .right {
-    position: stiky;
+    position: sticky;
     top: 32px;
     height: fit-content;
 }

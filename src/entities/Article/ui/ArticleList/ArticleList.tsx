@@ -25,12 +25,11 @@ interface ArticleListProps {
     onLoadNextBatch?: () => void;
 }
 
-const ItemContainerComp: FC<{ height: number; width: number; index: number }> =
-    () => (
-        <div className={styles.itemContainer}>
-            <ArticleListItemSkeleton view="tile" />
-        </div>
-    );
+const ItemContainerComp: FC<{
+    height: number;
+    width: number;
+    index: number;
+}> = () => <ArticleListItemSkeleton view="tile" />;
 
 export const ArticleList = memo(
     ({
@@ -82,7 +81,7 @@ export const ArticleList = memo(
                 return (
                     <ArticleListItemSkeleton
                         className={styles.card}
-                        view="list"
+                        view={view}
                     />
                 );
             }

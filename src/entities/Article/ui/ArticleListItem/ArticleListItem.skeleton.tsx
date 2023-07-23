@@ -26,7 +26,7 @@ export const ArticleListItemSkeleton = memo(
                 >
                     <Card className={styles.card}>
                         <div className={styles.imageWrapper}>
-                            <Skeleton width={300} height={300} />
+                            <Skeleton width={250} height={250} />
                             {infoWrapper}
                         </div>
                     </Card>
