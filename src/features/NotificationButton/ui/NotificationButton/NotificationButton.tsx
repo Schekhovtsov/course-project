@@ -21,6 +21,7 @@ export const NotificationButton = () => {
     const trigger = (
         <Icon
             Svg={NotificationIcon}
+            clickable
             onClick={toggleDrawer}
             width={30}
             height={30}

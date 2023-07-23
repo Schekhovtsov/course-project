@@ -20,7 +20,7 @@ interface ArticleHeaderProps {
 }
 
 export const ArticleHeader = ({ className }: ArticleHeaderProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('articlePage');
     const navigate = useNavigate();
     const article = useSelector(selectArticle);
     const canEditArticle = useSelector(selectCanEditArticle);

@@ -1,8 +1,9 @@
 {
-  "Article page": "Заглушка статьи",
-  "Article not found": "Такой статьи не существует",
-  "Comments": "Комментарии",
-  "There is no comments yet": "Комментариев пока нет",
-  "Read more": "Читать далее",
-  "Back to articles list": "Назад"
+    "Article page": "Заглушка статьи",
+    "Article not found": "Такой статьи не существует",
+    "Comments": "Комментарии",
+    "There is no comments yet": "Комментариев пока нет",
+    "Read more": "Читать далее",
+    "Back to articles list": "Назад",
+    "Edit": "Редактировать"
 }

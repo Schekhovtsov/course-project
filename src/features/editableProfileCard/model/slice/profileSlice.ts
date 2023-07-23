@@ -28,7 +28,7 @@ export const profileSlice = createSlice({
         },
         updateProfile: (state, { payload }: PayloadAction<Profile>) => {
             state.tempData = {
-                ...state.data,
+                ...state.tempData,
                 ...payload,
             };
         },
