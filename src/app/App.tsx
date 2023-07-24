@@ -8,11 +8,13 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
+import { useAppToolbar } from './lib/hooks/useAppToolbar';
 import { AppRouter } from './providers/router';
 
 function App() {
     const dispatch = useAppDispatch();
     const mounted = useSelector(selectUserIsMounted);
+    const toolbar = useAppToolbar();
 
     useEffect(() => {
         dispatch(initAuthData());
@@ -36,6 +38,7 @@ function App() {
                             content={<AppRouter />}
                             header={<Navbar />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>

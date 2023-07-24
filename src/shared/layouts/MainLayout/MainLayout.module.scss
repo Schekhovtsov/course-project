@@ -36,4 +36,9 @@
 .toolbar {
     grid-area: toolbar;
     height: 100%;
+    width: 50px;
+    background: var(--background-light-redesigned);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
