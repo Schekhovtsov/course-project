@@ -1,11 +1,10 @@
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { initAuthData, selectUserIsMounted } from '@/entities/User';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
-import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Loader } from '@/shared/ui/deprecated/Loader';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
@@ -20,14 +19,18 @@ function App() {
     }, [dispatch]);
 
     if (!mounted) {
-        return <Loader />;
+        return (
+            <div className="app_redesigned">
+                <AppLoaderLayout />
+            </div>
+        );
     }
 
     return (
         <ToggledFeatures
             feature="isAppRedesigned"
             on={
-                <div className={classNames('app_redesigned', {}, [])}>
+                <div className="app_redesigned">
                     <Suspense fallback="">
                         <MainLayout
                             content={<AppRouter />}
@@ -38,7 +41,7 @@ function App() {
                 </div>
             }
             off={
-                <div className={classNames('app', {}, [])}>
+                <div className="app">
                     <Suspense fallback="">
                         <Navbar />
                         <div className="body">
