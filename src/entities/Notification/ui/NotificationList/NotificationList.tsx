@@ -21,8 +21,9 @@ export const NotificationList = memo(({ className }: NotificationListProps) => {
         return (
             <VStack max className={className}>
                 <Text title={`${t('Notifications')}`} />
-                {new Array(2).fill(true).map(() => (
-                    <Skeleton height={100} width={400} />
+                {new Array(2).fill(true).map((_, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <Skeleton key={index} height={100} width={400} />
                 ))}
             </VStack>
         );
