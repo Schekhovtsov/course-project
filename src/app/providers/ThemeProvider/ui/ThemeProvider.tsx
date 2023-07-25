@@ -5,7 +5,7 @@ import { Theme } from '@/shared/constants/theme';
 import { ThemeContext } from '@/shared/contexts/ThemeContext';
 
 interface ThemeProviderProps {
-    initialTheme?: Theme;
+    initialTheme: Theme;
     children: ReactNode;
 }
 
@@ -15,19 +15,19 @@ export const ThemeProvider = ({
     initialTheme,
     children,
 }: ThemeProviderProps) => {
-    const { theme: storedTheme = fallbackTheme } = useJsonSettings();
+    const { theme: storedTheme } = useJsonSettings();
     const [theme, setTheme] = useState<Theme>(
-        fallbackTheme || storedTheme || initialTheme
+        initialTheme || fallbackTheme || storedTheme
     );
     const [isThemeInited, setIsThemeInited] = useState(false);
 
     useEffect(() => {
         if (!isThemeInited && storedTheme) {
-            setTheme(storedTheme);
-            localStorage.setItem(LS_THEME_KEY, storedTheme);
+            setTheme(initialTheme);
+            localStorage.setItem(LS_THEME_KEY, initialTheme);
             setIsThemeInited(true);
         }
-    }, [isThemeInited, storedTheme]);
+    }, [isThemeInited, initialTheme, storedTheme]);
 
     const defaultProps = useMemo(
         () => ({

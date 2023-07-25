@@ -6,7 +6,6 @@ import '@/app/styles/index.scss';
 import '@/shared/config/i18n/i18n';
 
 import App from './app/App';
-import { ThemeProvider } from './app/providers/ThemeProvider';
 
 const container = document.getElementById('root');
 
@@ -19,9 +18,7 @@ const root = createRoot(container);
 root.render(
     <StoreProvider>
         <BrowserRouter>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
+            <App />
         </BrowserRouter>
     </StoreProvider>
 );
