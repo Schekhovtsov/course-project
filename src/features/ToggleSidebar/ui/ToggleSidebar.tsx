@@ -23,7 +23,7 @@ export const ToggleSidebar = memo(
                 clickable
                 onClick={toggleSidebar}
                 title={`${t('Toggle sidebar')}`}
-                data-testid="Toggle sidebar"
+                data-testid="toggle-sidebar"
                 className={classNames(
                     styles.icon,
                     {

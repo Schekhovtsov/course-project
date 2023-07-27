@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import avatar from '@/shared/assets/icons/test/avatar.png';
+import avatar from '@/shared/assets/icons/tests/avatar.png';
 
 import { ValidateProfileErrors } from '../consts/consts';
 import { validateProfileData } from './validateProfileData';
@@ -12,7 +12,7 @@ const data = {
     avatar,
 };
 
-describe('entity/Profile/services/validateProfileData', () => {
+describe('features/editableProfileCard/model/services/valicdateProfileData', () => {
     test('Должен вернуть результат без ошибок', async () => {
         const result = validateProfileData(data);
         expect(result).toEqual([]);

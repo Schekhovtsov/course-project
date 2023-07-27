@@ -42,7 +42,7 @@ export default {
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '.+\\.(svg)': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-        '.+\\.(png)$': 'jest-transform-stub',
+        '.+\\.(png)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'), // 'jest-transform-stub',
         axios: 'axios/dist/node/axios.cjs',
         '^@/(.*)$': '<rootDir>src/$1',
     },

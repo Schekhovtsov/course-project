@@ -50,6 +50,7 @@ export const Icon = ({
                 className={styles.button}
                 onClick={otherProps.onClick}
                 title={title}
+                {...otherProps}
             >
                 {icon}
             </button>

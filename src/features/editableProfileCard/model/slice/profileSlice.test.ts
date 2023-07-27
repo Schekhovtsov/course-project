@@ -1,4 +1,4 @@
-import avatar from '@/shared/assets/icons/test/avatar.png';
+import avatar from '@/shared/assets/icons/tests/avatar.png';
 
 import { ValidateProfileErrors } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData';

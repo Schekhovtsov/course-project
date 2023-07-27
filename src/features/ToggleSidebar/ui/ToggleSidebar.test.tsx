@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 
 import { ToggleSidebar } from './ToggleSidebar';
 
-describe('Toggle sidebar button', () => {
+describe('features/ToggleSidebar/ui/ToggleSidebar', () => {
     test('Проверяет, отображается ли toggle sidebar на экране', () => {
         const isCollapsed = true;
         const toggle = () => {};
