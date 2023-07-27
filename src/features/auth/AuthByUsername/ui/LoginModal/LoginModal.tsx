@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
-import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
 import { Modal } from '@/shared/ui/deprecated/Modal';
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
@@ -41,7 +40,7 @@ export const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
             className={classNames(styles.container, {}, [className])}
             lazy
         >
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<div />}>
                 <LoginFormAsync onSuccess={onSuccessHandler} />
             </Suspense>
         </Modal>

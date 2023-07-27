@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames';
@@ -57,8 +57,23 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
+            dispatch(loginActions.setUsername(''));
+            dispatch(loginActions.setPassword(''));
         }
     }, [dispatch, password, username, onSuccess]);
+
+    useEffect(() => {
+        const listener = (event: KeyboardEvent) => {
+            if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+                event.preventDefault();
+                onLoginClickHandler();
+            }
+        };
+        document.addEventListener('keydown', listener);
+        return () => {
+            document.removeEventListener('keydown', listener);
+        };
+    }, [onLoginClickHandler]);
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
