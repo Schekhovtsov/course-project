@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useTranslation } from 'react-i18next';
-import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleTypeTabs } from '@/features/articles/ArticleTypeTabs';
 import { SortOrder } from '@/shared/lib/types';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';

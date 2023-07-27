@@ -1,5 +1,5 @@
 import { userReducer } from '@/entities/User';
-import { scrollRestorationReducer } from '@/features/ScrollRestoration';
+import { scrollRestorationReducer } from '@/features/ui/ScrollRestoration';
 import { api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import {

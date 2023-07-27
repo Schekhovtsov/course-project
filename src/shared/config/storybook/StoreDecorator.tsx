@@ -1,9 +1,9 @@
 /* eslint-disable feature-sliced-design/layers-hierarchy */
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleReducer } from '@/entities/Article/model/slice/articleSlice';
-import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
+import { addCommentFormReducer } from '@/features/articles/AddCommentForm/model/slice/addCommentFormSlice';
+import { loginReducer } from '@/features/auth/AuthByUsername/model/slice/loginSlice';
+import { profileReducer } from '@/features/profile/editableProfileCard/model/slice/profileSlice';
 import { articlePageReducer } from '@/pages/ArticlePage/model/slice';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { Story } from '@storybook/react';

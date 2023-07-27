@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { ScrollToTopButton } from '@/features/ScrollToTopButton';
+import { ScrollToTopButton } from '@/features/ui/ScrollToTopButton';
 import { AppRoutes } from '@/shared/constants/router';
 import { useRouteChange } from '@/shared/lib/router/useRouteChange';
 

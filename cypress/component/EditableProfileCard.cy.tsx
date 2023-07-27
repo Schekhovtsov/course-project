@@ -1,4 +1,4 @@
-import { EditableProfileCard } from '@/features/editableProfileCard';
+import { EditableProfileCard } from '@/features/profile/editableProfileCard';
 import { TestProvider } from '@/shared/lib/tests/componentRender';
 
 describe('EditableProfileCard.cy.tsx', () => {

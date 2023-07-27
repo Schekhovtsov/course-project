@@ -1,4 +1,4 @@
-import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { ArticleViewSwitcher } from '@/features/articles/ArticleViewSwitcher';
 
 import { useArticleFilters } from '../../model/lib/hooks/useArticleFilters';
 

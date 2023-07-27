@@ -1,8 +1,8 @@
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { LanguageSwitcher } from '@/features/LanguageSwitcher';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
-import { ToggleSidebar } from '@/features/ToggleSidebar';
+import { LanguageSwitcher } from '@/features/ui/LanguageSwitcher';
+import { ThemeSwitcher } from '@/features/ui/ThemeSwitcher';
+import { ToggleSidebar } from '@/features/ui/ToggleSidebar';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { VStack } from '@/shared/ui/redesigned/Stack';

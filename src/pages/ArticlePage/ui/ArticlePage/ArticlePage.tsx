@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Article, articleReducer } from '@/entities/Article';
-import { ArticleRating } from '@/features/ArticleRating';
+import { ArticleRating } from '@/features/articles/ArticleRating';
 import { StickyContentLayout } from '@/shared/layouts';
 import { getFeatureFlag } from '@/shared/lib/features';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
