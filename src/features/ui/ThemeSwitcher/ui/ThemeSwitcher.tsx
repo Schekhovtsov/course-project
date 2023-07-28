@@ -5,7 +5,7 @@ import ChangeThemeIcon from '@/shared/assets/icons/changeThemeIcon.svg';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
-import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Icon } from '@/shared/ui/Icon';
 
 import styles from './ThemeSwitcher.module.scss';
 

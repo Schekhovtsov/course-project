@@ -5,7 +5,7 @@ import { ThemeSwitcher } from '@/features/ui/ThemeSwitcher';
 import { ToggleSidebar } from '@/features/ui/ToggleSidebar';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 import { selectSidebarItems } from '../../model/selector/selectSidebarItems';
 import { SidebarItem } from '../SidebarItem';

@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { getRouteProfile } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 import { CommentType } from '../../model/types/Comment';
 

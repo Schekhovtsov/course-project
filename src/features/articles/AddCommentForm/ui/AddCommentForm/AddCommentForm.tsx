@@ -5,9 +5,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDynamicReducerLoader } from '@/shared/lib/hooks/useDynamicReducerLoader';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicReducerLoader/ui/useDynamicReducerLoader';
-import { Button } from '@/shared/ui/redesigned/Button';
-import { Input } from '@/shared/ui/redesigned/Input';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { VStack } from '@/shared/ui/Stack';
 
 import { getAddCommentFormText } from '../../model/selector/addCommentFormSelector';
 import {

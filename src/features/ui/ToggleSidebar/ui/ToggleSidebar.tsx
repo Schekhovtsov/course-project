@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import ArrowRightIcon from '@/shared/assets/icons/arrows/right.svg';
 import { classNames } from '@/shared/lib/classNames';
-import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Icon } from '@/shared/ui/Icon';
 
 import styles from './ToggleSidebar.module.scss';
 

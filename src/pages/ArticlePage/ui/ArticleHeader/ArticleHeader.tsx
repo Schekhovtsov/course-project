@@ -8,8 +8,8 @@ import {
     getRouteArticles,
 } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames';
-import { Button } from '@/shared/ui/redesigned/Button';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Button } from '@/shared/ui/Button';
+import { VStack } from '@/shared/ui/Stack';
 
 import { selectCanEditArticle } from '../../model/selectors/article';
 

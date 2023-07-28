@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
 export const ForbiddenPage = () => {

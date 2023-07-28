@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 import { ArticleRatingProps } from '../../ui/ArticleRating/ArticleRating';
 

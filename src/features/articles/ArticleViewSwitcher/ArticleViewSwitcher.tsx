@@ -1,7 +1,7 @@
 import { ArticleViewType } from '@/entities/Article/model/types/Article';
 import { classNames } from '@/shared/lib/classNames';
-import { Button } from '@/shared/ui/redesigned/Button';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Button } from '@/shared/ui/Button';
+import { VStack } from '@/shared/ui/Stack';
 
 import styles from './ArticleViewSwitcher.module.scss';
 

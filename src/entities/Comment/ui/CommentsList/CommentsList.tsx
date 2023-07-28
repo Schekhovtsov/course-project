@@ -1,4 +1,4 @@
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 import { CommentType } from '../../model/types/Comment';
 import { CommentCard } from '../../ui/CommentCard/CommentCard';

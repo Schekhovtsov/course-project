@@ -2,12 +2,12 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { LS_ARTICLES_LIST_ITEM_ID } from '@/shared/constants/localStorage';
 import { getRouteArticle } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { AppImage } from '@/shared/ui/redesigned/AppImage';
-import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { AppImage } from '@/shared/ui/AppImage';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Card } from '@/shared/ui/Card';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text } from '@/shared/ui/Text';
 
 import {
     ArticleTextBlock,

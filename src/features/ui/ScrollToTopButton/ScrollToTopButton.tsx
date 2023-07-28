@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import scrollTopIcon from '@/shared/assets/icons/scrollTop.svg';
-import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Icon } from '@/shared/ui/Icon';
 
 export const ScrollToTopButton = memo(() => {
     const { t } = useTranslation();

@@ -8,8 +8,8 @@ import {
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { Dropdown } from '@/shared/ui/redesigned/Popups';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
 
 export const AvatarDropdown = () => {
     const { t } = useTranslation();

@@ -1,5 +1,5 @@
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 import { MainLayout } from '../MainLayout';
 
