@@ -10,11 +10,11 @@ import styles from './Filter.module.scss';
 
 const sortOrder: { order: SortOrder; label: string }[] = [
     {
-        order: 'asc',
+        order: 'desc',
         label: '↓',
     },
     {
-        order: 'desc',
+        order: 'asc',
         label: '↑',
     },
 ];

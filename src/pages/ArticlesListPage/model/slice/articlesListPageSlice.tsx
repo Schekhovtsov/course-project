@@ -20,25 +20,29 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
     (state) => state.articlesListPage || articlesAdapter.getInitialState()
 );
 
+const initialState = {
+    error: null,
+    isLoading: false,
+    view:
+        (localStorage.getItem(LS_ARTICLES_LIST_VIEW) as ArticleViewType) ??
+        'list',
+    hasMore: true,
+    limit: 6,
+    page: 1,
+    ids: [],
+    entities: {},
+    order: 'desc',
+    search: '',
+    sort: 'createdAt',
+    type: 'All',
+    _inited: false,
+};
+
 const articlesListPageSlice = createSlice({
     name: 'articlesListPageSlice',
-    initialState: articlesAdapter.getInitialState<ArticlesListPageSchema>({
-        error: null,
-        isLoading: false,
-        view:
-            (localStorage.getItem(LS_ARTICLES_LIST_VIEW) as ArticleViewType) ??
-            'list',
-        hasMore: true,
-        limit: 3,
-        page: 1,
-        ids: [],
-        entities: {},
-        order: 'asc',
-        search: '',
-        sort: 'createdAt',
-        type: 'All',
-        _inited: false,
-    }),
+    initialState: articlesAdapter.getInitialState<ArticlesListPageSchema>(
+        initialState as ArticlesListPageSchema
+    ),
     reducers: {
         setView: (state, action: PayloadAction<ArticleViewType>) => {
             state.view = action.payload;
