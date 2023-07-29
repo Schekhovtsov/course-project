@@ -21,7 +21,7 @@ const article = {
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'Ulbi tv',
+        username: 'Schekhovtsov',
         avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
     tags: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
@@ -89,7 +89,12 @@ const article = {
 
 export const List = Template.bind({});
 List.args = {
-    articles: [article],
+    articles: new Array(9).fill(0).map((item, index) => ({
+        ...article,
+        id: String(index),
+    })),
+    isLoading: false,
+    view: 'list',
 };
 List.decorators = [StoreDecorator({})];
 

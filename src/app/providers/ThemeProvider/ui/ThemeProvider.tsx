@@ -17,7 +17,7 @@ export const ThemeProvider = ({
 }: ThemeProviderProps) => {
     const { theme: storedTheme } = useJsonSettings();
     const [theme, setTheme] = useState<Theme>(
-        initialTheme || fallbackTheme || storedTheme
+        storedTheme || fallbackTheme || initialTheme
     );
     const [isThemeInited, setIsThemeInited] = useState(false);
 

@@ -38,6 +38,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        width: 250px;
 
         .tags {
             display: flex;
@@ -45,21 +46,30 @@
             gap: 10px;
             margin-left: 5px;
             font: var(--font-s-redesigned);
+            overflow: hidden;
+            overflow-x: scroll;
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                height: 0;
+            }
 
             .tag {
+                font-size: 14px;
                 background-color: var(--color-dark);
                 color: var(--color-white);
-                padding: 10px;
-                border-radius: 16px;
+                padding: 8px;
+                border-radius: 12px;
             }
         }
 
         .title {
             margin-top: 5px;
             background-color: var(--color-overlay);
+            height: 77px;
             padding: 5px;
 
-            h3 {
+            h1 {
                 font: var(--font-m-redesigned) !important;
                 margin-left: 5px;
                 margin-top: 5px;
@@ -110,7 +120,7 @@
             .createdAt {
                 background-color: var(--color-overlay);
                 padding: 10px;
-                border-radius: 16px;
+                border-radius: 12px;
 
                 span {
                     color: var(--color-white) !important;
@@ -123,6 +133,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
+        width: 100%;
 
         .tags {
             display: flex;
@@ -135,15 +146,15 @@
                 background-color: var(--color-dark);
                 color: var(--color-white);
                 padding: 10px;
-                border-radius: 16px;
+                border-radius: 12px;
             }
         }
 
         .title {
-            margin: 5px 0;
+            margin: 5px 0 0;
             background-color: var(--color-overlay);
 
-            h3 {
+            h1 {
                 color: var(--color-white) !important;
                 margin-left: 5px;
             }

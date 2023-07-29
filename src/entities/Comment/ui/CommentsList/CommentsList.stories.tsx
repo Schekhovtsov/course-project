@@ -23,6 +23,14 @@ Primary.args = {
                 username: 'Vasya',
             },
         },
+        {
+            id: '2',
+            text: 'Hello another',
+            user: {
+                id: '1',
+                username: 'Perya',
+            },
+        },
     ],
 };
 Primary.decorators = [StoreDecorator({})];

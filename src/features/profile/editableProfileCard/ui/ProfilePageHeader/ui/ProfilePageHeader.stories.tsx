@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfilePageHeader } from './ProfilePageHeader';
 
 export default {
-    title: 'feature/editableProfileCard/ProfilePageHeader',
+    title: 'features/editableProfileCard/ProfilePageHeader',
     component: ProfilePageHeader,
 } as ComponentMeta<typeof ProfilePageHeader>;
 

@@ -12,8 +12,8 @@ export type useThemeType = {
 };
 
 export const useTheme = (): useThemeType => {
-    const { theme: storedTheme = Theme.LIGHT } = useJsonSettings();
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { theme: storedTheme } = useJsonSettings();
+    const { theme = Theme.LIGHT, setTheme } = useContext(ThemeContext);
 
     // eslint-disable-next-line no-unused-vars
     const toggleTheme = (saveAction?: (theme: Theme) => void) => {
@@ -28,5 +28,5 @@ export const useTheme = (): useThemeType => {
         document.body.className = storedTheme;
     }, [storedTheme]);
 
-    return { theme: theme || Theme.LIGHT, toggleTheme };
+    return { theme, toggleTheme };
 };

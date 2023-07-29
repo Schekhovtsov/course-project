@@ -10,4 +10,14 @@ export default {
 const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    isOpen: true,
+    // eslint-disable-next-line i18next/no-literal-string
+    children: <div>Drawer, испольщующийся в мобильной версии сайта</div>,
+    style: {
+        position: 'absolute',
+        bottom: '0',
+        width: '95%',
+        height: '70%',
+    },
+};

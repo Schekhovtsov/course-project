@@ -87,8 +87,16 @@ const article = {
     ],
 } as ArticleType;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const List = Template.bind({});
+List.args = {
     article,
+    view: 'list',
 };
-Primary.decorators = [StoreDecorator({})];
+List.decorators = [StoreDecorator({})];
+
+export const Tile = Template.bind({});
+Tile.args = {
+    article,
+    view: 'tile',
+};
+Tile.decorators = [StoreDecorator({})];

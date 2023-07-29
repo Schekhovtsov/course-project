@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { saveJsonSettings } from '@/entities/User/model/services/saveJsonSettings';
 import ChangeThemeIcon from '@/shared/assets/icons/changeThemeIcon.svg';
@@ -17,11 +17,15 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { toggleTheme } = useTheme();
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const [loading, setLoading] = useState(false);
 
     const onToggleHandler = useCallback(() => {
         // eslint-disable-next-line no-unused-vars
+        setLoading(true);
         toggleTheme((newTheme) => {
-            dispatch(saveJsonSettings({ theme: newTheme }));
+            dispatch(saveJsonSettings({ theme: newTheme })).then(() => {
+                setLoading(false);
+            });
         });
     }, [dispatch, toggleTheme]);
 
@@ -34,6 +38,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             height={32}
             clickable
             onClick={onToggleHandler}
+            disabled={loading}
         />
     );
 });

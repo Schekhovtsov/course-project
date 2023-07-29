@@ -1,4 +1,4 @@
-import { memo, ReactNode, useCallback, useEffect } from 'react';
+import { CSSProperties, memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AnimationProvider,
@@ -16,12 +16,13 @@ interface DrawerProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
+    style?: CSSProperties;
 }
 
 const height = window.innerHeight - 100;
 
 export const DrawerContent = memo(
-    ({ className, children, isOpen, onClose }: DrawerProps) => {
+    ({ className, children, isOpen, onClose, style }: DrawerProps) => {
         const { Spring, Gesture } = useAnimationLibs();
         const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
@@ -93,6 +94,7 @@ export const DrawerContent = memo(
                             display,
                             bottom: `calc(-100vh + ${height - 100}px)`,
                             y,
+                            ...style,
                         }}
                         {...bind()}
                     >
