@@ -29,10 +29,10 @@ export const selectArticlesListPageType = (state: StateSchema) =>
     state.articlesListPage?.type ?? 'All';
 
 export const selectArticlesListPageSortOrder = (state: StateSchema) =>
-    state.articlesListPage?.order;
+    state.articlesListPage?.order ?? 'desc';
 
 export const selectArticlesListPageSort = (state: StateSchema) =>
-    state.articlesListPage?.sort;
+    state.articlesListPage?.sort ?? 'createdAt';
 
 export const [useArticleItemById] = buildSelector(
     (state, id: string) => state.articlesListPage?.entities[id]
