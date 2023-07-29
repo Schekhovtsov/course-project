@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
-import { useJsonSettings } from '@/entities/User';
 import { LS_THEME_KEY } from '@/shared/constants/localStorage';
 import { Theme } from '@/shared/constants/theme';
 import { ThemeContext } from '@/shared/contexts/ThemeContext';
@@ -15,19 +14,22 @@ export const ThemeProvider = ({
     initialTheme,
     children,
 }: ThemeProviderProps) => {
-    const { theme: storedTheme } = useJsonSettings();
     const [theme, setTheme] = useState<Theme>(
-        storedTheme || fallbackTheme || initialTheme
+        initialTheme || fallbackTheme || Theme.LIGHT
     );
     const [isThemeInited, setIsThemeInited] = useState(false);
 
     useEffect(() => {
-        if (!isThemeInited && storedTheme) {
+        if (!isThemeInited) {
             setTheme(initialTheme);
-            localStorage.setItem(LS_THEME_KEY, initialTheme);
             setIsThemeInited(true);
         }
-    }, [isThemeInited, initialTheme, storedTheme]);
+    }, [isThemeInited, initialTheme]);
+
+    useEffect(() => {
+        localStorage.setItem(LS_THEME_KEY, theme);
+        document.body.className = theme;
+    }, [theme]);
 
     const defaultProps = useMemo(
         () => ({

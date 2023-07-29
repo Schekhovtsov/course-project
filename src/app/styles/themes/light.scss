@@ -1,34 +1,7 @@
 :root,
 .app_light_theme {
-    // Main colors
-    --bg-color: #fff;
-    --inverted-bg-color: #f4f9fb;
-    --third-bg-color: #23262f;
-    --primary-color: #002a38;
-    --secondary-color: #000f0f;
-
-    // Text
-    --text-primary-color: #423d3d;
-    --link-primary-color: var(--primary-color);
-    --link-secondary-color: var(--secondary-color);
-    --inverted-link-primary-color: var(--primary-color);
-    --inverted-link-secondary-color: var(--secondary-color);
-
-    // Buttons
-    --button-primary-background: var(--primary-color);
-    --button-primary-text: var(--bg-color);
-    --button-secondary-text: var(--link-primary-color);
-    --button-secondary-background: var(--bg-color);
-
-    // Skeleton
-    --skeleton-color: var(--inverted-bg-color);
-
-    // Code
-    --code-background-color: #ebebeb;
-
-    // redesigned:
-    --background-dark-redesigned: #fff;
     --background-redesigned: #eff5f6;
+    --background-dark-redesigned: #fff;
     --background-light-redesigned: #e2eef1;
     --text-redesigned: #141c1f;
     --hint-redesigned: #adbcc8;
@@ -38,4 +11,6 @@
     --accent-redesigned: #00c8ff;
     --color-white: #e2eef1;
     --color-dark: #141c1f;
+    --skeleton-color: var(--background-light-redesigned);
+    --code-background-color: #ebebeb;
 }

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { initAuthData, selectUserIsMounted } from '@/entities/User';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
-import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
@@ -28,31 +27,15 @@ const App = memo(() => {
     }
 
     return (
-        <ToggledFeatures
-            feature="isAppRedesigned"
-            on={
-                <div className="app_redesigned">
-                    <Suspense fallback="">
-                        <MainLayout
-                            content={<AppRouter />}
-                            header={<Navbar />}
-                            sidebar={<Sidebar />}
-                        />
-                    </Suspense>
-                </div>
-            }
-            off={
-                <div className="app">
-                    <Suspense fallback="">
-                        <Navbar />
-                        <div className="body">
-                            <Sidebar />
-                            {mounted ? <AppRouter /> : null}
-                        </div>
-                    </Suspense>
-                </div>
-            }
-        />
+        <div className="app_redesigned">
+            <Suspense fallback="">
+                <MainLayout
+                    content={<AppRouter />}
+                    header={<Navbar />}
+                    sidebar={<Sidebar />}
+                />
+            </Suspense>
+        </div>
     );
 });
 

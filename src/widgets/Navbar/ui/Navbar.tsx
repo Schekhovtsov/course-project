@@ -7,7 +7,6 @@ import { LoginModal } from '@/features/auth/AuthByUsername';
 import { AvatarDropdown } from '@/features/profile/AvatarDropdown';
 import { NotificationButton } from '@/features/ui/NotificationButton';
 import { classNames } from '@/shared/lib/classNames';
-import { ToggledFeatures } from '@/shared/lib/features/ToggledFeatures';
 import { useModal } from '@/shared/lib/hooks/useModal';
 import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
@@ -28,67 +27,29 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
 
     if (authData) {
         return (
-            <ToggledFeatures
-                feature="isAppRedesigned"
-                on={
-                    <div
-                        className={classNames(styles.containerRedesigned, {}, [
-                            className,
-                        ])}
-                    >
-                        <HStack className={styles.actions}>
-                            <NotificationButton />
-                            <AvatarDropdown />
-                        </HStack>
-                    </div>
-                }
-                off={
-                    <div
-                        className={classNames(styles.container, {}, [
-                            className,
-                        ])}
-                    >
-                        <span className={styles.title}>
-                            {`${t('Site name')}`}
-                        </span>
-                        <HStack className={styles.actions}>
-                            <NotificationButton />
-                            <AvatarDropdown />
-                        </HStack>
-                    </div>
-                }
-            />
+            <div
+                className={classNames(styles.containerRedesigned, {}, [
+                    className,
+                ])}
+            >
+                <HStack className={styles.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </div>
         );
     }
 
     return (
-        <ToggledFeatures
-            feature="isAppRedesigned"
-            on={
-                <div className={classNames(styles.container, {}, [className])}>
-                    <Button onClick={openModal} variant="text">
-                        {`${t('Log in')}`}
-                    </Button>
-                    <LoginModal
-                        isOpen={isModalOpen}
-                        onClose={closeModal}
-                        {...portalProps}
-                    />
-                </div>
-            }
-            off={
-                <div className={classNames(styles.container, {}, [className])}>
-                    <span className={styles.title}>{`${t('Site name')}`}</span>
-                    <Button onClick={openModal} variant="text">
-                        {`${t('Log in')}`}
-                    </Button>
-                    <LoginModal
-                        isOpen={isModalOpen}
-                        onClose={closeModal}
-                        {...portalProps}
-                    />
-                </div>
-            }
-        />
+        <div className={classNames(styles.container, {}, [className])}>
+            <Button onClick={openModal} variant="text">
+                {`${t('Log in')}`}
+            </Button>
+            <LoginModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                {...portalProps}
+            />
+        </div>
     );
 });

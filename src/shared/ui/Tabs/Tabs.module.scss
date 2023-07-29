@@ -11,6 +11,12 @@
     width: 100px;
     height: 40px;
     color: var(--text-primary-color);
+
+    &:hover {
+        border-radius: 16px;
+        outline: 1px solid var(--hint-redesigned);
+        transition: none;
+    }
 }
 
 .active {

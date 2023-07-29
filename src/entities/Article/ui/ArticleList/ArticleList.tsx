@@ -109,7 +109,7 @@ export const ArticleList = memo(
                 ) : (
                     <VirtuosoGrid
                         ref={virtuosoGridRef}
-                        style={{ height: '90%' }}
+                        style={{ height: '100%' }}
                         totalCount={articles.length}
                         components={{
                             ScrollSeekPlaceholder: ItemContainerComp,
