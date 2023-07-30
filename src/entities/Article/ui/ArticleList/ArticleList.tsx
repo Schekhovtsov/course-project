@@ -25,11 +25,17 @@ interface ArticleListProps {
     onLoadNextBatch?: () => void;
 }
 
-const ItemContainerComp: FC<{
+const LoaderSkeleton: FC<{
     height: number;
     width: number;
     index: number;
-}> = () => <ArticleListItemSkeleton view="tile" />;
+}> = () => (
+    <>
+        <ArticleListItemSkeleton view="tile" />
+        <ArticleListItemSkeleton view="tile" />
+        <ArticleListItemSkeleton view="tile" />
+    </>
+);
 
 export const ArticleList = memo(
     ({
@@ -112,7 +118,7 @@ export const ArticleList = memo(
                         style={{ height: '100%' }}
                         totalCount={articles.length}
                         components={{
-                            ScrollSeekPlaceholder: ItemContainerComp,
+                            ScrollSeekPlaceholder: LoaderSkeleton,
                         }}
                         endReached={onLoadNextBatch}
                         data={articles}

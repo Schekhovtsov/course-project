@@ -35,7 +35,7 @@ export const RatingCard = memo(
         onCancel,
         rating = 0,
     }: RatingCardProps) => {
-        const { t } = useTranslation();
+        const { t } = useTranslation('articlePage');
         const { closeModal, isModalOpen, openModal } = useModal();
         const [starsCount, setStarsCount] = useState(rating);
         const [feedback, setFeedback] = useState('');
@@ -93,7 +93,7 @@ export const RatingCard = memo(
                 className={classNames(styles.container, {}, [className])}
             >
                 <VStack className={styles.container} max>
-                    <Text title={starsCount ? 'Thank you' : title} />
+                    <Text title={starsCount ? t('Thank you') : title} />
                     <StarRating
                         selectedStars={starsCount}
                         onSelect={onSelectStars}

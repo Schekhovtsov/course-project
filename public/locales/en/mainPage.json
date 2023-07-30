@@ -1,16 +1,27 @@
 {
-  "Main page": "Main page",
-  "Admin panel": "Admin panel",
-  "Forbidden": "Forbidden",
-  "Notifications": "Notifications",
-  "aboutPage": {
-    "Rate the article": "Rate the article",
-    "Enjoyed": "Enjoyed?"
-  },
-  "Close": "Close",
-  "Sent": "Sent",
-  "Leave your messsage": "Leave your message",
-  "Toggle sidebar": "Toggle sidebar",
-  "Change theme": "Change theme",
-  "Scroll top": "Scroll top"
+    "Main page": "Main page",
+    "Admin panel": "Admin panel",
+    "Forbidden": "Forbidden",
+    "Notifications": "Notifications",
+    "aboutPage": {
+        "Rate the article": "Rate the article",
+        "Enjoyed": "Enjoyed?"
+    },
+    "Close": "Close",
+    "Sent": "Sent",
+    "Leave your messsage": "Leave your message",
+    "Toggle sidebar": "Toggle sidebar",
+    "Change theme": "Change theme",
+    "title": "This website is a pet project created as part of the \"Advanced Frontend. In production on React\" course by Ulbi TV",
+    "subtitle": "The goal of development is to learn new approaches, libraries, and improve overall qualifications",
+    "stack": "The project uses the following technology stack:",
+    "stack_li_1": "- Build: Webpack (project configuration from scratch), Vite",
+    "stack_li_2": "- TypeScript",
+    "stack_li_3": "- React + Redux Toolkit",
+    "stack_li_4": "- JSON Server",
+    "stack_li_5": "- Storybook",
+    "stack_li_6": "- Localization: i18Next",
+    "stack_li_7": "- Testing: JEST + RTL, Loki, Cypress",
+    "architecture": "Project Architecture - Feature Sliced Design",
+    "credits": "march-august 2023, Sergey Schekhovtsov"
 }

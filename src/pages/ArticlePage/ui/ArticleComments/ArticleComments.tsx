@@ -19,7 +19,7 @@ interface ArticleCommentsProps {
 }
 
 export const ArticleComments = ({ id }: ArticleCommentsProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('articlePage');
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {

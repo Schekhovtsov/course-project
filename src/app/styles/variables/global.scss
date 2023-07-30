@@ -2,24 +2,20 @@
 /* stylelint-disable string-quotes */
 :root {
     // Fonts
-    --font-family: serif;
-    --font-size-s: 10px;
-    --font-line-s: 18px;
-    --font-s: var(--font-line-s) / var(--font-line-s) var(--font-family);
-    --font-size-m: 12px;
-    --font-line-m: 20px;
-    --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family);
+    --font-size-s: 12px;
+    --font-line-s: 20px;
+    --font-s-redesigned: var(--font-size-s) / var(--font-line-s)
+        var(--font-family-text-redesigned);
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m-redesigned: var(--font-size-m) / var(--font-line-m)
+        var(--font-family-text-redesigned);
     --font-size-l: 24px;
     --font-line-l: 32px;
-    --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family);
+    --font-l-redesigned: var(--font-size-l) / var(--font-line-l)
+        var(--font-family-title-redesigned);
     --font-family-title-redesigned: 'Roboto', sans-serif;
     --font-family-text-redesigned: 'Nunito Sans', sans-serif;
-    --font-s-redesigned: var(--font-line-s) / var(--font-line-s)
-        var(--font-family-text-redesigned);
-    --font-m-redesigned: var(--font-line-m) / var(--font-line-m)
-        var(--font-family-text-redesigned);
-    --font-l-redesigned: var(--font-line-l) / var(--font-line-l)
-        var(--font-family-title-redesigned);
 
     // Sizes
     --size-navbar-height: 50px;
@@ -27,8 +23,8 @@
     --size-sidebar-width-collapsed: 90px;
 
     // Colors
-    --color-black: #2a2727;
-    --color-white: #eeeaea;
+    --color-white: #e2eef1;
+    --color-dark: #141c1f;
     --color-overlay: rgba(0 0 0 / 50%);
     --color-red: #ef0e0e;
     --color-gray: #d4d4d4;

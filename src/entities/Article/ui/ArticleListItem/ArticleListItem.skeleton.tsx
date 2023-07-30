@@ -43,7 +43,11 @@ export const ArticleListItemSkeleton = memo(
                     ])}
                 >
                     <Card className={styles.card}>
-                        <Skeleton width="100%" height={300} />
+                        <Skeleton
+                            width="100%"
+                            height={300}
+                            borderRadius="16px"
+                        />
                     </Card>
                 </div>
             );

@@ -1,6 +1,10 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
+
+import styles from './MainPage.module.scss';
 
 function MainPage() {
     // eslint-disable-next-line no-unused-vars
@@ -8,44 +12,38 @@ function MainPage() {
 
     return (
         <Page data-testid="Main page">
-            TO-DO:
-            <br />
-            <br />
+            <Text titleSize="xl" title={`${t('title')}`} />
+            <Text title={`${t('subtitle')}`} />
+            <Text text={`${t('stack')}`} />
             <ul>
                 <li>
-                    <del>В features растасовать всё по папкам</del>
+                    <Text text={`${t('stack_li_1')}`} />
                 </li>
                 <li>
-                    <del>Подправить окно подгрузки формы авторизации</del>
+                    <Text text={`${t('stack_li_2')}`} />
                 </li>
                 <li>
-                    <del>Просмотреть storybook. Добавить кейсов</del>
+                    <Text text={`${t('stack_li_3')}`} />
                 </li>
-                <li>Починить иконки при старте через Vite</li>
                 <li>
-                    <del>Заменить реализацию редактирования профиля</del>
+                    <Text text={`${t('stack_li_4')}`} />
                 </li>
-                <li>Починить подгрузку тайлов в сетке</li>
-                <del>
-                    <li>Проверить весь функционал фильтрации статей</li>
-                </del>
-                <li>Выполнить полную локализацию</li>
-                <li>В статьях починить подгрузку в режиме Grid/Tile</li>
                 <li>
-                    <del>Проверить логику переключеният тем. Глючит</del>
+                    <Text text={`${t('stack_li_5')}`} />
                 </li>
-                <li>Сделать дизайн лоадера при первичной загрузке сайта</li>
-                <li>Описать весь проект на главной странице</li>
-                <li>Починить тему AppLoaderLayout</li>
                 <li>
-                    Подправить скелетоны - добавить радиус (в некотороых местах)
-                    и анимацию
+                    <Text text={`${t('stack_li_6')}`} />
                 </li>
-                <li>Добится положительных проверок github actions</li>
-                <li>Опционально: обновить все версии библиотек</li>
-                <li>Опционально: дизайн в сторибуке</li>
-                <li>Опционально: прокрутка не в контейнере а на странице</li>
+                <li>
+                    <Text text={`${t('stack_li_7')}`} />
+                </li>
             </ul>
+            <br />
+            <Text text={`${t('architecture')}`} />
+            <br />
+            <div className={styles.footer}>
+                <Text text={`${t('credits')}`} />
+            </div>
         </Page>
     );
 }

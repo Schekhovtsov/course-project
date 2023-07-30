@@ -1,5 +1,26 @@
 {
-  "Main page": "Главная страница",
-  "Articles list page": "Лента статей",
-  "Notifications": "Уведомления"
+    "Admin panel": "Админ-панель",
+    "Forbidden": "Запрещено, вылезай отсюда",
+    "Notifications": "Уведомления",
+    "aboutPage": {
+        "Rate the article": "Оцените статью",
+        "Enjoyed": "Понравилась?"
+    },
+    "Close": "Закрыть",
+    "Sent": "Отправить",
+    "Leave your messsage": "Оставьте ваш комментарий",
+    "Toggle sidebar": "Переключить сайдбар",
+    "Change theme": "Сменить тему",
+    "title": "Этот сайт - pet-проект, созданный в рамках курса \"Продвинутый Frontend. В production на React\" от Ulbi TV",
+    "subtitle": "Цель разработки - изучение новых подходов, инструментов и повышение общей квалификации",
+    "stack": "В рамках проекта был применен стек следующих технологий:",
+    "stack_li_1": "- Сборка: Webpack (конфигурация проекта с нуля), Vite",
+    "stack_li_2": "- TypeScript",
+    "stack_li_3": "- React + Redux Toolkit",
+    "stack_li_4": "- JSON Server",
+    "stack_li_5": "- Storybook",
+    "stack_li_6": "- Локализация: i18Next",
+    "stack_li_7": "- Тестирование: JEST + RTL, Loki, Cypress",
+    "architecture": "Архитектура проекта - Feature Sliced Design",
+    "credits": "март-август 2023, Шеховцов Сергей"
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = memo(() => {
-    const { t } = useTranslation('Admin');
+    const { t } = useTranslation('adminPanelPage');
 
     return (
         <Page data-testid="Admin panel page">{`${t('Admin panel page')}`}</Page>

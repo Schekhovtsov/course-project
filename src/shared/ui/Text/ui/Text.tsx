@@ -6,7 +6,7 @@ import styles from './Text.module.scss';
 
 export type TextVariant = 'primary' | 'error' | 'accent';
 
-type TitleSize = 'small' | 'medium' | 'big';
+type TitleSize = 'small' | 'medium' | 'big' | 'xl';
 
 type HeaderTag = 'h1' | 'h2' | 'h3';
 
@@ -25,6 +25,7 @@ const mapSizeToHeaderTag: Record<TitleSize, HeaderTag> = {
     small: 'h3',
     medium: 'h2',
     big: 'h1',
+    xl: 'h1',
 };
 
 export const Text = memo(
@@ -39,6 +40,9 @@ export const Text = memo(
         'data-testid': dataTestId = '',
     }: TextProps) => {
         const HeaderTag = mapSizeToHeaderTag[titleSize];
+
+        const titleMods = { [styles.xl]: titleSize === 'xl' };
+
         const textElement = bold ? (
             <span
                 className={styles.text}
@@ -59,7 +63,7 @@ export const Text = memo(
 
         return (
             <div
-                className={classNames(styles.container, {}, [
+                className={classNames(styles.container, titleMods, [
                     className,
                     styles[variant],
                 ])}

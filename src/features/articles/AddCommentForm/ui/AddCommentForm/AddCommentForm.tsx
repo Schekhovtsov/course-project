@@ -30,7 +30,7 @@ const reducers: ReducersList = {
 const AddCommentForm = memo(
     ({ onSendComment, className }: AddCommentFormProps) => {
         const dispatch = useAppDispatch();
-        const { t } = useTranslation();
+        const { t } = useTranslation('articlePage');
         const text = useSelector(getAddCommentFormText);
 
         useDynamicReducerLoader(reducers);
@@ -55,7 +55,7 @@ const AddCommentForm = memo(
                 data-testid="AddCommentForm"
             >
                 <Input
-                    placeholder={`${t('Введите текст комментария')}`}
+                    placeholder={`${t('Enter your comment')}`}
                     value={text}
                     onChange={onTextChange}
                     className={styles.input}
@@ -67,7 +67,7 @@ const AddCommentForm = memo(
                     data-testid="AddCommentForm.Button"
                     className={styles.button}
                 >
-                    {`${t('Отправить комментарий')}`}
+                    {`${t('Leave a comment')}`}
                 </Button>
             </VStack>
         );
