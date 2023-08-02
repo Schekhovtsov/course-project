@@ -12,7 +12,7 @@ const data = {
     avatar,
 };
 
-describe('features/editableProfileCard/model/services/valicdateProfileData', () => {
+describe('features/EditableProfileCard/model/services/valicdateProfileData', () => {
     test('Должен вернуть результат без ошибок', async () => {
         const result = validateProfileData(data);
         expect(result).toEqual([]);

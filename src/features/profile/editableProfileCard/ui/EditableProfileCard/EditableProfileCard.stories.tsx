@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
-    title: 'features/editableProfileCard/EditableProfileCard',
+    title: 'features/EditableProfileCard/EditableProfileCard',
     component: EditableProfileCard,
 } as ComponentMeta<typeof EditableProfileCard>;
 

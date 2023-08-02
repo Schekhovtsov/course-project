@@ -3,7 +3,7 @@ import { ArticleSchema } from '@/entities/Article';
 import { UserSchema } from '@/entities/User';
 import { AddCommentFormSchema } from '@/features/articles/AddCommentForm';
 import { LoginSchema } from '@/features/auth/AuthByUsername/model/types/loginSchema';
-import { ProfileSchema } from '@/features/profile/editableProfileCard';
+import { ProfileSchema } from '@/features/profile/EditableProfileCard';
 import { ScrollRestorationSchema } from '@/features/ui/ScrollRestoration';
 import { ArticlePageSchema } from '@/pages/ArticlePage';
 import { ArticlesListPageSchema } from '@/pages/ArticlesListPage';

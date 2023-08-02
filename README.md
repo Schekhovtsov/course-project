@@ -1,8 +1,14 @@
-## Запуск проекта
+## Запуск проекта (локально)
 
 ```
 npm install
 npm run start:dev
+```
+
+## Запуск проекта (удалённо)
+
+```
+https://bespoke-mochi-054d72.netlify.app
 ```
 
 ### Логин и пароль для авторизации - Admin
@@ -132,14 +138,14 @@ npm run start:dev
 
 ## Фичи (features)
 
-- [AddCommentForm](/src/features/AddCommentForm)
-- [ArticleRating](/src/features/ArticleRating)
-- [ArticleTypeTabs](/src/features/ArticleTypeTabs)
-- [ArticleViewSwitcher](/src/features/ArticleViewSwitcher)
-- [AuthByUsername](/src/features/AuthByUsername)
-- [AvatarDropdown](/src/features/AvatarDropdown)
-- [EditableProfileCard](/src/features/editableProfileCard)
-- [LanguageSwitcher](/src/features/LanguageSwitcher)
-- [NotificationButton](/src/features/NotificationButton)
-- [ThemeSwitcher](/src/features/ThemeSwitcher)
-- [ToggleSidebar](/src/features/ToggleSidebar)
+- [AddCommentForm](/src/features/articles/AddCommentForm)
+- [ArticleRating](/src/features/articles/ArticleRating)
+- [ArticleTypeTabs](/src/features/articles/ArticleTypeTabs)
+- [ArticleViewSwitcher](/src/features/articles/ArticleViewSwitcher)
+- [AuthByUsername](/src/features/auth/AuthByUsername)
+- [AvatarDropdown](/src/features/profile/AvatarDropdown)
+- [EditableProfileCard](/src/features/profile/EditableProfileCard)
+- [LanguageSwitcher](/src/features/ui/LanguageSwitcher)
+- [NotificationButton](/src/features/ui/NotificationButton)
+- [ThemeSwitcher](/src/features/ui/ThemeSwitcher)
+- [ToggleSidebar](/src/features/ui/ToggleSidebar)
