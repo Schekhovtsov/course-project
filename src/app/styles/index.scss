@@ -31,11 +31,7 @@ body {
     height: 5px;
 }
 
-*::-webkit-scroll-bar-track {
-    background-color: var(--inverted-bg-color);
-}
-
 *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+    background-color: var(--text-redesigned);
     border-radius: 10px;
 }

@@ -13,5 +13,7 @@
     "Password": "Пароль",
     "Error": "Ошибка",
     "Login form": "Форма авторизации",
-    "Wrong username or password": "Неправильный логин или пароль"
+    "Wrong username or password": "Неправильный логин или пароль",
+    "Notifications": "Уведомления",
+    "Admin panel": "Админ-панель"
 }

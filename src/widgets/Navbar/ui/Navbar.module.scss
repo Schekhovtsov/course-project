@@ -1,7 +1,6 @@
 .container {
     width: 100%;
     height: var(--size-navbar-height);
-    background: var(--background-dark-redesigned);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,4 +13,8 @@
 
 .title {
     color: var(--background-redesigned);
+}
+
+.button {
+    color: var(--text-redesigned);
 }

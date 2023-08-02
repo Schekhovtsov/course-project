@@ -42,7 +42,7 @@ export const Navbar = memo(({ className, portalProps }: NavbarProps) => {
 
     return (
         <div className={classNames(styles.container, {}, [className])}>
-            <Button onClick={openModal} variant="text">
+            <Button onClick={openModal} variant="text" className={styles.button}>
                 {`${t('Log in')}`}
             </Button>
             <LoginModal

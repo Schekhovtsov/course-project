@@ -36,7 +36,7 @@ export const Filter = ({
     search,
     type,
 }: FilterProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('articlePage');
 
     return (
         <VStack className={styles.container}>

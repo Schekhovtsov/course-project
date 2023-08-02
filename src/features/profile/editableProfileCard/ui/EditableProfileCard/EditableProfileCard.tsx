@@ -131,7 +131,7 @@ export const EditableProfileCard = memo(
                     <VStack className={styles.form}>
                         <HStack>
                             <Text
-                                text="First name"
+                                text={`${t('First name')}`}
                                 className={styles.inputTitle}
                             />
                             <Input
@@ -145,7 +145,7 @@ export const EditableProfileCard = memo(
                         </HStack>
                         <HStack>
                             <Text
-                                text="Last name"
+                                text={`${t('Last name')}`}
                                 className={styles.inputTitle}
                             />
                             <Input
@@ -158,7 +158,10 @@ export const EditableProfileCard = memo(
                             />
                         </HStack>
                         <HStack>
-                            <Text text="City" className={styles.inputTitle} />
+                            <Text
+                                text={`${t('City')}`}
+                                className={styles.inputTitle}
+                            />
                             <Input
                                 value={data?.city}
                                 placeholder={`${t('City')}`}
@@ -169,7 +172,7 @@ export const EditableProfileCard = memo(
                         </HStack>
                         <HStack>
                             <Text
-                                text="Avatar link name"
+                                text={`${t('Avatar')}`}
                                 className={styles.inputTitle}
                             />
                             <Input
