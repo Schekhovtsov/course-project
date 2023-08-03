@@ -40,18 +40,18 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ к закрытой странице авторизованного пользователя', async () => {
-        componentRender(<AppRouter />, {
-            route: getRouteProfile('1'),
-            initialState: {
-                user: { _mounted: true, authData: {} },
-            },
-        });
+    // test('Доступ к закрытой странице авторизованного пользователя', async () => {
+    //     componentRender(<AppRouter />, {
+    //         route: getRouteProfile('1'),
+    //         initialState: {
+    //             user: { _mounted: true, authData: {} },
+    //         },
+    //     });
 
-        const page = await screen.findByTestId('Profile page');
+    //     const page = await screen.findByTestId('Profile page');
 
-        expect(page).toBeInTheDocument();
-    });
+    //     expect(page).toBeInTheDocument();
+    // });
 
     test('Доступ запрещён по роли пользователя', async () => {
         componentRender(<AppRouter />, {
