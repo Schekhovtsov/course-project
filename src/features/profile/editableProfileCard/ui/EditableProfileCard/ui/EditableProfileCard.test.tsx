@@ -4,7 +4,7 @@ import { componentRender } from '@/shared/lib/tests/componentRender';
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 
-import { profileReducer } from '../../model/slice/profileSlice';
+import { profileReducer } from '../../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 
 const profile: Profile = {

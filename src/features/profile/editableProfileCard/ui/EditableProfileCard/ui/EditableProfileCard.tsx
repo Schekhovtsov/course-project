@@ -12,17 +12,20 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import { ValidateProfileErrors } from '../../model/consts/consts';
+import { ValidateProfileErrors } from '../../../model/consts/consts';
 import {
     selectError,
     selectIsLoading,
     selectProfile,
     selectReadOnlyStatus,
     selectValidateErrors,
-} from '../../model/selector/profileSelectors';
-import { fetchProfileData } from '../../model/services/fetchProfileData';
-import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ProfilePageHeader } from '../ProfilePageHeader';
+} from '../../../model/selector/profileSelectors';
+import { fetchProfileData } from '../../../model/services/fetchProfileData';
+import {
+    profileActions,
+    profileReducer,
+} from '../../../model/slice/profileSlice';
+import { ProfilePageHeader } from '../../ProfilePageHeader';
 
 import styles from './EditableProfileCard.module.scss';
 
