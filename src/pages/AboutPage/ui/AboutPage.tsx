@@ -1,5 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 
 function AboutPage() {
@@ -8,13 +9,10 @@ function AboutPage() {
 
     return (
         <Page data-testid="About page">
-            <b>TO-DO:</b>
-            <ul>
-                <li>Оформить все статьи</li>
-                <li>Добится положительных проверок github actions</li>
-                <li>Опционально: обновить все версии библиотек</li>
-                <li>Опционально: дизайн в сторибуке</li>
-            </ul>
+            <Text
+                title={`${t('Тут был TO-DO лист')}`}
+                text={`${t('Но я сделал всё что хотел (или почти всё)')}`}
+            />
         </Page>
     );
 }
