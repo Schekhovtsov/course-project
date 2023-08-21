@@ -2,7 +2,7 @@ import avatar from '@/shared/assets/icons/tests/avatar.png';
 
 import { ValidateProfileErrors } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData';
-import { ProfileSchema } from '../types/EditableProfileCard';
+import { ProfileSchema } from '../types/editableProfileCard';
 import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
